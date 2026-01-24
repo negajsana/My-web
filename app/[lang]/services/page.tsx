@@ -1,10 +1,25 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { ServicesSection } from "@/components/services-section"
 import { Footer } from "@/components/footer"
+import { JsonLd } from "@/components/json-ld"
 import { translations, type Language } from "@/lib/translations"
+import { generatePageMetadata } from "@/lib/seo"
 import { redirect } from "next/navigation"
 
-export default function ServicesPage({ params }: { params: { lang: string } }) {
+interface PageProps {
+  params: { lang: string }
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const lang = params.lang as Language
+  if (!translations[lang]) {
+    return {}
+  }
+  return generatePageMetadata(lang, "services")
+}
+
+export default function ServicesPage({ params }: PageProps) {
   const lang = params.lang as Language
 
   if (!translations[lang]) {
@@ -15,6 +30,7 @@ export default function ServicesPage({ params }: { params: { lang: string } }) {
 
   return (
     <div className="min-h-screen">
+      <JsonLd lang={lang} page="services" />
       <Navigation t={t} lang={lang} />
       <main className="pt-16">
         <ServicesSection t={t} />

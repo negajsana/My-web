@@ -1,5 +1,51 @@
 export const translations = {
   uk: {
+    // SEO Meta Tags
+    seo: {
+      home: {
+        title: "Розробка сайтів та чат-ботів в Україні | Олександр",
+        description: "Професійна розробка веб-сайтів, Telegram чат-ботів та автоматизація бізнесу. Сайт за 2-4 тижні, бот за тиждень. Замовити розробку.",
+        h1: "Розробка сайтів та чат-ботів для бізнесу",
+      },
+      about: {
+        title: "Про розробника | Full-Stack веб-розробка Україна",
+        description: "Досвідчений Full-Stack розробник: Next.js, React, Node.js, Python. Створення веб-додатків та автоматизація бізнес-процесів в Україні.",
+        h1: "Про мене — Full-Stack розробник",
+      },
+      services: {
+        title: "Послуги веб-розробки та автоматизації | Ціни",
+        description: "Розробка сайтів, лендінгів, Telegram ботів, інтеграція API та CRM. Автоматизація бізнес-процесів. Замовити послугу розробки в Україні.",
+        h1: "Послуги веб-розробки та автоматизації",
+      },
+      contact: {
+        title: "Замовити розробку сайту | Контакти розробника",
+        description: "Замовити розробку веб-сайту або чат-бота. Безкоштовна консультація. Telegram, WhatsApp, телефон. Швидкий зворотний зв'язок.",
+        h1: "Зв'язатися з розробником",
+      },
+    },
+    // FAQ for Schema.org
+    faq: [
+      {
+        question: "Скільки коштує розробка сайту?",
+        answer: "Вартість залежить від складності проєкту. Лендінг від $250, корпоративний сайт від $500, веб-додаток від $1000. Точну ціну надаю після обговорення вимог.",
+      },
+      {
+        question: "Скільки часу займає розробка?",
+        answer: "Лендінг — 1-2 тижні, корпоративний сайт — 2-4 тижні, веб-додаток — 4-8 тижнів. Telegram бот — від 3 до 7 днів.",
+      },
+      {
+        question: "Чи надаєте підтримку після запуску?",
+        answer: "Так, надаю технічну підтримку та обслуговування сайту. Перший рік підтримки безкоштовно для всіх проєктів.",
+      },
+      {
+        question: "Які технології використовуєте?",
+        answer: "Працюю з Next.js, React, Node.js, TypeScript, Python. Для ботів — Telegram Bot API, WhatsApp Business API. Інтеграція з Stripe, PayPal, Monobank.",
+      },
+      {
+        question: "Чи працюєте з клієнтами з Європи?",
+        answer: "Так, працюю з клієнтами з України та Європи. Комунікація українською або англійською мовою.",
+      },
+    ],
     nav: {
       home: "Головна",
       about: "Про мене",
@@ -70,6 +116,52 @@ export const translations = {
     },
   },
   ru: {
+    // SEO Meta Tags
+    seo: {
+      home: {
+        title: "Разработка сайтов и чат-ботов | Александр",
+        description: "Профессиональная разработка веб-сайтов, Telegram чат-ботов и автоматизация бизнеса. Сайт за 2-4 недели, бот за неделю.",
+        h1: "Разработка сайтов и чат-ботов для бизнеса",
+      },
+      about: {
+        title: "О разработчике | Full-Stack веб-разработка",
+        description: "Опытный Full-Stack разработчик: Next.js, React, Node.js, Python. Создание веб-приложений и автоматизация бизнес-процессов.",
+        h1: "Обо мне — Full-Stack разработчик",
+      },
+      services: {
+        title: "Услуги веб-разработки и автоматизации | Цены",
+        description: "Разработка сайтов, лендингов, Telegram ботов, интеграция API и CRM. Автоматизация бизнес-процессов.",
+        h1: "Услуги веб-разработки и автоматизации",
+      },
+      contact: {
+        title: "Заказать разработку сайта | Контакты разработчика",
+        description: "Заказать разработку веб-сайта или чат-бота. Бесплатная консультация. Telegram, WhatsApp, телефон.",
+        h1: "Связаться с разработчиком",
+      },
+    },
+    // FAQ for Schema.org
+    faq: [
+      {
+        question: "Сколько стоит разработка сайта?",
+        answer: "Стоимость зависит от сложности проекта. Лендинг от $250, корпоративный сайт от $500, веб-приложение от $1000.",
+      },
+      {
+        question: "Сколько времени занимает разработка?",
+        answer: "Лендинг — 1-2 недели, корпоративный сайт — 2-4 недели, веб-приложение — 4-8 недель. Telegram бот — от 3 до 7 дней.",
+      },
+      {
+        question: "Предоставляете поддержку после запуска?",
+        answer: "Да, предоставляю техническую поддержку и обслуживание сайта. Первый год поддержки бесплатно.",
+      },
+      {
+        question: "Какие технологии используете?",
+        answer: "Работаю с Next.js, React, Node.js, TypeScript, Python. Для ботов — Telegram Bot API, WhatsApp Business API.",
+      },
+      {
+        question: "Работаете с клиентами из Европы?",
+        answer: "Да, работаю с клиентами из Украины и Европы. Коммуникация на украинском или английском языке.",
+      },
+    ],
     nav: {
       home: "Главная",
       about: "Обо мне",
@@ -140,6 +232,52 @@ export const translations = {
     },
   },
   en: {
+    // SEO Meta Tags
+    seo: {
+      home: {
+        title: "Web Development & Chatbots in Europe | Oleksandr",
+        description: "Professional website development, Telegram chatbots & business automation. Website in 2-4 weeks, bot in one week. Order development services.",
+        h1: "Website & Chatbot Development for Business",
+      },
+      about: {
+        title: "About Developer | Full-Stack Web Development Europe",
+        description: "Experienced Full-Stack developer: Next.js, React, Node.js, Python. Web application development and business process automation in Europe.",
+        h1: "About Me — Full-Stack Developer",
+      },
+      services: {
+        title: "Web Development & Automation Services | Pricing",
+        description: "Website development, landing pages, Telegram bots, API & CRM integration. Business process automation. Order development services in Europe.",
+        h1: "Web Development & Automation Services",
+      },
+      contact: {
+        title: "Order Website Development | Developer Contacts",
+        description: "Order website or chatbot development. Free consultation. Telegram, WhatsApp, phone. Quick response guaranteed.",
+        h1: "Contact the Developer",
+      },
+    },
+    // FAQ for Schema.org
+    faq: [
+      {
+        question: "How much does website development cost?",
+        answer: "Cost depends on project complexity. Landing page from $250, corporate website from $500, web application from $1000. Exact price provided after discussing requirements.",
+      },
+      {
+        question: "How long does development take?",
+        answer: "Landing page — 1-2 weeks, corporate website — 2-4 weeks, web application — 4-8 weeks. Telegram bot — 3 to 7 days.",
+      },
+      {
+        question: "Do you provide support after launch?",
+        answer: "Yes, I provide technical support and website maintenance. First year of support is free for all projects.",
+      },
+      {
+        question: "What technologies do you use?",
+        answer: "I work with Next.js, React, Node.js, TypeScript, Python. For bots — Telegram Bot API, WhatsApp Business API. Integration with Stripe, PayPal, Monobank.",
+      },
+      {
+        question: "Do you work with clients from Europe?",
+        answer: "Yes, I work with clients from Ukraine and Europe. Communication in Ukrainian or English.",
+      },
+    ],
     nav: {
       home: "Home",
       about: "About",
