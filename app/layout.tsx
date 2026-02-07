@@ -1,16 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _inter = Inter({ subsets: ["latin", "cyrillic"] })
+const _playfair = Playfair_Display({ subsets: ["latin", "cyrillic"] })
 
 export const metadata: Metadata = {
-  title: "Олександр | Розробник Веб-Сайтів та Чат-Ботів",
+  title: "Oleksandr | Web Developer & Chatbot Engineer",
   description:
-    "Професійна розробка веб-сайтів, чат-ботів та цифрових рішень. Створюю сучасні, функціональні та візуально привабливі проєкти.",
+    "Professional web development, chatbots, and digital solutions. Building modern, functional, and visually compelling projects.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk" className="dark">
-      <body className={`font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>

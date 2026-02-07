@@ -32,7 +32,7 @@ export default function AboutPage({ params }: PageProps) {
     <div className="min-h-screen">
       <JsonLd lang={lang} page="about" />
       <Navigation t={t} lang={lang} />
-      <main className="pt-16">
+      <main className="pt-24">
         <AboutSection t={t} />
       </main>
       <Footer t={t} />

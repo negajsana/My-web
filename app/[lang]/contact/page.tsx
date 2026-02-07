@@ -32,7 +32,7 @@ export default function ContactPage({ params }: PageProps) {
     <div className="min-h-screen">
       <JsonLd lang={lang} page="contact" />
       <Navigation t={t} lang={lang} />
-      <main className="pt-16">
+      <main className="pt-24">
         <ContactSection t={t} />
       </main>
       <Footer t={t} />
