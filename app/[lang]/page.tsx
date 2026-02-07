@@ -14,19 +14,21 @@ import { generatePageMetadata } from "@/lib/seo"
 import { redirect } from "next/navigation"
 
 interface PageProps {
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lang = params.lang as Language
+  const { lang: rawLang } = await params
+  const lang = rawLang as Language
   if (!translations[lang]) {
     return {}
   }
   return generatePageMetadata(lang, "home")
 }
 
-export default function Page({ params }: PageProps) {
-  const lang = params.lang as Language
+export default async function Page({ params }: PageProps) {
+  const { lang: rawLang } = await params
+  const lang = rawLang as Language
 
   if (!translations[lang]) {
     redirect("/uk")
