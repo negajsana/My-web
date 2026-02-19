@@ -112,7 +112,7 @@ export const translations = {
       letsTalk: "Готові почати? Напишіть зараз",
     },
     footer: {
-      rights: "© 2026 Олександр. Всі права захищені.",
+      rights: "© 2026 Олександр.",
     },
   },
   ru: {
@@ -228,7 +228,7 @@ export const translations = {
       letsTalk: "Готовы начать? Напишите сейчас",
     },
     footer: {
-      rights: "© 2026 Александр. Все права защищены.",
+      rights: "© 2026 Александр.",
     },
   },
   en: {
@@ -344,7 +344,7 @@ export const translations = {
       letsTalk: "Ready to start? Message now",
     },
     footer: {
-      rights: "© 2026 Oleksandr. All rights reserved.",
+      rights: "© 2026 Oleksandr.",
     },
   },
 }
