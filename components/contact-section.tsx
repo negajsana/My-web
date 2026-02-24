@@ -121,12 +121,7 @@ export function ContactSection({ t }: ContactSectionProps) {
             </div>
           </div>
 
-          {/* CTA Banner */}
-          <div
-            className={`relative overflow-hidden rounded-2xl border border-primary/15 bg-primary/[0.03] p-10 lg:p-14 text-center ${
-              inView ? "animate-fade-up delay-400" : "opacity-0"
-            }`}
-          >
+          
             {/* Decorative glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
