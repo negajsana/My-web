@@ -53,73 +53,7 @@ export function ContactSection({ t }: ContactSectionProps) {
             />
           </div>
 
-          {/* Contact Cards */}
-          <div
-            ref={cardsRef}
-            className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-20"
-          >
-            {/* Phone/WhatsApp Card */}
-            <div
-              className={`group relative p-8 lg:p-10 border border-border/30 bg-surface/50 transition-all duration-700 hover:border-primary/30 hover:bg-surface-elevated/50 ${
-                cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
-            >
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/40 transition-all duration-500 group-hover:w-6 group-hover:h-6 group-hover:border-primary/70" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/40 transition-all duration-500 group-hover:w-6 group-hover:h-6 group-hover:border-primary/70" />
-
-              <Phone className="h-6 w-6 text-primary mb-6" />
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-2">
-                {t.contact.phone}
-              </h3>
-              <p className="text-muted-foreground mb-8 text-sm">+4915154730846</p>
-
-              <div className="flex flex-col gap-3">
-                <a
-                  href="tel:+4915154730846"
-                  className="group/btn flex items-center justify-between px-5 py-3 border border-border/50 text-sm uppercase tracking-widest text-foreground transition-all duration-300 hover:border-primary/50 hover:text-primary"
-                >
-                  <span>{t.contact.phone}</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                </a>
-                <a
-                  href="https://wa.me/4915154730846"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/btn flex items-center justify-between px-5 py-3 border border-border/50 text-sm uppercase tracking-widest text-foreground transition-all duration-300 hover:border-primary/50 hover:text-primary"
-                >
-                  <span>WhatsApp</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Telegram Card */}
-            <div
-              className={`group relative p-8 lg:p-10 border border-border/30 bg-surface/50 transition-all duration-700 hover:border-primary/30 hover:bg-surface-elevated/50 ${
-                cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
-              style={{ transitionDelay: "150ms" }}
-            >
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/40 transition-all duration-500 group-hover:w-6 group-hover:h-6 group-hover:border-primary/70" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/40 transition-all duration-500 group-hover:w-6 group-hover:h-6 group-hover:border-primary/70" />
-
-              <Send className="h-6 w-6 text-primary mb-6" />
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-2">
-                {t.contact.telegram}
-              </h3>
-              <p className="text-muted-foreground mb-8 text-sm">@NE_106</p>
-
-              <a
-                href="https://t.me/NE_106"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn flex items-center justify-between px-5 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(180,150,80,0.15)]"
-              >
-                <span>{t.contact.telegram}</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-              </a>
-            </div>
-          </div>
+         
 
           {/* Bottom CTA */}
           
