@@ -122,12 +122,7 @@ export function ContactSection({ t }: ContactSectionProps) {
           </div>
 
           {/* Bottom CTA */}
-          <div
-            ref={ctaRef}
-            className={`text-center transition-all duration-700 ${
-              ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          
             <div className="relative p-12 lg:p-16 border border-primary/20 bg-primary/5">
               <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-primary/40" />
               <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/40" />
