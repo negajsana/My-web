@@ -1,12 +1,10 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { usePathname, useRouter } from "next/navigation"
 
 export function LanguageSwitcher() {
   const router = useRouter()
   const pathname = usePathname()
-
   const currentLang = pathname.split("/")[1] || "uk"
 
   const switchLanguage = (lang: string) => {
@@ -15,32 +13,28 @@ export function LanguageSwitcher() {
     router.push(segments.join("/") || `/${lang}`)
   }
 
+  const langs = [
+    { code: "uk", label: "UA" },
+    { code: "ru", label: "RU" },
+    { code: "en", label: "EN" },
+  ]
+
   return (
-    <div className="flex items-center gap-1 border border-border rounded-md p-1">
-      <Button
-        variant={currentLang === "uk" ? "default" : "ghost"}
-        size="sm"
-        onClick={() => switchLanguage("uk")}
-        className="h-7 px-2 text-xs"
-      >
-        UA
-      </Button>
-      <Button
-        variant={currentLang === "ru" ? "default" : "ghost"}
-        size="sm"
-        onClick={() => switchLanguage("ru")}
-        className="h-7 px-2 text-xs"
-      >
-        RU
-      </Button>
-      <Button
-        variant={currentLang === "en" ? "default" : "ghost"}
-        size="sm"
-        onClick={() => switchLanguage("en")}
-        className="h-7 px-2 text-xs"
-      >
-        EN
-      </Button>
+    <div className="flex items-center gap-0.5 p-1 rounded-lg border border-border/30 bg-secondary/30">
+      {langs.map((lang) => (
+        <button
+          key={lang.code}
+          type="button"
+          onClick={() => switchLanguage(lang.code)}
+          className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-300 ${
+            currentLang === lang.code
+              ? "bg-primary text-primary-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          {lang.label}
+        </button>
+      ))}
     </div>
   )
 }
