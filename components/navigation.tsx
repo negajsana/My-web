@@ -23,6 +23,18 @@ export function Navigation({ t, lang }: NavigationProps) {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [mobileMenuOpen])
+
   const navLinks = [
     { href: `/${lang}`, label: t.nav.home },
     { href: `/${lang}/about`, label: t.nav.about },
@@ -82,12 +94,11 @@ export function Navigation({ t, lang }: NavigationProps) {
 
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden fixed inset-0 top-0 bg-background/98 backdrop-blur-2xl transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 z-40 bg-background/98 backdrop-blur-2xl transition-all duration-500 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
-        style={{ zIndex: -1 }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
           {navLinks.map((link, index) => (
