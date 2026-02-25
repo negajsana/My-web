@@ -29,7 +29,6 @@ export function Navigation({ t, lang }: NavigationProps) {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden"
@@ -45,6 +44,7 @@ export function Navigation({ t, lang }: NavigationProps) {
     { href: `/${lang}`, label: t.nav.home },
     { href: `/${lang}/about`, label: t.nav.about },
     { href: `/${lang}/services`, label: t.nav.services },
+    { href: `/${lang}/how-we-work`, label: t.nav.howWeWork },
     { href: `/${lang}/contact`, label: t.nav.contact },
   ]
 
@@ -57,7 +57,6 @@ export function Navigation({ t, lang }: NavigationProps) {
       }`}
       style={{ zIndex: 9999 }}
     >
-      {/* Close button inside overlay */}
       <button
         className="absolute top-5 right-6 w-10 h-10 flex items-center justify-center text-foreground"
         onClick={() => setMobileMenuOpen(false)}
@@ -76,7 +75,7 @@ export function Navigation({ t, lang }: NavigationProps) {
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             }`}
-            style={{ transitionDelay: mobileMenuOpen ? `${index * 100 + 100}ms` : "0ms" }}
+            style={{ transitionDelay: mobileMenuOpen ? `${index * 80 + 100}ms` : "0ms" }}
             onClick={() => setMobileMenuOpen(false)}
           >
             {link.label}
@@ -120,11 +119,10 @@ export function Navigation({ t, lang }: NavigationProps) {
             <div className="flex items-center gap-4">
               <LanguageSwitcher />
 
-              {/* Mobile Menu Button */}
               <button
                 className="md:hidden relative w-10 h-10 flex items-center justify-center text-foreground"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-label="Open menu"
               >
                 <Menu className="h-5 w-5" />
               </button>
@@ -133,7 +131,6 @@ export function Navigation({ t, lang }: NavigationProps) {
         </div>
       </nav>
 
-      {/* Portal: renders overlay directly into document.body, outside nav stacking context */}
       {mounted && createPortal(mobileOverlay, document.body)}
     </>
   )
