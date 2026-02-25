@@ -1,10 +1,7 @@
 import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { ServicesSection } from "@/components/services-section"
 import { ProjectsSection } from "@/components/projects-section"
-import { FAQSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { MarqueeDivider } from "@/components/marquee-divider"
@@ -54,11 +51,7 @@ export default async function Page({ params }: PageProps) {
       <main>
         <HeroSection t={t} lang={lang} />
         <MarqueeDivider items={marqueeItems} />
-        <AboutSection t={t} />
-        <ServicesSection t={t} />
-        <MarqueeDivider items={marqueeItems} />
         <ProjectsSection t={t} />
-        <FAQSection t={t} />
         <ContactSection t={t} />
       </main>
       <Footer t={t} />
