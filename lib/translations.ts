@@ -156,6 +156,7 @@ export const translations = {
       phone: "Телефон / WhatsApp",
       telegram: "Telegram",
       cta: "Напишіть зараз — перша консультація безкоштовна",
+      letsTalk: "Напишіть зараз — перша консультація безкоштовна",
     },
 
     // Footer
@@ -321,6 +322,7 @@ export const translations = {
       phone: "Телефон / WhatsApp",
       telegram: "Telegram",
       cta: "Напишите сейчас — первая консультация бесплатно",
+      letsTalk: "Напишите сейчас — первая консультация бесплатно",
     },
 
     // Footer
@@ -486,6 +488,7 @@ export const translations = {
       phone: "Phone / WhatsApp",
       telegram: "Telegram",
       cta: "Write now — first consultation is free",
+      letsTalk: "Write now — first consultation is free",
     },
 
     // Footer
