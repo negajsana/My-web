@@ -5,15 +5,15 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://oleksandr.dev"
 
 export function generatePageMetadata(
   lang: Language,
-  page: "home" | "about" | "services" | "contact"
+  page: "home" | "about" | "services" | "contact" | "howWeWork"
 ): Metadata {
   const t = translations[lang]
   const seo = t.seo[page]
-  
+
   const langCode = lang === "uk" ? "uk-UA" : lang === "en" ? "en-US" : "ru-RU"
-  const pagePath = page === "home" ? "" : `/${page}`
+  const pagePath = page === "home" ? "" : `/${page === "howWeWork" ? "how-we-work" : page}`
   const canonicalUrl = `${SITE_URL}/${lang}${pagePath}`
-  
+
   const alternateLanguages: Record<string, string> = {
     "uk": `${SITE_URL}/uk${pagePath}`,
     "en": `${SITE_URL}/en${pagePath}`,
@@ -103,6 +103,13 @@ function getKeywords(lang: Language, page: string): string[] {
         "зв'язатися з розробником",
         "безкоштовна консультація сайт",
       ],
+      howWeWork: [
+        "процес розробки сайту",
+        "як замовити сайт",
+        "етапи розробки",
+        "співпраця з веб-розробником",
+        "скільки часу розробка сайту",
+      ],
     },
     en: {
       home: [
@@ -138,6 +145,13 @@ function getKeywords(lang: Language, page: string): string[] {
         "contact developer",
         "free consultation website",
       ],
+      howWeWork: [
+        "web development process",
+        "how to order a website",
+        "development stages",
+        "working with web developer",
+        "website development timeline",
+      ],
     },
     ru: {
       home: [
@@ -167,13 +181,19 @@ function getKeywords(lang: Language, page: string): string[] {
         "консультация веб-разработчика",
         "связаться с разработчиком",
       ],
+      howWeWork: [
+        "процесс разработки сайта",
+        "как заказать сайт",
+        "этапы разработки",
+        "сотрудничество с веб-разработчиком",
+        "сроки разработки сайта",
+      ],
     },
   }
 
   return keywords[lang][page] || []
 }
 
-// Schema.org structured data generators
 export function generateOrganizationSchema(lang: Language) {
   const name = lang === "uk" ? "Олександр — Веб-розробник" : lang === "en" ? "Oleksandr — Web Developer" : "Александр — Веб-разработчик"
   const description = translations[lang].seo.home.description
@@ -199,7 +219,7 @@ export function generateOrganizationSchema(lang: Language) {
         name: "Ukraine",
       },
       {
-        "@type": "Continent", 
+        "@type": "Continent",
         name: "Europe",
       },
     ],
@@ -236,7 +256,7 @@ export function generatePersonSchema(lang: Language) {
 
 export function generateServicesSchema(lang: Language) {
   const t = translations[lang]
-  
+
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -295,7 +315,7 @@ export function generateServicesSchema(lang: Language) {
 
 export function generateFAQSchema(lang: Language) {
   const t = translations[lang]
-  
+
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -312,7 +332,7 @@ export function generateFAQSchema(lang: Language) {
 
 export function generateBreadcrumbSchema(lang: Language, page: string, pageName: string) {
   const homeName = lang === "uk" ? "Головна" : lang === "en" ? "Home" : "Главная"
-  
+
   const items = [
     {
       "@type": "ListItem",
