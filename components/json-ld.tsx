@@ -10,17 +10,15 @@ import type { Language } from "@/lib/translations"
 
 interface JsonLdProps {
   lang: Language
-  page: "home" | "about" | "services" | "contact"
+  page: "home" | "about" | "services" | "contact" | "howWeWork"
 }
 
 export function JsonLd({ lang, page }: JsonLdProps) {
   const schemas = []
 
-  // Always include organization and website schema
   schemas.push(generateOrganizationSchema(lang))
   schemas.push(generateWebsiteSchema(lang))
 
-  // Page-specific schemas
   switch (page) {
     case "home":
       schemas.push(generatePersonSchema(lang))
@@ -52,6 +50,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
           lang,
           "contact",
           lang === "uk" ? "Контакти" : lang === "en" ? "Contact" : "Контакты"
+        )
+      )
+      break
+    case "howWeWork":
+      schemas.push(
+        generateBreadcrumbSchema(
+          lang,
+          "how-we-work",
+          lang === "uk" ? "Як ми працюємо" : lang === "en" ? "How We Work" : "Как мы работаем"
         )
       )
       break
