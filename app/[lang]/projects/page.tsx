@@ -107,6 +107,12 @@ export default async function ProjectsPage({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return [{ lang: "uk" }, { lang: "ru" }, { lang: "en" }]
+  return [
+    { lang: "uk" },
+    { lang: "ru" },
+    { lang: "en" },
+    { lang: "es" },
+    { lang: "de" },
+  ]
 }
 
