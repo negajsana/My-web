@@ -97,7 +97,8 @@ export const translations = {
     },
     projects: {
       title: "Портфоліо",
-      view: "Переглянути сайт",
+      view: "ПЕРЕГЛЯНУТИ САЙТ",
+      allProjectsButton: "Усі проєкти",
       advokats: {
         title: "Адвокатське бюро «Свій Юрист»",
         description: "Корпоративний сайт з системою онлайн-консультацій та формами зворотного зв'язку. Результат: зростання звернень з органічного пошуку після запуску.",
@@ -106,25 +107,27 @@ export const translations = {
         title: "Oratorica — Школа мов",
         description: "Платформа онлайн-навчання з системою реєстрації, особистими кабінетами та інтеграцією оплати. Автоматизований запис і оплата — без ручної обробки.",
       },
+      luerssen: {
+        title: "Lürssen",
+        description: "Корпоративний сайт міжнародної суднобудівної компанії преміум-сегмента. Реалізовано адаптивну верстку, оптимізацію швидкості завантаження, структурування контенту та покращення UI/UX для зручної презентації флоту й проєктів компанії.",
+      },
+      isarAerospace: {
+        title: "Isar Aerospace",
+        description: "Корпоративний сайт аерокосмічної компанії. Реалізовано сучасний технологічний інтерфейс, адаптивну верстку, оптимізацію продуктивності та структуровану подачу інформації про ракету-носій і технології компанії.",
+      },
+      providentLaw: {
+        title: "Provident Law LLP",
+        description: "Сайт юридичної компанії. Реалізовано зручну структуру послуг, форми зворотного зв’язку, SEO-оптимізацію та адаптивний дизайн для підвищення кількості звернень клієнтів.",
+      },
+      rcnb: {
+        title: "Real Club Náutico de Barcelona (RCNB)",
+        description: "Офіційний сайт яхт-клубу міжнародного рівня. Виконано адаптивну верстку, структурування інформації про події та регати, оптимізацію контенту та покращення навігації для зручного доступу до сервісів клубу.",
+      },
     },
     portfolioPage: {
       title: "Портфоліо",
       allProjectsTitle: "Усі проєкти",
       newProjectsTitle: "Нові проєкти",
-    },
-    newProjects: {
-      autoParts: {
-        title: "Інтернет-магазин автозапчастин",
-        description: "Інтернет-магазин із каталогом понад 5 000 позицій, фільтрами за маркою авто та інтеграцією з платіжними сервісами. Реалізовано особистий кабінет, історію замовлень та автоматичні статуси доставки.",
-      },
-      clinic: {
-        title: "Медична клініка — сайт запису на прийом",
-        description: "Корпоративний сайт клініки з онлайн-записом до лікаря, інтеграцією CRM та SMS-нагадуваннями. Зменшено кількість пропущених візитів завдяки автоматичним зверненням до пацієнтів.",
-      },
-      saas: {
-        title: "SaaS-панель аналітики для e-commerce",
-        description: "Веб-додаток з кабінетом для власників інтернет-магазинів: зведені дашборди, аналітика продажів, інтеграція з маркетплейсами та експорт звітів у форматах CSV/Excel.",
-      },
     },
     contact: {
       title: "Готові обговорити проект?",
@@ -287,6 +290,7 @@ export const translations = {
     projects: {
       title: "Портфолио",
       view: "Посмотреть сайт",
+      allProjectsButton: "Все проекты",
       advokats: {
         title: "Адвокатское бюро «Свій Юрист»",
         description: "Корпоративный сайт с системой онлайн-консультаций и формами обратной связи. Результат: рост обращений из органического поиска после запуска.",
@@ -295,25 +299,27 @@ export const translations = {
         title: "Oratorica — Школа языков",
         description: "Платформа онлайн-обучения с системой регистрации, личными кабинетами и интеграцией оплаты. Автоматизированная запись и оплата — без ручной обработки.",
       },
+      luerssen: {
+        title: "Lürssen",
+        description: "Корпоративный сайт международной судостроительной компании премиум-сегмента. Реализована адаптивная вёрстка, оптимизация скорости загрузки, структурирование контента и улучшение UI/UX для удобной презентации флота и проектов компании.",
+      },
+      isarAerospace: {
+        title: "Isar Aerospace",
+        description: "Корпоративный сайт аэрокосмической компании. Реализован современный технологичный интерфейс, адаптивная вёрстка, оптимизация производительности и структурированная подача информации о ракете-носителе и технологиях компании.",
+      },
+      providentLaw: {
+        title: "Provident Law LLP",
+        description: "Сайт юридической компании. Реализована удобная структура услуг, формы обратной связи, SEO-оптимизация и адаптивный дизайн для увеличения количества обращений клиентов.",
+      },
+      rcnb: {
+        title: "Real Club Náutico de Barcelona (RCNB)",
+        description: "Официальный сайт яхт-клуба международного уровня. Выполнена адаптивная вёрстка, структурирование информации о событиях и регатах, оптимизация контента и улучшение навигации для удобного доступа к сервисам клуба.",
+      },
     },
     portfolioPage: {
       title: "Портфолио",
       allProjectsTitle: "Все проекты",
       newProjectsTitle: "Новые проекты",
-    },
-    newProjects: {
-      autoParts: {
-        title: "Интернет-магазин автозапчастей",
-        description: "Интернет-магазин с каталогом более 5 000 позиций, фильтрами по марке автомобиля и интеграцией с платёжными сервисами. Реализован личный кабинет, история заказов и автоматические статусы доставки.",
-      },
-      clinic: {
-        title: "Медицинская клиника — сайт онлайн-записи",
-        description: "Корпоративный сайт клиники с онлайн-записью к врачу, интеграцией с CRM и SMS-напоминаниями. Снижено количество пропущенных визитов благодаря автоматическим уведомлениям пациентам.",
-      },
-      saas: {
-        title: "SaaS-панель аналитики для e-commerce",
-        description: "Веб-приложение с кабинетом для владельцев интернет-магазинов: сводные дашборды, аналитика продаж, интеграция с маркетплейсами и экспорт отчётов в форматах CSV/Excel.",
-      },
     },
     contact: {
       title: "Готовы обсудить проект?",
@@ -476,6 +482,7 @@ export const translations = {
     projects: {
       title: "Portfolio",
       view: "View Site",
+      allProjectsButton: "All Projects",
       advokats: {
         title: "Law Firm «Sviy Yurist»",
         description: "Corporate website with an online consultation system and contact forms. Result: organic search traffic and inbound leads grew after launch.",
@@ -484,25 +491,27 @@ export const translations = {
         title: "Oratorica — Language School",
         description: "Online learning platform with registration, personal accounts, and payment integration. Automated enrollment and billing — no manual processing needed.",
       },
+      luerssen: {
+        title: "Lürssen",
+        description: "Corporate website for an international premium shipbuilding company. Delivered responsive layout, performance optimization, structured content, and improved UI/UX to clearly present the company’s fleet and projects.",
+      },
+      isarAerospace: {
+        title: "Isar Aerospace",
+        description: "Corporate website for an aerospace company. Implemented a modern tech-focused interface, responsive layout, performance optimisation, and a structured presentation of the launch vehicle and core technologies.",
+      },
+      providentLaw: {
+        title: "Provident Law LLP",
+        description: "Website for a law firm. Implemented a clear service structure, contact and inquiry forms, SEO optimisation, and responsive design to increase the number of client enquiries.",
+      },
+      rcnb: {
+        title: "Real Club Náutico de Barcelona (RCNB)",
+        description: "Official website of an international yacht club. Delivered responsive layout, structured information about events and regattas, optimised content, and improved navigation for easy access to club services.",
+      },
     },
     portfolioPage: {
       title: "Portfolio",
       allProjectsTitle: "All projects",
       newProjectsTitle: "New projects",
-    },
-    newProjects: {
-      autoParts: {
-        title: "Auto Parts Online Store",
-        description: "E-commerce website with a catalog of 5,000+ SKUs, filters by car make and model, and payment gateway integration. Implemented user accounts, order history, and automatic shipment status updates.",
-      },
-      clinic: {
-        title: "Medical Clinic — Online Booking Website",
-        description: "Corporate website for a clinic with online doctor booking, CRM integration, and SMS reminders. Reduced no‑show rate thanks to automated notifications to patients.",
-      },
-      saas: {
-        title: "SaaS Analytics Dashboard for E‑commerce",
-        description: "Web application with a dashboard for store owners: consolidated KPIs, sales analytics, marketplace integrations, and report export to CSV/Excel formats.",
-      },
     },
     contact: {
       title: "Ready to discuss your project?",
