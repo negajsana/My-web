@@ -10,14 +10,25 @@ export function generatePageMetadata(
   const t = translations[lang]
   const seo = t.seo[page]
 
-  const langCode = lang === "uk" ? "uk-UA" : lang === "en" ? "en-US" : "ru-RU"
+  const langCode =
+    lang === "uk"
+      ? "uk-UA"
+      : lang === "en"
+        ? "en-US"
+        : lang === "ru"
+          ? "ru-RU"
+          : lang === "es"
+            ? "es-ES"
+            : "de-DE"
   const pagePath = page === "home" ? "" : `/${page === "howWeWork" ? "how-we-work" : page}`
   const canonicalUrl = `${SITE_URL}/${lang}${pagePath}`
 
   const alternateLanguages: Record<string, string> = {
-    "uk": `${SITE_URL}/uk${pagePath}`,
-    "en": `${SITE_URL}/en${pagePath}`,
-    "ru": `${SITE_URL}/ru${pagePath}`,
+    uk: `${SITE_URL}/uk${pagePath}`,
+    en: `${SITE_URL}/en${pagePath}`,
+    ru: `${SITE_URL}/ru${pagePath}`,
+    es: `${SITE_URL}/es${pagePath}`,
+    de: `${SITE_URL}/de${pagePath}`,
     "x-default": `${SITE_URL}/uk${pagePath}`,
   }
 
@@ -47,10 +58,21 @@ export function generatePageMetadata(
       title: seo.title,
       description: seo.description,
       url: canonicalUrl,
-      siteName: lang === "uk" ? "Олександр — Веб-розробник" : lang === "en" ? "Oleksandr — Web Developer" : "Александр — Веб-разработчик",
+      siteName:
+        lang === "uk"
+          ? "Олександр — Веб-розробник"
+          : lang === "ru"
+            ? "Александр — Веб-разработчик"
+            : lang === "es"
+              ? "Oleksandr — Desarrollador Web"
+              : lang === "de"
+                ? "Oleksandr — Webentwickler"
+                : "Oleksandr — Web Developer",
       locale: langCode,
       type: "website",
-      alternateLocale: ["uk-UA", "en-US", "ru-RU"].filter(l => l !== langCode),
+      alternateLocale: ["uk-UA", "en-US", "ru-RU", "es-ES", "de-DE"].filter(
+        l => l !== langCode
+      ),
     },
     twitter: {
       card: "summary_large_image",
@@ -207,13 +229,118 @@ function getKeywords(lang: Language, page: string): string[] {
         "сроки разработки сайта",
       ],
     },
+    es: {
+      home: [
+        "desarrollo web europa",
+        "servicios de desarrollo web",
+        "encargar sitio web",
+        "desarrollador web freelance",
+        "desarrollo de chatbots",
+        "desarrollo bot telegram",
+        "automatización de negocios",
+        "desarrollador full-stack",
+        "landing page a medida",
+        "aplicación web personalizada",
+      ],
+      about: [
+        "desarrollador full-stack europa",
+        "experiencia desarrollador web",
+        "desarrollador react next.js",
+        "desarrollador node.js python",
+        "portafolio desarrollador web",
+      ],
+      services: [
+        "servicios de desarrollo web",
+        "precio desarrollo bot telegram",
+        "precio creación de página web",
+        "automatización de procesos",
+        "integración api crm",
+        "desarrollo de aplicaciones web",
+      ],
+      projects: [
+        "portafolio desarrollador web",
+        "casos de éxito sitios web",
+        "proyectos web realizados",
+        "proyectos portfolio next.js",
+      ],
+      contact: [
+        "encargar desarrollo web",
+        "consultoría desarrollador web",
+        "contactar desarrollador",
+        "consultoría web gratuita",
+      ],
+      howWeWork: [
+        "proceso de desarrollo web",
+        "cómo encargar una página web",
+        "etapas del desarrollo web",
+        "trabajar con un desarrollador web",
+        "plazos desarrollo de sitio",
+      ],
+    },
+    de: {
+      home: [
+        "webentwicklung europa",
+        "webseiten entwicklung dienstleistungen",
+        "website erstellen lassen",
+        "freelance webentwickler",
+        "chatbot entwicklung",
+        "telegram bot entwicklung",
+        "geschäftsautomatisierung",
+        "full-stack entwickler",
+        "landingpage entwicklung",
+        "individuelle webanwendung",
+      ],
+      about: [
+        "full-stack entwickler europa",
+        "erfahrener webentwickler",
+        "react next.js entwickler",
+        "node.js python entwickler",
+        "webentwickler portfolio",
+      ],
+      services: [
+        "leistungen webentwicklung",
+        "telegram bot entwicklung preis",
+        "kosten website entwicklung",
+        "prozessautomatisierung",
+        "api crm integration",
+        "webanwendungsentwicklung",
+      ],
+      projects: [
+        "portfolio webentwickler",
+        "webseiten referenzen",
+        "realisierte webprojekte",
+        "next.js portfolio projekte",
+      ],
+      contact: [
+        "website entwicklung beauftragen",
+        "beratung webentwickler",
+        "webentwickler kontakt",
+        "kostenlose webberatung",
+      ],
+      howWeWork: [
+        "ablauf webentwicklung",
+        "wie website beauftragen",
+        "phasen der webentwicklung",
+        "zusammenarbeit mit webentwickler",
+        "dauer website entwicklung",
+      ],
+    },
   }
 
   return keywords[lang][page] || []
 }
 
 export function generateOrganizationSchema(lang: Language) {
-  const name = lang === "uk" ? "Олександр — Веб-розробник" : lang === "en" ? "Oleksandr — Web Developer" : "Александр — Веб-разработчик"
+  const name =
+    lang === "uk"
+      ? "Олександр — Веб-розробник"
+      : lang === "ru"
+        ? "Александр — Веб-разработчик"
+        : lang === "es"
+          ? "Oleksandr — Desarrollador Web"
+          : lang === "de"
+            ? "Oleksandr — Webentwickler"
+            : "Oleksandr — Web Developer"
   const description = translations[lang].seo.home.description
 
   return {
@@ -226,7 +353,7 @@ export function generateOrganizationSchema(lang: Language) {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      availableLanguage: ["Ukrainian", "English", "Russian"],
+      availableLanguage: ["Ukrainian", "English", "Russian", "Spanish", "German"],
     },
     sameAs: [
       "https://t.me/oleksandr_dev",
@@ -245,8 +372,22 @@ export function generateOrganizationSchema(lang: Language) {
 }
 
 export function generatePersonSchema(lang: Language) {
-  const name = lang === "uk" ? "Олександр" : lang === "en" ? "Oleksandr" : "Александр"
-  const jobTitle = lang === "uk" ? "Full-Stack Веб-розробник" : lang === "en" ? "Full-Stack Web Developer" : "Full-Stack Веб-разработчик"
+  const name =
+    lang === "uk" || lang === "ru"
+      ? "Олександр"
+      : lang === "es" || lang === "de" || lang === "en"
+        ? "Oleksandr"
+        : "Oleksandr"
+  const jobTitle =
+    lang === "uk"
+      ? "Full-Stack Веб-розробник"
+      : lang === "ru"
+        ? "Full-Stack Веб-разработчик"
+        : lang === "es"
+          ? "Desarrollador Web Full-Stack"
+          : lang === "de"
+            ? "Full-Stack Webentwickler"
+            : "Full-Stack Web Developer"
 
   return {
     "@context": "https://schema.org",
@@ -267,7 +408,16 @@ export function generatePersonSchema(lang: Language) {
     ],
     worksFor: {
       "@type": "Organization",
-      name: lang === "uk" ? "Фріланс" : lang === "en" ? "Freelance" : "Фриланс",
+      name:
+        lang === "uk"
+          ? "Фріланс"
+          : lang === "ru"
+            ? "Фриланс"
+            : lang === "es"
+              ? "Freelance"
+              : lang === "de"
+                ? "Freelance"
+                : "Freelance",
     },
   }
 }
@@ -286,7 +436,12 @@ export function generateServicesSchema(lang: Language) {
         description: t.services.web.description,
         provider: {
           "@type": "Person",
-          name: lang === "uk" ? "Олександр" : lang === "en" ? "Oleksandr" : "Александр",
+          name:
+            lang === "uk"
+              ? "Олександр"
+              : lang === "ru"
+                ? "Александр"
+                : "Oleksandr",
         },
         areaServed: ["Ukraine", "Europe"],
         serviceType: "Web Development",
@@ -298,7 +453,12 @@ export function generateServicesSchema(lang: Language) {
         description: t.services.chatbots.description,
         provider: {
           "@type": "Person",
-          name: lang === "uk" ? "Олександр" : lang === "en" ? "Oleksandr" : "Александр",
+          name:
+            lang === "uk"
+              ? "Олександр"
+              : lang === "ru"
+                ? "Александр"
+                : "Oleksandr",
         },
         areaServed: ["Ukraine", "Europe"],
         serviceType: "Chatbot Development",
@@ -310,7 +470,12 @@ export function generateServicesSchema(lang: Language) {
         description: t.services.automation.description,
         provider: {
           "@type": "Person",
-          name: lang === "uk" ? "Олександр" : lang === "en" ? "Oleksandr" : "Александр",
+          name:
+            lang === "uk"
+              ? "Олександр"
+              : lang === "ru"
+                ? "Александр"
+                : "Oleksandr",
         },
         areaServed: ["Ukraine", "Europe"],
         serviceType: "Business Automation",
@@ -322,7 +487,12 @@ export function generateServicesSchema(lang: Language) {
         description: t.services.integration.description,
         provider: {
           "@type": "Person",
-          name: lang === "uk" ? "Олександр" : lang === "en" ? "Oleksandr" : "Александр",
+          name:
+            lang === "uk"
+              ? "Олександр"
+              : lang === "ru"
+                ? "Александр"
+                : "Oleksandr",
         },
         areaServed: ["Ukraine", "Europe"],
         serviceType: "API Integration",
@@ -349,7 +519,16 @@ export function generateFAQSchema(lang: Language) {
 }
 
 export function generateBreadcrumbSchema(lang: Language, page: string, pageName: string) {
-  const homeName = lang === "uk" ? "Головна" : lang === "en" ? "Home" : "Главная"
+  const homeName =
+    lang === "uk"
+      ? "Головна"
+      : lang === "ru"
+        ? "Главная"
+        : lang === "es"
+          ? "Inicio"
+          : lang === "de"
+            ? "Startseite"
+            : "Home"
 
   const items = [
     {
@@ -380,9 +559,27 @@ export function generateWebsiteSchema(lang: Language) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: lang === "uk" ? "Олександр — Веб-розробник" : lang === "en" ? "Oleksandr — Web Developer" : "Александр — Веб-разработчик",
+    name:
+      lang === "uk"
+        ? "Олександр — Веб-розробник"
+        : lang === "ru"
+          ? "Александр — Веб-разработчик"
+          : lang === "es"
+            ? "Oleksandr — Desarrollador Web"
+            : lang === "de"
+              ? "Oleksandr — Webentwickler"
+              : "Oleksandr — Web Developer",
     url: SITE_URL,
-    inLanguage: lang === "uk" ? "uk-UA" : lang === "en" ? "en-US" : "ru-RU",
+    inLanguage:
+      lang === "uk"
+        ? "uk-UA"
+        : lang === "ru"
+          ? "ru-RU"
+          : lang === "es"
+            ? "es-ES"
+            : lang === "de"
+              ? "de-DE"
+              : "en-US",
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/search?q={search_term_string}`,
