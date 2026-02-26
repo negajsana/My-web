@@ -46,25 +46,25 @@ export default async function ProjectsPage({ params }: PageProps) {
     {
       title: t.projects.luerssen.title,
       description: t.projects.luerssen.description,
-      url: "#",
+      url: "https://www.lurssen.com/",
       image: "/project-luerssen.jpg",
     },
     {
       title: t.projects.isarAerospace.title,
       description: t.projects.isarAerospace.description,
-      url: "#",
+      url: "https://isaraerospace.com/",
       image: "/project-isar-aerospace.jpg",
     },
     {
       title: t.projects.providentLaw.title,
       description: t.projects.providentLaw.description,
-      url: "#",
+      url: "https://providentlawllp.ca",
       image: "/project-provident-law.jpg",
     },
     {
       title: t.projects.rcnb.title,
       description: t.projects.rcnb.description,
-      url: "#",
+      url: "https://www.rcnb.com/en/",
       image: "/project-rcnb.jpg",
     },
   ]
