@@ -1,11 +1,13 @@
 "use client"
 
-import type { TranslationKey } from "@/lib/translations"
+import Link from "next/link"
+import type { TranslationKey, Language } from "@/lib/translations"
 import { ArrowUpRight } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface ProjectsSectionProps {
   t: TranslationKey
+  lang: Language
 }
 
 export function ProjectCard({
@@ -77,7 +79,7 @@ export function ProjectCard({
   )
 }
 
-export function ProjectsSection({ t }: ProjectsSectionProps) {
+export function ProjectsSection({ t, lang }: ProjectsSectionProps) {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation()
 
   const projects = [
@@ -128,7 +130,7 @@ export function ProjectsSection({ t }: ProjectsSectionProps) {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 mb-12">
             {projects.map((project, index) => (
               <ProjectCard
                 key={index}
@@ -140,6 +142,16 @@ export function ProjectsSection({ t }: ProjectsSectionProps) {
                 viewText={t.projects.view}
               />
             ))}
+          </div>
+
+          {/* All Projects Button */}
+          <div className="flex justify-center">
+            <Link
+              href={`/${lang}/projects`}
+              className="inline-flex items-center px-8 py-3 border border-primary text-sm uppercase tracking-[0.2em] font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+            >
+              {t.projects.allProjectsButton}
+            </Link>
           </div>
         </div>
       </div>
