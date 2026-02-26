@@ -18,6 +18,8 @@ export function LanguageSwitcher() {
     { code: "uk", label: "UA" },
     { code: "ru", label: "RU" },
     { code: "en", label: "EN" },
+    { code: "es", label: "ES" },
+    { code: "de", label: "DE" },
   ]
 
   return (
