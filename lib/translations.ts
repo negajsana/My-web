@@ -575,6 +575,360 @@ export const translations = {
       ],
     },
   },
+  es: {
+    seo: {
+      home: {
+        title: "Desarrollo de sitios web y chatbots en Europa | Oleksandr",
+        description:
+          "Desarrollo profesional de sitios web, chatbots de Telegram y automatización de procesos. Sitio web en 2–4 semanas, bot en una semana.",
+        h1: "Desarrollo de sitios web y chatbots para negocios",
+      },
+      about: {
+        title: "Sobre el desarrollador | Desarrollo web Full-Stack en Europa",
+        description:
+          "Desarrollador Full-Stack con experiencia: Next.js, React, Node.js, Python. Desarrollo de aplicaciones web y automatización de procesos de negocio.",
+        h1: "Sobre mí — Desarrollador Full-Stack",
+      },
+      services: {
+        title: "Servicios de desarrollo web y automatización | Precios",
+        description:
+          "Desarrollo de sitios web, landing pages, chatbots de Telegram, integración de API y CRM. Automatización de procesos de negocio.",
+        h1: "Servicios de desarrollo web y automatización",
+      },
+      projects: {
+        title: "Portafolio — Todos los proyectos realizados | Oleksandr",
+        description:
+          "Portafolio completo de proyectos entregados: sitios corporativos, landing pages, plataformas educativas y soluciones de automatización.",
+        h1: "Portafolio — Todos los proyectos",
+      },
+      contact: {
+        title: "Encargar desarrollo de sitio web | Contacto del desarrollador",
+        description:
+          "Encarga el desarrollo de un sitio web o chatbot. Asesoría gratuita. Telegram, WhatsApp, teléfono.",
+        h1: "Contactar con el desarrollador",
+      },
+      howWeWork: {
+        title: "Cómo trabajamos | Proceso de desarrollo | Oleksandr",
+        description:
+          "Proceso transparente de desarrollo desde el primer contacto hasta el soporte posterior al lanzamiento.",
+        h1: "Cómo trabajamos",
+      },
+    },
+    faq: [
+      {
+        question: "¿Cuánto cuesta desarrollar un sitio web?",
+        answer:
+          "Depende de la complejidad del proyecto. Landing page desde 300 $, sitio corporativo desde 600 $, aplicación web desde 1000 $. El presupuesto exacto se define después de revisar los requisitos.",
+      },
+      {
+        question: "¿Cuánto tarda el desarrollo?",
+        answer:
+          "Landing page — 1–2 semanas, sitio corporativo — 2–4 semanas, aplicación web — 4–8 semanas. Chatbot de Telegram — de 3 a 7 días. Los plazos se fijan en el acuerdo.",
+      },
+      {
+        question: "¿Ofreces soporte después del lanzamiento?",
+        answer:
+          "Sí, el soporte está incluido. El primer mes tras el lanzamiento — correcciones y solución de errores sin coste adicional. Después — según acuerdo o plan de mantenimiento mensual.",
+      },
+      {
+        question: "¿Qué tecnologías utilizas?",
+        answer:
+          "Trabajo con Next.js, React, Node.js, TypeScript y Python. Para bots — Telegram Bot API, WhatsApp Business API. Integración con Stripe, PayPal, Monobank.",
+      },
+      {
+        question: "¿Trabajas con clientes de Europa?",
+        answer:
+          "Sí, tengo experiencia con clientes de Ucrania, Alemania, Polonia y otros países. Me comunico en ucraniano, ruso e inglés. Pago en USDT, EUR, UAH.",
+      },
+    ],
+    nav: {
+      home: "Inicio",
+      about: "Sobre mí",
+      services: "Servicios",
+      howWeWork: "Cómo trabajamos",
+      projects: "Portafolio",
+      contact: "Contacto",
+    },
+    hero: {
+      greeting: "Desarrollo web que trae clientes",
+      name: "Oleksandr",
+      title:
+        "Creo sitios web y chatbots para pequeñas y medianas empresas — con plazos claros, resultados reales y soporte después del lanzamiento.",
+      description: "El primer proyecto listo en 2–4 semanas.",
+      cta: "Hablar de mi proyecto",
+      viewWork: "Ver trabajos",
+    },
+    about: {
+      title: "Sobre mí",
+      intro:
+        "Ayudo a pequeñas y medianas empresas a salir al mundo online de una forma que realmente genera clientes — no solo una página bonita.",
+      experience:
+        "Más de 3 años trabajando con Next.js, React, Node.js y Python. He lanzado proyectos para firmas legales, plataformas educativas y negocios de servicios.",
+      focus:
+        "No desaparezco después de la entrega — sigo disponible y apoyo tu producto.",
+    },
+    services: {
+      title: "Servicios",
+      web: {
+        title: "Desarrollo web",
+        description:
+          "Un sitio web que vende, no solo existe. Landing page o aplicación web completa en Next.js: diseño responsive, carga rápida, SEO básico y analítica lista para usar.",
+      },
+      chatbots: {
+        title: "Telegram & Chatbots",
+        description:
+          "Un asistente que trabaja 24/7. El bot gestiona pedidos, responde a clientes, recoge leads y envía recordatorios. Aumenta la conversión frente al tratamiento manual.",
+      },
+      automation: {
+        title: "Automatización",
+        description:
+          "Deja que la automatización se ocupe de las tareas repetitivas. Recolección de datos, informes automáticos, integraciones con CRM y mensajería.",
+      },
+      integration: {
+        title: "API & Integraciones",
+        description:
+          "Todas tus herramientas en un solo ecosistema. Conecto Stripe, PayPal, Monobank, sistemas CRM y mensajería. Del pago al aviso al equipo — todo automatizado.",
+      },
+    },
+    projects: {
+      title: "Portafolio",
+      view: "Ver sitio",
+      allProjectsButton: "Todos los proyectos",
+      advokats: {
+        title: "Bufete «Sviy Yurist»",
+        description:
+          "Sitio corporativo con sistema de consultas online y formularios de contacto. Resultado: crecimiento de las solicitudes desde búsqueda orgánica tras el lanzamiento.",
+      },
+      oratorica: {
+        title: "Oratorica — Escuela de idiomas",
+        description:
+          "Plataforma de aprendizaje online con registro, cuentas personales e integración de pagos. Proceso de inscripción y cobro automatizado.",
+      },
+      luerssen: {
+        title: "Lürssen",
+        description:
+          "Sitio corporativo para una empresa internacional de construcción naval de segmento premium. Maquetación responsive, optimización de rendimiento y presentación cuidada de la flota y proyectos.",
+      },
+      isarAerospace: {
+        title: "Isar Aerospace",
+        description:
+          "Sitio corporativo para una empresa aeroespacial. Interfaz moderna, maquetación adaptable, optimización de rendimiento y estructura clara para la información sobre el lanzador y las tecnologías.",
+      },
+      providentLaw: {
+        title: "Provident Law LLP",
+        description:
+          "Sitio web para un despacho de abogados. Estructura clara de servicios, formularios de contacto, SEO y diseño responsive para aumentar el número de solicitudes.",
+      },
+      rcnb: {
+        title: "Real Club Náutico de Barcelona (RCNB)",
+        description:
+          "Sitio oficial de un club náutico internacional. Maquetación responsive, estructura de información sobre eventos y regatas, contenido optimizado y navegación mejorada hacia los servicios del club.",
+      },
+    },
+    portfolioPage: {
+      title: "Portafolio",
+      allProjectsTitle: "Todos los proyectos",
+      newProjectsTitle: "Nuevos proyectos",
+    },
+    contact: {
+      title: "¿Listo para hablar de tu proyecto?",
+      subtitle:
+        "Respondo en menos de una hora en horario laboral. Elige el canal que prefieras:",
+      phone: "Teléfono / WhatsApp",
+      telegram: "Telegram",
+      letsTalk: "Escríbeme ahora — la primera consulta es gratuita",
+    },
+    footer: {
+      rights: "© 2026 Oleksandr.",
+    },
+    howWeWork: {
+      label: "Nuestro proceso",
+      title: "Cómo trabajamos",
+      subtitle:
+        "Un proceso transparente desde el primer mensaje hasta el soporte tras el lanzamiento.",
+      ctaText:
+        "¿Listo para empezar? El primer paso es una llamada gratuita de 20 minutos.",
+      ctaButton: "Escribir ahora",
+      steps: translations.en.howWeWork.steps,
+    },
+  },
+  de: {
+    seo: {
+      home: {
+        title: "Webentwicklung & Chatbots in Europa | Oleksandr",
+        description:
+          "Professionelle Entwicklung von Websites, Telegram-Chatbots und Geschäftsautomatisierung. Website in 2–4 Wochen, Bot in einer Woche.",
+        h1: "Webseiten- und Chatbot-Entwicklung für Unternehmen",
+      },
+      about: {
+        title: "Über den Entwickler | Full-Stack Webentwicklung in Europa",
+        description:
+          "Erfahrener Full-Stack-Entwickler: Next.js, React, Node.js, Python. Entwicklung von Webanwendungen und Automatisierung von Geschäftsprozessen.",
+        h1: "Über mich — Full-Stack Entwickler",
+      },
+      services: {
+        title: "Webentwicklungs- & Automatisierungsleistungen | Preise",
+        description:
+          "Entwicklung von Websites, Landingpages, Telegram-Bots, API- & CRM-Integration. Automatisierung Ihrer Geschäftsprozesse.",
+        h1: "Leistungen in Webentwicklung & Automatisierung",
+      },
+      projects: {
+        title: "Portfolio — Alle umgesetzten Projekte | Oleksandr",
+        description:
+          "Vollständiges Portfolio ausgelieferter Projekte: Unternehmenswebsites, Landingpages, Lernplattformen und Automatisierungslösungen.",
+        h1: "Portfolio — Alle Projekte",
+      },
+      contact: {
+        title: "Website-Entwicklung beauftragen | Kontakt zum Entwickler",
+        description:
+          "Beauftragen Sie die Entwicklung einer Website oder eines Chatbots. Kostenlose Erstberatung. Telegram, WhatsApp, Telefon.",
+        h1: "Kontakt zum Entwickler",
+      },
+      howWeWork: {
+        title: "Wie wir arbeiten | Entwicklungsprozess | Oleksandr",
+        description:
+          "Transparenter Entwicklungsprozess vom ersten Kontakt bis zum Support nach dem Launch.",
+        h1: "Wie wir arbeiten",
+      },
+    },
+    faq: [
+      {
+        question: "Was kostet die Entwicklung einer Website?",
+        answer:
+          "Der Preis hängt von der Komplexität ab. Landingpage ab 300 $, Unternehmenswebsite ab 600 $, Webanwendung ab 1000 $. Das genaue Angebot erstelle ich nach Klärung der Anforderungen.",
+      },
+      {
+        question: "Wie lange dauert die Entwicklung?",
+        answer:
+          "Landingpage — 1–2 Wochen, Unternehmenswebsite — 2–4 Wochen, Webanwendung — 4–8 Wochen. Telegram-Bot — 3 bis 7 Tage. Die Fristen werden im Vertrag festgehalten.",
+      },
+      {
+        question: "Gibt es Support nach dem Launch?",
+        answer:
+          "Ja, Support ist inklusive. Im ersten Monat nach dem Launch sind Korrekturen und Bugfixes kostenlos. Danach nach Vereinbarung oder im Rahmen eines Wartungspakets.",
+      },
+      {
+        question: "Welche Technologien verwendest du?",
+        answer:
+          "Ich arbeite mit Next.js, React, Node.js, TypeScript und Python. Für Bots — Telegram Bot API, WhatsApp Business API. Integration mit Stripe, PayPal, Monobank.",
+      },
+      {
+        question: "Arbeitest du mit Kunden aus Europa?",
+        answer:
+          "Ja, ich arbeite mit Kunden aus der Ukraine, Deutschland, Polen und anderen Ländern. Kommunikation auf Ukrainisch, Russisch und Englisch. Zahlung in USDT, EUR, UAH.",
+      },
+    ],
+    nav: {
+      home: "Startseite",
+      about: "Über mich",
+      services: "Leistungen",
+      howWeWork: "Wie wir arbeiten",
+      projects: "Portfolio",
+      contact: "Kontakt",
+    },
+    hero: {
+      greeting: "Webentwicklung, die neue Kunden bringt",
+      name: "Oleksandr",
+      title:
+        "Ich entwickle Websites und Chatbots für kleine und wachsende Unternehmen — mit klaren Fristen, messbaren Ergebnissen und Support nach dem Launch.",
+      description: "Das erste Projekt ist in 2–4 Wochen einsatzbereit.",
+      cta: "Projekt besprechen",
+      viewWork: "Referenzen ansehen",
+    },
+    about: {
+      title: "Über mich",
+      intro:
+        "Ich helfe kleinen und mittelständischen Unternehmen, online sichtbar zu werden — mit Websites, die wirklich Kunden bringen und nicht nur gut aussehen.",
+      experience:
+        "Über 3 Jahre Erfahrung mit Next.js, React, Node.js und Python. Realisierte Projekte für Kanzleien, Bildungsplattformen und Dienstleistungsbetriebe.",
+      focus:
+        "Ich verschwinde nicht nach dem Launch — ich bleibe erreichbar und unterstütze Ihr Produkt.",
+    },
+    services: {
+      title: "Leistungen",
+      web: {
+        title: "Webentwicklung",
+        description:
+          "Eine Website, die konvertiert, nicht nur existiert. Landingpage oder komplette Webanwendung mit Next.js: responsive Design, hohe Performance, SEO-Basis und Tracking eingerichtet.",
+      },
+      chatbots: {
+        title: "Telegram & Chatbots",
+        description:
+          "Ein Assistent, der 24/7 arbeitet. Der Bot beantwortet Anfragen, sammelt Leads und begleitet Bestellungen — mit höherer Conversion als reine Handarbeit.",
+      },
+      automation: {
+        title: "Automatisierung",
+        description:
+          "Automatisieren Sie wiederkehrende Aufgaben: Datensammlung, Reports, Integrationen zwischen CRM und Messengern.",
+      },
+      integration: {
+        title: "API & Integrationen",
+        description:
+          "Alle Ihre Systeme als ein Ökosystem. Ich verbinde Stripe, PayPal, Monobank, CRMs und Messenger. Vom Payment bis zur internen Benachrichtigung — automatisiert.",
+      },
+    },
+    projects: {
+      title: "Portfolio",
+      view: "Website ansehen",
+      allProjectsButton: "Alle Projekte",
+      advokats: {
+        title: "Kanzlei «Sviy Yurist»",
+        description:
+          "Unternehmenswebsite mit Online-Beratungen und Kontaktformularen. Ergebnis: Mehr Anfragen aus organischer Suche nach dem Launch.",
+      },
+      oratorica: {
+        title: "Oratorica — Sprachschule",
+        description:
+          "Online-Lernplattform mit Registrierung, Benutzerkonten und Zahlungsintegration. Vollständig automatisierter Anmelde- und Zahlungsprozess.",
+      },
+      luerssen: {
+        title: "Lürssen",
+        description:
+          "Corporate Website für eine internationale Werft im Premiumsegment. Responsive Layout, Performance-Optimierung und strukturierte Präsentation der Flotte und Projekte.",
+      },
+      isarAerospace: {
+        title: "Isar Aerospace",
+        description:
+          "Corporate Website für ein Raumfahrtunternehmen. Moderner, technischer Auftritt, responsive Umsetzung und klare Struktur für Informationen zur Trägerrakete und Technologie.",
+      },
+      providentLaw: {
+        title: "Provident Law LLP",
+        description:
+          "Website für eine Anwaltskanzlei. Klare Struktur der Leistungen, Kontaktformulare, SEO-Optimierung und responsive Design zur Steigerung der Mandantenanfragen.",
+      },
+      rcnb: {
+        title: "Real Club Náutico de Barcelona (RCNB)",
+        description:
+          "Offizielle Website eines internationalen Yachtclubs. Responsive Layout, strukturierte Darstellung von Events und Regatten, optimierte Inhalte und verbesserte Navigation.",
+      },
+    },
+    portfolioPage: {
+      title: "Portfolio",
+      allProjectsTitle: "Alle Projekte",
+      newProjectsTitle: "Neue Projekte",
+    },
+    contact: {
+      title: "Bereit, über Ihr Projekt zu sprechen?",
+      subtitle:
+        "Ich antworte in der Regel innerhalb einer Stunde an Werktagen. Wählen Sie den passenden Kanal:",
+      phone: "Telefon / WhatsApp",
+      telegram: "Telegram",
+      letsTalk: "Schreiben Sie jetzt — das erste Gespräch ist kostenlos",
+    },
+    footer: {
+      rights: "© 2026 Oleksandr.",
+    },
+    howWeWork: {
+      label: "Unser Ablauf",
+      title: "Wie wir arbeiten",
+      subtitle:
+        "Ein transparenter Ablauf vom ersten Kontakt bis zum Support nach dem Launch.",
+      ctaText:
+        "Bereit zu starten? Der erste Schritt ist ein unverbindliches 20‑minütiges Gespräch.",
+      ctaButton: "Jetzt schreiben",
+      steps: translations.en.howWeWork.steps,
+    },
+  },
 }
 
 export type Language = keyof typeof translations
