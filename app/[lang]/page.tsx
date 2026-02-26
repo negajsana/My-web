@@ -51,7 +51,7 @@ export default async function Page({ params }: PageProps) {
       <main>
         <HeroSection t={t} lang={lang} />
         <MarqueeDivider items={marqueeItems} />
-        <ProjectsSection t={t} />
+        <ProjectsSection t={t} lang={lang} />
         <ContactSection t={t} />
       </main>
       <Footer t={t} />
