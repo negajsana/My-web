@@ -30,7 +30,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
         generateBreadcrumbSchema(
           lang,
           "about",
-          lang === "uk" ? "Про мене" : lang === "en" ? "About" : "Обо мне"
+          lang === "uk"
+            ? "Про мене"
+            : lang === "ru"
+              ? "Обо мне"
+              : lang === "es"
+                ? "Sobre mí"
+                : lang === "de"
+                  ? "Über mich"
+                  : "About"
         )
       )
       break
@@ -40,7 +48,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
         generateBreadcrumbSchema(
           lang,
           "services",
-          lang === "uk" ? "Послуги" : lang === "en" ? "Services" : "Услуги"
+          lang === "uk"
+            ? "Послуги"
+            : lang === "ru"
+              ? "Услуги"
+              : lang === "es"
+                ? "Servicios"
+                : lang === "de"
+                  ? "Leistungen"
+                  : "Services"
         )
       )
       break
@@ -49,7 +65,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
         generateBreadcrumbSchema(
           lang,
           "contact",
-          lang === "uk" ? "Контакти" : lang === "en" ? "Contact" : "Контакты"
+          lang === "uk"
+            ? "Контакти"
+            : lang === "ru"
+              ? "Контакты"
+              : lang === "es"
+                ? "Contacto"
+                : lang === "de"
+                  ? "Kontakt"
+                  : "Contact"
         )
       )
       break
@@ -58,7 +82,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
         generateBreadcrumbSchema(
           lang,
           "how-we-work",
-          lang === "uk" ? "Як ми працюємо" : lang === "en" ? "How We Work" : "Как мы работаем"
+          lang === "uk"
+            ? "Як ми працюємо"
+            : lang === "ru"
+              ? "Как мы работаем"
+              : lang === "es"
+                ? "Cómo trabajamos"
+                : lang === "de"
+                  ? "Wie wir arbeiten"
+                  : "How We Work"
         )
       )
       break
@@ -67,7 +99,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
         generateBreadcrumbSchema(
           lang,
           "projects",
-          lang === "uk" ? "Портфоліо" : lang === "en" ? "Portfolio" : "Портфолио"
+          lang === "uk"
+            ? "Портфоліо"
+            : lang === "ru"
+              ? "Портфолио"
+              : lang === "es"
+                ? "Portafolio"
+                : lang === "de"
+                  ? "Portfolio"
+                  : "Portfolio"
         )
       )
       break
