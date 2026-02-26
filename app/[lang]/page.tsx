@@ -60,5 +60,5 @@ export default async function Page({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return [{ lang: "uk" }, { lang: "ru" }, { lang: "en" }]
+  return [{ lang: "uk" }, { lang: "ru" }, { lang: "en" }, { lang: "es" }, { lang: "de" }]
 }
