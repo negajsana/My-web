@@ -8,7 +8,7 @@ interface ProjectsSectionProps {
   t: TranslationKey
 }
 
-function ProjectCard({
+export function ProjectCard({
   title,
   description,
   url,
