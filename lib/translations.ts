@@ -749,7 +749,50 @@ export const translations = {
       ctaText:
         "¿Listo para empezar? El primer paso es una llamada gratuita de 20 minutos.",
       ctaButton: "Escribir ahora",
-      steps: translations.en.howWeWork.steps,
+      steps: [
+        {
+          number: "01",
+          title: "Kennenlernen & Gespräch",
+          duration: "20–30 Minuten",
+          description: "Wir sprechen per Telegram oder Zoom — ohne Vorbereitung und Präsentationen. Ich frage nach Ihrem Unternehmen, dem Ziel und den Erwartungen. Sie fragen alles, was Sie interessiert. Das Ziel: gegenseitiges Verständnis und Klärung, ob wir als Partner zueinander passen.",
+        },
+        {
+          number: "02",
+          title: "Briefing & Leistungsbeschreibung",
+          duration: "1–2 Tage",
+          description: "Nach dem Gespräch sende ich ein detailliertes Briefing: Projektstruktur, Funktionen, Zeitplan und Kosten. Alles wird schriftlich festgehalten — damit es kein «Ich dachte, dass...» gibt. Sie stimmen zu oder passen an, bis alles klar ist.",
+        },
+        {
+          number: "03",
+          title: "Design & Prototyp",
+          duration: "3–7 Tage",
+          description: "Ich erstelle ein Layout oder einen Prototyp in Figma. Sie sehen, wie die Website aussehen wird, bevor eine Zeile Code geschrieben ist. Zu diesem Zeitpunkt sind Änderungen einfach und günstig — daher empfehle ich, sich Zeit zu nehmen und detailliertes Feedback zu geben.",
+        },
+        {
+          number: "04",
+          title: "Entwicklung",
+          duration: "1–4 Wochen",
+          description: "Ich entwickle mit Next.js, React und Node.js. Sie haben Zugang zur Testumgebung und sehen den Fortschritt in Echtzeit. Wöchentliches Update: was fertig ist, was als nächstes kommt. Kein wochenlanger Funkstille.",
+        },
+        {
+          number: "05",
+          title: "Testing",
+          duration: "2–4 Tage",
+          description: "Ich teste die Website auf verschiedenen Geräten und Browsern, prüfe alle Formulare, Buttons und Integrationen. Sie testen auf Ihrer Seite und senden eine Liste mit Korrekturen. Ich nehme Änderungen vor — in der Regel noch am selben Tag.",
+        },
+        {
+          number: "06",
+          title: "Launch",
+          duration: "1 Tag",
+          description: "Deployment auf Produktion, Domain-Einrichtung, SSL- und Analytics-Konfiguration. Ich stelle sicher, dass alles stabil läuft, bevor der Launch verkündet wird. Sie erhalten eine live Website und alle Zugangsdaten.",
+        },
+        {
+          number: "07",
+          title: "Support nach dem Launch",
+          duration: "Kostenlos im ersten Monat",
+          description: "In den ersten 30 Tagen nach dem Launch bin ich erreichbar und behebe Fehler kostenlos. Danach — nach Vereinbarung: Einzelkorrekturen oder ein monatliches Wartungspaket. Sie stehen nie allein vor einem Problem.",
+        },
+      ],
     },
   },
   de: {
@@ -926,7 +969,50 @@ export const translations = {
       ctaText:
         "Bereit zu starten? Der erste Schritt ist ein unverbindliches 20‑minütiges Gespräch.",
       ctaButton: "Jetzt schreiben",
-      steps: translations.en.howWeWork.steps,
+      steps: [
+        {
+          number: "01",
+          title: "Kennenlernen & Gespräch",
+          duration: "20–30 Minuten",
+          description: "Wir sprechen per Telegram oder Zoom — ohne Vorbereitung und Präsentationen. Ich frage nach Ihrem Unternehmen, dem Ziel und den Erwartungen. Sie fragen alles, was Sie interessiert. Das Ziel: gegenseitiges Verständnis und Klärung, ob wir als Partner zueinander passen.",
+        },
+        {
+          number: "02",
+          title: "Briefing & Leistungsbeschreibung",
+          duration: "1–2 Tage",
+          description: "Nach dem Gespräch sende ich ein detailliertes Briefing: Projektstruktur, Funktionen, Zeitplan und Kosten. Alles wird schriftlich festgehalten — damit es kein «Ich dachte, dass...» gibt. Sie stimmen zu oder passen an, bis alles klar ist.",
+        },
+        {
+          number: "03",
+          title: "Design & Prototyp",
+          duration: "3–7 Tage",
+          description: "Ich erstelle ein Layout oder einen Prototyp in Figma. Sie sehen, wie die Website aussehen wird, bevor eine Zeile Code geschrieben ist. Zu diesem Zeitpunkt sind Änderungen einfach und günstig — daher empfehle ich, sich Zeit zu nehmen und detailliertes Feedback zu geben.",
+        },
+        {
+          number: "04",
+          title: "Entwicklung",
+          duration: "1–4 Wochen",
+          description: "Ich entwickle mit Next.js, React und Node.js. Sie haben Zugang zur Testumgebung und sehen den Fortschritt in Echtzeit. Wöchentliches Update: was fertig ist, was als nächstes kommt. Kein wochenlanger Funkstille.",
+        },
+        {
+          number: "05",
+          title: "Testing",
+          duration: "2–4 Tage",
+          description: "Ich teste die Website auf verschiedenen Geräten und Browsern, prüfe alle Formulare, Buttons und Integrationen. Sie testen auf Ihrer Seite und senden eine Liste mit Korrekturen. Ich nehme Änderungen vor — in der Regel noch am selben Tag.",
+        },
+        {
+          number: "06",
+          title: "Launch",
+          duration: "1 Tag",
+          description: "Deployment auf Produktion, Domain-Einrichtung, SSL- und Analytics-Konfiguration. Ich stelle sicher, dass alles stabil läuft, bevor der Launch verkündet wird. Sie erhalten eine live Website und alle Zugangsdaten.",
+        },
+        {
+          number: "07",
+          title: "Support nach dem Launch",
+          duration: "Kostenlos im ersten Monat",
+          description: "In den ersten 30 Tagen nach dem Launch bin ich erreichbar und behebe Fehler kostenlos. Danach — nach Vereinbarung: Einzelkorrekturen oder ein monatliches Wartungspaket. Sie stehen nie allein vor einem Problem.",
+        },
+      ],
     },
   },
 }
