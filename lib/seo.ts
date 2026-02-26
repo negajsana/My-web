@@ -5,7 +5,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://oleksandr.dev"
 
 export function generatePageMetadata(
   lang: Language,
-  page: "home" | "about" | "services" | "contact" | "howWeWork"
+  page: "home" | "about" | "services" | "contact" | "howWeWork" | "projects"
 ): Metadata {
   const t = translations[lang]
   const seo = t.seo[page]
@@ -97,6 +97,12 @@ function getKeywords(lang: Language, page: string): string[] {
         "інтеграція api crm",
         "розробка веб-додатків",
       ],
+      projects: [
+        "портфоліо веб-розробника",
+        "приклади робіт",
+        "реалізовані проєкти сайтів",
+        "кейси веб-розробки",
+      ],
       contact: [
         "замовити розробку сайту",
         "консультація веб-розробника",
@@ -139,6 +145,12 @@ function getKeywords(lang: Language, page: string): string[] {
         "api crm integration",
         "web application development",
       ],
+      projects: [
+        "web developer portfolio",
+        "case studies websites",
+        "delivered web projects",
+        "next.js portfolio projects",
+      ],
       contact: [
         "order website development",
         "web developer consultation",
@@ -175,6 +187,12 @@ function getKeywords(lang: Language, page: string): string[] {
         "разработка telegram бота цена",
         "создание сайта цена",
         "автоматизация процессов",
+      ],
+      projects: [
+        "портфолио веб-разработчика",
+        "примеры работ сайтов",
+        "реализованные проекты",
+        "кейсы веб-разработки",
       ],
       contact: [
         "заказать разработку сайта",
