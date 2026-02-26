@@ -16,6 +16,11 @@ export const translations = {
         description: "Розробка сайтів, лендінгів, Telegram ботів, інтеграція API та CRM. Автоматизація бізнес-процесів. Замовити послугу розробки в Україні.",
         h1: "Послуги веб-розробки та автоматизації",
       },
+      projects: {
+        title: "Портфоліо — всі реалізовані проєкти | Олександр",
+        description: "Портфоліо з усіма реалізованими проєктами: корпоративні сайти, лендінги, освітні платформи та автоматизація бізнес-процесів.",
+        h1: "Портфоліо — всі проєкти",
+      },
       contact: {
         title: "Замовити розробку сайту | Контакти розробника",
         description: "Замовити розробку веб-сайту або чат-бота. Безкоштовна консультація. Telegram, WhatsApp, телефон. Швидкий зворотний зв'язок.",
@@ -54,6 +59,7 @@ export const translations = {
       about: "Про мене",
       services: "Послуги",
       howWeWork: "Як ми працюємо",
+      projects: "Портфоліо",
       contact: "Контакти",
     },
     hero: {
@@ -99,6 +105,25 @@ export const translations = {
       oratorica: {
         title: "Oratorica — Школа мов",
         description: "Платформа онлайн-навчання з системою реєстрації, особистими кабінетами та інтеграцією оплати. Автоматизований запис і оплата — без ручної обробки.",
+      },
+    },
+    portfolioPage: {
+      title: "Портфоліо",
+      allProjectsTitle: "Усі проєкти",
+      newProjectsTitle: "Нові проєкти",
+    },
+    newProjects: {
+      autoParts: {
+        title: "Інтернет-магазин автозапчастин",
+        description: "Інтернет-магазин із каталогом понад 5 000 позицій, фільтрами за маркою авто та інтеграцією з платіжними сервісами. Реалізовано особистий кабінет, історію замовлень та автоматичні статуси доставки.",
+      },
+      clinic: {
+        title: "Медична клініка — сайт запису на прийом",
+        description: "Корпоративний сайт клініки з онлайн-записом до лікаря, інтеграцією CRM та SMS-нагадуваннями. Зменшено кількість пропущених візитів завдяки автоматичним зверненням до пацієнтів.",
+      },
+      saas: {
+        title: "SaaS-панель аналітики для e-commerce",
+        description: "Веб-додаток з кабінетом для власників інтернет-магазинів: зведені дашборди, аналітика продажів, інтеграція з маркетплейсами та експорт звітів у форматах CSV/Excel.",
       },
     },
     contact: {
@@ -180,6 +205,11 @@ export const translations = {
         description: "Разработка сайтов, лендингов, Telegram ботов, интеграция API и CRM. Автоматизация бизнес-процессов.",
         h1: "Услуги веб-разработки и автоматизации",
       },
+      projects: {
+        title: "Портфолио — все реализованные проекты | Александр",
+        description: "Портфолио со всеми реализованными проектами: корпоративные сайты, лендинги, образовательные платформы и автоматизация бизнес-процессов.",
+        h1: "Портфолио — все проекты",
+      },
       contact: {
         title: "Заказать разработку сайта | Контакты разработчика",
         description: "Заказать разработку веб-сайта или чат-бота. Бесплатная консультация. Telegram, WhatsApp, телефон.",
@@ -218,6 +248,7 @@ export const translations = {
       about: "Обо мне",
       services: "Услуги",
       howWeWork: "Как мы работаем",
+      projects: "Портфолио",
       contact: "Контакты",
     },
     hero: {
@@ -263,6 +294,25 @@ export const translations = {
       oratorica: {
         title: "Oratorica — Школа языков",
         description: "Платформа онлайн-обучения с системой регистрации, личными кабинетами и интеграцией оплаты. Автоматизированная запись и оплата — без ручной обработки.",
+      },
+    },
+    portfolioPage: {
+      title: "Портфолио",
+      allProjectsTitle: "Все проекты",
+      newProjectsTitle: "Новые проекты",
+    },
+    newProjects: {
+      autoParts: {
+        title: "Интернет-магазин автозапчастей",
+        description: "Интернет-магазин с каталогом более 5 000 позиций, фильтрами по марке автомобиля и интеграцией с платёжными сервисами. Реализован личный кабинет, история заказов и автоматические статусы доставки.",
+      },
+      clinic: {
+        title: "Медицинская клиника — сайт онлайн-записи",
+        description: "Корпоративный сайт клиники с онлайн-записью к врачу, интеграцией с CRM и SMS-напоминаниями. Снижено количество пропущенных визитов благодаря автоматическим уведомлениям пациентам.",
+      },
+      saas: {
+        title: "SaaS-панель аналитики для e-commerce",
+        description: "Веб-приложение с кабинетом для владельцев интернет-магазинов: сводные дашборды, аналитика продаж, интеграция с маркетплейсами и экспорт отчётов в форматах CSV/Excel.",
       },
     },
     contact: {
@@ -344,6 +394,11 @@ export const translations = {
         description: "Website development, landing pages, Telegram bots, API & CRM integration. Business process automation. Order development services in Europe.",
         h1: "Web Development & Automation Services",
       },
+      projects: {
+        title: "Portfolio — All Delivered Projects | Oleksandr",
+        description: "Full portfolio of delivered projects: corporate websites, landing pages, education platforms, and business automation solutions.",
+        h1: "Portfolio — All Projects",
+      },
       contact: {
         title: "Order Website Development | Developer Contacts",
         description: "Order website or chatbot development. Free consultation. Telegram, WhatsApp, phone. Quick response guaranteed.",
@@ -382,6 +437,7 @@ export const translations = {
       about: "About",
       services: "Services",
       howWeWork: "How We Work",
+      projects: "Portfolio",
       contact: "Contact",
     },
     hero: {
@@ -427,6 +483,25 @@ export const translations = {
       oratorica: {
         title: "Oratorica — Language School",
         description: "Online learning platform with registration, personal accounts, and payment integration. Automated enrollment and billing — no manual processing needed.",
+      },
+    },
+    portfolioPage: {
+      title: "Portfolio",
+      allProjectsTitle: "All projects",
+      newProjectsTitle: "New projects",
+    },
+    newProjects: {
+      autoParts: {
+        title: "Auto Parts Online Store",
+        description: "E-commerce website with a catalog of 5,000+ SKUs, filters by car make and model, and payment gateway integration. Implemented user accounts, order history, and automatic shipment status updates.",
+      },
+      clinic: {
+        title: "Medical Clinic — Online Booking Website",
+        description: "Corporate website for a clinic with online doctor booking, CRM integration, and SMS reminders. Reduced no‑show rate thanks to automated notifications to patients.",
+      },
+      saas: {
+        title: "SaaS Analytics Dashboard for E‑commerce",
+        description: "Web application with a dashboard for store owners: consolidated KPIs, sales analytics, marketplace integrations, and report export to CSV/Excel formats.",
       },
     },
     contact: {
