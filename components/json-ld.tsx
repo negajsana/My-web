@@ -10,7 +10,7 @@ import type { Language } from "@/lib/translations"
 
 interface JsonLdProps {
   lang: Language
-  page: "home" | "about" | "services" | "contact" | "howWeWork"
+  page: "home" | "about" | "services" | "contact" | "howWeWork" | "projects"
 }
 
 export function JsonLd({ lang, page }: JsonLdProps) {
@@ -59,6 +59,15 @@ export function JsonLd({ lang, page }: JsonLdProps) {
           lang,
           "how-we-work",
           lang === "uk" ? "Як ми працюємо" : lang === "en" ? "How We Work" : "Как мы работаем"
+        )
+      )
+      break
+    case "projects":
+      schemas.push(
+        generateBreadcrumbSchema(
+          lang,
+          "projects",
+          lang === "uk" ? "Портфоліо" : lang === "en" ? "Portfolio" : "Портфолио"
         )
       )
       break
