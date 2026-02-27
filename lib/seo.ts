@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { translations, type Language } from "./translations"
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://oleksandr.dev"
+// Company name: Code Architect | Lead Developer: Alexander
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://codearchitect.dev"
 
 export function generatePageMetadata(
   lang: Language,
@@ -36,9 +37,10 @@ export function generatePageMetadata(
     title: seo.title,
     description: seo.description,
     keywords: getKeywords(lang, page),
-    authors: [{ name: "Oleksandr", url: SITE_URL }],
-    creator: "Oleksandr",
-    publisher: "Oleksandr",
+    // Lead Developer: Alexander | Company: Code Architect
+    authors: [{ name: "Alexander", url: SITE_URL }],
+    creator: "Code Architect",
+    publisher: "Code Architect",
     robots: {
       index: true,
       follow: true,
@@ -58,16 +60,17 @@ export function generatePageMetadata(
       title: seo.title,
       description: seo.description,
       url: canonicalUrl,
+      // Open Graph siteName — всі мови: Code Architect
       siteName:
         lang === "uk"
-          ? "Олександр — Веб-розробник"
+          ? "Code Architect — Веб-розробка"
           : lang === "ru"
-            ? "Александр — Веб-разработчик"
+            ? "Code Architect — Веб-разработка"
             : lang === "es"
-              ? "Oleksandr — Desarrollador Web"
+              ? "Code Architect — Desarrollo Web"
               : lang === "de"
-                ? "Oleksandr — Webentwickler"
-                : "Oleksandr — Web Developer",
+                ? "Code Architect — Webentwicklung"
+                : "Code Architect — Web Development",
       locale: langCode,
       type: "website",
       alternateLocale: ["uk-UA", "en-US", "ru-RU", "es-ES", "de-DE"].filter(
@@ -331,16 +334,8 @@ function getKeywords(lang: Language, page: string): string[] {
 }
 
 export function generateOrganizationSchema(lang: Language) {
-  const name =
-    lang === "uk"
-      ? "Олександр — Веб-розробник"
-      : lang === "ru"
-        ? "Александр — Веб-разработчик"
-        : lang === "es"
-          ? "Oleksandr — Desarrollador Web"
-          : lang === "de"
-            ? "Oleksandr — Webentwickler"
-            : "Oleksandr — Web Developer"
+  // Organization name: Code Architect (all languages)
+  const name = "Code Architect"
   const description = translations[lang].seo.home.description
 
   return {
@@ -350,13 +345,28 @@ export function generateOrganizationSchema(lang: Language) {
     url: SITE_URL,
     logo: `${SITE_URL}/icon.svg`,
     description,
+    // Lead Developer: Alexander
+    employee: {
+      "@type": "Person",
+      name: "Alexander",
+      jobTitle:
+        lang === "uk"
+          ? "Головний розробник"
+          : lang === "ru"
+            ? "Главный разработчик"
+            : lang === "es"
+              ? "Desarrollador principal"
+              : lang === "de"
+                ? "Hauptentwickler"
+                : "Lead Developer",
+    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       availableLanguage: ["Ukrainian", "English", "Russian", "Spanish", "German"],
     },
     sameAs: [
-      "https://t.me/oleksandr_dev",
+      "https://t.me/NE_106",
     ],
     areaServed: [
       {
@@ -372,22 +382,18 @@ export function generateOrganizationSchema(lang: Language) {
 }
 
 export function generatePersonSchema(lang: Language) {
-  const name =
-    lang === "uk" || lang === "ru"
-      ? "Олександр"
-      : lang === "es" || lang === "de" || lang === "en"
-        ? "Oleksandr"
-        : "Oleksandr"
+  // Person schema: Alexander — Lead Developer of Code Architect
+  const name = "Alexander"
   const jobTitle =
     lang === "uk"
-      ? "Full-Stack Веб-розробник"
+      ? "Головний розробник — Code Architect"
       : lang === "ru"
-        ? "Full-Stack Веб-разработчик"
+        ? "Главный разработчик — Code Architect"
         : lang === "es"
-          ? "Desarrollador Web Full-Stack"
+          ? "Desarrollador principal — Code Architect"
           : lang === "de"
-            ? "Full-Stack Webentwickler"
-            : "Full-Stack Web Developer"
+            ? "Hauptentwickler — Code Architect"
+            : "Lead Developer — Code Architect"
 
   return {
     "@context": "https://schema.org",
@@ -395,6 +401,10 @@ export function generatePersonSchema(lang: Language) {
     name,
     jobTitle,
     url: SITE_URL,
+    worksFor: {
+      "@type": "Organization",
+      name: "Code Architect",
+    },
     knowsAbout: [
       "Web Development",
       "Next.js",
@@ -406,24 +416,18 @@ export function generatePersonSchema(lang: Language) {
       "Business Automation",
       "API Integration",
     ],
-    worksFor: {
-      "@type": "Organization",
-      name:
-        lang === "uk"
-          ? "Фріланс"
-          : lang === "ru"
-            ? "Фриланс"
-            : lang === "es"
-              ? "Freelance"
-              : lang === "de"
-                ? "Freelance"
-                : "Freelance",
-    },
   }
 }
 
 export function generateServicesSchema(lang: Language) {
   const t = translations[lang]
+
+  // Provider: Code Architect (organization); Lead Developer: Alexander
+  const providerSchema = {
+    "@type": "Organization",
+    name: "Code Architect",
+    employee: { "@type": "Person", name: "Alexander" },
+  }
 
   return {
     "@context": "https://schema.org",
@@ -434,15 +438,7 @@ export function generateServicesSchema(lang: Language) {
         position: 1,
         name: t.services.web.title,
         description: t.services.web.description,
-        provider: {
-          "@type": "Person",
-          name:
-            lang === "uk"
-              ? "Олександр"
-              : lang === "ru"
-                ? "Александр"
-                : "Oleksandr",
-        },
+        provider: providerSchema,
         areaServed: ["Ukraine", "Europe"],
         serviceType: "Web Development",
       },
@@ -451,15 +447,7 @@ export function generateServicesSchema(lang: Language) {
         position: 2,
         name: t.services.chatbots.title,
         description: t.services.chatbots.description,
-        provider: {
-          "@type": "Person",
-          name:
-            lang === "uk"
-              ? "Олександр"
-              : lang === "ru"
-                ? "Александр"
-                : "Oleksandr",
-        },
+        provider: providerSchema,
         areaServed: ["Ukraine", "Europe"],
         serviceType: "Chatbot Development",
       },
@@ -468,15 +456,7 @@ export function generateServicesSchema(lang: Language) {
         position: 3,
         name: t.services.automation.title,
         description: t.services.automation.description,
-        provider: {
-          "@type": "Person",
-          name:
-            lang === "uk"
-              ? "Олександр"
-              : lang === "ru"
-                ? "Александр"
-                : "Oleksandr",
-        },
+        provider: providerSchema,
         areaServed: ["Ukraine", "Europe"],
         serviceType: "Business Automation",
       },
@@ -485,15 +465,7 @@ export function generateServicesSchema(lang: Language) {
         position: 4,
         name: t.services.integration.title,
         description: t.services.integration.description,
-        provider: {
-          "@type": "Person",
-          name:
-            lang === "uk"
-              ? "Олександр"
-              : lang === "ru"
-                ? "Александр"
-                : "Oleksandr",
-        },
+        provider: providerSchema,
         areaServed: ["Ukraine", "Europe"],
         serviceType: "API Integration",
       },
@@ -556,19 +528,20 @@ export function generateBreadcrumbSchema(lang: Language, page: string, pageName:
 }
 
 export function generateWebsiteSchema(lang: Language) {
+  // Website name: Code Architect (all languages)
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name:
       lang === "uk"
-        ? "Олександр — Веб-розробник"
+        ? "Code Architect — Веб-розробка"
         : lang === "ru"
-          ? "Александр — Веб-разработчик"
+          ? "Code Architect — Веб-разработка"
           : lang === "es"
-            ? "Oleksandr — Desarrollador Web"
+            ? "Code Architect — Desarrollo Web"
             : lang === "de"
-              ? "Oleksandr — Webentwickler"
-              : "Oleksandr — Web Developer",
+              ? "Code Architect — Webentwicklung"
+              : "Code Architect — Web Development",
     url: SITE_URL,
     inLanguage:
       lang === "uk"
