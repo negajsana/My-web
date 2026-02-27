@@ -1,3 +1,7 @@
+/**
+ * JSON-LD structured data component
+ * Company: Code Architect | Lead Developer: Alexander
+ */
 import {
   generateOrganizationSchema,
   generatePersonSchema,
