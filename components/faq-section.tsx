@@ -13,16 +13,25 @@ interface FAQSectionProps {
   t: TranslationKey
 }
 
+/**
+ * FAQSection component
+ * Company: Code Architect | Lead Developer: Alexander
+ */
 export function FAQSection({ t }: FAQSectionProps) {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation()
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.05 })
 
+  // Determine FAQ heading by language using nav key
   const title =
     t.nav.home === "Головна"
       ? "Часті запитання"
       : t.nav.home === "Home"
         ? "Frequently Asked Questions"
-        : "Часто задаваемые вопросы"
+        : t.nav.home === "Inicio"
+          ? "Preguntas frecuentes"
+          : t.nav.home === "Startseite"
+            ? "Häufig gestellte Fragen"
+            : "Часто задаваемые вопросы"
 
   return (
     <section className="py-32 lg:py-40 relative" id="faq">
