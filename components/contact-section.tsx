@@ -12,8 +12,8 @@ const contacts = [
   {
     key: "telegram",
     label: "Telegram",
-    handle: "@NE_106",
-    href: "https://t.me/NE_106",
+    handle: "@sermoneygramm1",
+    href: "https://t.me/sermoneygramm1",
     icon: Send,
     primary: true,
   },
