@@ -24,7 +24,10 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
   const textOpacity = Math.max(0, 1 - scrollY / 600)
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image with Parallax */}
       <div
         className="absolute inset-0 z-0"
@@ -56,28 +59,42 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
         ))}
       </div>
 
-      {/* Content */}
+      {/* Content
+          Отступы по breakpoints:
+          - mobile (base):  pt-20 pb-24  — достаточно для nav (~64px) + scroll indicator (~80px)
+          - sm (640px+):    pt-24 pb-24
+          - lg (1024px+):   pt-28 pb-24
+          Это гарантирует, что greeting не залезает под nav на любом экране.
+      */}
       <div
-        className="relative z-10 container mx-auto px-6 lg:px-12"
+        className="relative z-10 container mx-auto px-6 lg:px-12 pt-20 sm:pt-24 lg:pt-28 pb-24"
         style={{ opacity: textOpacity }}
       >
         <div className="max-w-5xl mx-auto text-center">
+
           {/* Greeting Line */}
           <div
-            className={`overflow-hidden mb-6 transition-all duration-1000 ${
+            className={`overflow-hidden mb-4 sm:mb-6 transition-all duration-1000 ${
               loaded ? "opacity-100" : "opacity-0"
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            <p className="text-sm uppercase tracking-[0.4em] text-primary">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-primary">
               {t.hero.greeting}
             </p>
           </div>
 
-          {/* Main Name */}
-          <div className="overflow-hidden mb-8">
+          {/* Main Name
+              Размеры шрифта по breakpoints:
+              - base (320–639px):  text-4xl (36px)  — «Code Architect» в одну строку на узких экранах
+              - sm   (640–767px):  text-5xl (48px)
+              - md   (768–1023px): text-7xl (72px)
+              - lg   (1024px+):    text-[7rem] (112px) — помещается в одну строку на десктопе
+              leading-tight вместо leading-[0.95] — корректный межстрочный при переносе
+          */}
+          <div className="overflow-hidden mb-6 sm:mb-8">
             <h1
-              className={`text-7xl md:text-9xl lg:text-[10rem] font-serif font-bold leading-[0.9] tracking-tight transition-all duration-1000 ${
+              className={`text-4xl sm:text-5xl md:text-7xl lg:text-[7rem] font-serif font-bold leading-tight tracking-tight transition-all duration-1000 ${
                 loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
               }`}
               style={{ transitionDelay: "500ms" }}
@@ -87,10 +104,10 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
           </div>
 
           {/* Decorative Line */}
-          <div className="flex items-center justify-center gap-4 mb-10">
+          <div className="flex items-center justify-center gap-4 mb-6 sm:mb-10">
             <div
               className={`h-px bg-primary/40 transition-all duration-1000 ease-out ${
-                loaded ? "w-16 md:w-24" : "w-0"
+                loaded ? "w-12 md:w-24" : "w-0"
               }`}
               style={{ transitionDelay: "900ms" }}
             />
@@ -102,15 +119,20 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
             />
             <div
               className={`h-px bg-primary/40 transition-all duration-1000 ease-out ${
-                loaded ? "w-16 md:w-24" : "w-0"
+                loaded ? "w-12 md:w-24" : "w-0"
               }`}
               style={{ transitionDelay: "900ms" }}
             />
           </div>
 
-          {/* Subtitle */}
+          {/* Subtitle
+              - mobile: text-lg  (меньше, чтобы длинные тексты не переполняли экран)
+              - md+:    text-2xl
+              - lg+:    text-3xl
+              mb уменьшен на мобильном: mb-4 → sm:mb-6
+          */}
           <p
-            className={`text-xl md:text-2xl lg:text-3xl font-serif text-foreground/90 max-w-3xl mx-auto leading-relaxed mb-6 text-balance transition-all duration-1000 ${
+            className={`text-lg md:text-2xl lg:text-3xl font-serif text-foreground/90 max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-6 text-balance transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "1100ms" }}
@@ -118,9 +140,12 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
             {t.hero.title}
           </p>
 
-          {/* Description */}
+          {/* Description
+              mb-8 на mobile вместо mb-14 — освобождает место для кнопок,
+              чтобы они не уходили за экран или не перекрывались со Scroll indicator
+          */}
           <p
-            className={`text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-14 text-pretty transition-all duration-1000 ${
+            className={`text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 md:mb-14 text-pretty transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "1300ms" }}
@@ -128,16 +153,19 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
             {t.hero.description}
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons
+              На mobile: flex-col (кнопки стопкой), на sm+: flex-row (в ряд)
+              w-full на mobile чтобы кнопки не были слишком узкими
+          */}
           <div
-            className={`flex flex-col sm:flex-row gap-5 justify-center transition-all duration-1000 ${
+            className={`flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             style={{ transitionDelay: "1500ms" }}
           >
             <button
               onClick={() => (window.location.href = `/${lang}/contact`)}
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide uppercase text-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(180,150,80,0.2)]"
+              className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide uppercase text-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(180,150,80,0.2)] w-full sm:w-auto"
             >
               <span className="relative z-10">{t.hero.cta}</span>
               <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -148,7 +176,7 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
                 const el = document.getElementById("projects")
                 el?.scrollIntoView({ behavior: "smooth" })
               }}
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-foreground font-medium tracking-wide uppercase text-sm transition-all duration-500 hover:border-primary/50 hover:text-primary"
+              className="group inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-4 border border-border text-foreground font-medium tracking-wide uppercase text-sm transition-all duration-500 hover:border-primary/50 hover:text-primary w-full sm:w-auto"
             >
               <span>{t.hero.viewWork}</span>
               <span className="w-5 h-5 flex items-center justify-center border border-current rounded-full transition-all duration-300 group-hover:border-primary">
@@ -156,12 +184,16 @@ export function HeroSection({ t, lang }: HeroSectionProps) {
               </span>
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator
+          bottom-6 на mobile (вместо bottom-10) — чтобы не выходил за экран
+          на sm+ возвращается bottom-10
+      */}
       <div
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-10 transition-all duration-1000 ${
+        className={`absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 transition-all duration-1000 ${
           loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
         style={{ transitionDelay: "2000ms" }}
