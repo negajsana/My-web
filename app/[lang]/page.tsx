@@ -10,6 +10,12 @@ import { translations, type Language } from "@/lib/translations"
 import { generatePageMetadata } from "@/lib/seo"
 import { redirect } from "next/navigation"
 
+/**
+ * Home page
+ * Company: Code Architect
+ * Lead Developer: Alexander
+ */
+
 interface PageProps {
   params: Promise<{ lang: string }>
 }
