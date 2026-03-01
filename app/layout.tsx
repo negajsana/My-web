@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { LanguageSelectScreen } from "@/components/language-select-screen"
 import "./globals.css"
 
 /*
@@ -29,7 +30,7 @@ const playfair = Playfair_Display({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5, // разрешаем зум для доступности, но не более 5x
+  maximumScale: 5,
   userScalable: true,
   themeColor: [
     { media: "(prefers-color-scheme: dark)",  color: "#1a1712" },
@@ -38,14 +39,13 @@ export const viewport: Viewport = {
 }
 
 /* =====================================================================
-   Метаданные — Code Architect (название компании обновлено)
+   Метаданные — Code Architect
    ===================================================================== */
 export const metadata: Metadata = {
   title: "Code Architect | Web Developer & Chatbot Engineer",
   description:
     "Professional web development, chatbots, and digital solutions. Building modern, functional, and visually compelling projects.",
   generator: "v0.app",
-  // Явный charset и robots — Samsung Browser иногда его теряет
   robots: "index, follow",
   icons: {
     icon: [
@@ -80,22 +80,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    /*
-      Передаём CSS-переменные шрифтов через className.
-      Samsung Browser корректно читает font-family через var(),
-      если переменная объявлена на :root через Next.js font system.
-    */
     <html lang="uk" className={`dark ${inter.variable} ${playfair.variable}`}>
       <head>
-        {/*
-          Явный meta charset — страховка для Samsung Browser,
-          который иногда некорректно определяет кодировку.
-        */}
         <meta charSet="utf-8" />
-        {/*
-          Prefetch DNS для Google Fonts — ускоряет загрузку шрифтов
-          на мобильных устройствах с медленным соединением.
-        */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -103,12 +90,10 @@ export default function RootLayout({
       </head>
       <body
         className="font-sans antialiased"
-        /*
-          Samsung Browser применяет автоматическое масштабирование шрифтов.
-          style напрямую — надёжнее, чем только CSS.
-        */
         style={{ WebkitTextSizeAdjust: "100%", textSizeAdjust: "100%" } as React.CSSProperties}
       >
+        {/* Language selection screen — shown only on first visit, client-side */}
+        <LanguageSelectScreen />
         {children}
         <Analytics />
       </body>
