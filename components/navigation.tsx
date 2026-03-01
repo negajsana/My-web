@@ -13,7 +13,7 @@ interface NavigationProps {
 }
 
 export function Navigation({ t, lang }: NavigationProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -30,7 +30,7 @@ export function Navigation({ t, lang }: NavigationProps) {
   }, [])
 
   useEffect(() => {
-    if (mobileMenuOpen) {
+    if (menuOpen) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = ""
@@ -38,7 +38,7 @@ export function Navigation({ t, lang }: NavigationProps) {
     return () => {
       document.body.style.overflow = ""
     }
-  }, [mobileMenuOpen])
+  }, [menuOpen])
 
   const navLinks = [
     { href: `/${lang}`, label: t.nav.home },
@@ -49,10 +49,10 @@ export function Navigation({ t, lang }: NavigationProps) {
     { href: `/${lang}/contact`, label: t.nav.contact },
   ]
 
-  const mobileOverlay = (
+  const overlay = (
     <div
-      className={`md:hidden fixed inset-0 bg-background/98 backdrop-blur-2xl transition-all duration-500 ${
-        mobileMenuOpen
+      className={`fixed inset-0 bg-background/98 backdrop-blur-2xl transition-all duration-500 ${
+        menuOpen
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
       }`}
@@ -60,7 +60,7 @@ export function Navigation({ t, lang }: NavigationProps) {
     >
       <button
         className="absolute top-5 right-6 w-10 h-10 flex items-center justify-center text-foreground"
-        onClick={() => setMobileMenuOpen(false)}
+        onClick={() => setMenuOpen(false)}
         aria-label="Close menu"
       >
         <X className="h-5 w-5" />
@@ -72,12 +72,12 @@ export function Navigation({ t, lang }: NavigationProps) {
             key={link.href}
             href={link.href}
             className={`text-3xl font-serif text-foreground hover:text-primary transition-all duration-500 ${
-              mobileMenuOpen
+              menuOpen
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             }`}
-            style={{ transitionDelay: mobileMenuOpen ? `${index * 80 + 100}ms` : "0ms" }}
-            onClick={() => setMobileMenuOpen(false)}
+            style={{ transitionDelay: menuOpen ? `${index * 80 + 100}ms` : "0ms" }}
+            onClick={() => setMenuOpen(false)}
           >
             {link.label}
           </Link>
@@ -97,32 +97,21 @@ export function Navigation({ t, lang }: NavigationProps) {
       >
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between">
+            {/* Logo */}
             <Link href={`/${lang}`} className="group flex items-center gap-1">
               <span className="text-xl font-serif tracking-wide text-foreground transition-colors group-hover:text-primary">
-                Oleksandr
+                Code Architect
               </span>
               <span className="text-primary text-2xl leading-none">.</span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-10">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="relative text-sm uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-4">
+            {/* Right side: language switcher + burger (always visible on ALL devices) */}
+            <div className="flex items-center gap-3">
               <LanguageSwitcher />
 
               <button
-                className="md:hidden relative w-10 h-10 flex items-center justify-center text-foreground"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="relative w-10 h-10 flex items-center justify-center text-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Open menu"
               >
                 <Menu className="h-5 w-5" />
@@ -132,7 +121,7 @@ export function Navigation({ t, lang }: NavigationProps) {
         </div>
       </nav>
 
-      {mounted && createPortal(mobileOverlay, document.body)}
+      {mounted && createPortal(overlay, document.body)}
     </>
   )
 }
