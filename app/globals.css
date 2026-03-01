@@ -3,83 +3,182 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  =====================================================================
+  ЦВЕТА — двойные значения: сначала hsl (для Samsung/старых браузеров),
+  потом oklch (для современных). Браузер возьмёт последнее понятое.
+  =====================================================================
+*/
 :root {
-  /* Luxury dark palette with gold/champagne accents */
-  --background: oklch(0.13 0.005 60);
-  --foreground: oklch(0.93 0.01 80);
-  --card: oklch(0.16 0.006 60);
-  --card-foreground: oklch(0.93 0.01 80);
-  --popover: oklch(0.16 0.006 60);
+  /* Background: тёмно-коричневый почти чёрный */
+  --background:        hsl(36, 8%, 9%);
+  --background:        oklch(0.13 0.005 60);
+
+  /* Foreground: светло-кремовый */
+  --foreground:        hsl(40, 15%, 88%);
+  --foreground:        oklch(0.93 0.01 80);
+
+  /* Card */
+  --card:              hsl(36, 8%, 11%);
+  --card:              oklch(0.16 0.006 60);
+  --card-foreground:   hsl(40, 15%, 88%);
+  --card-foreground:   oklch(0.93 0.01 80);
+
+  /* Popover */
+  --popover:           hsl(36, 8%, 11%);
+  --popover:           oklch(0.16 0.006 60);
+  --popover-foreground: hsl(40, 15%, 88%);
   --popover-foreground: oklch(0.93 0.01 80);
-  --primary: oklch(0.72 0.1 75);
+
+  /* Primary: золото/шампань */
+  --primary:           hsl(38, 55%, 55%);
+  --primary:           oklch(0.72 0.1 75);
+  --primary-foreground: hsl(36, 8%, 9%);
   --primary-foreground: oklch(0.13 0.005 60);
-  --secondary: oklch(0.2 0.006 60);
+
+  /* Secondary */
+  --secondary:         hsl(36, 8%, 14%);
+  --secondary:         oklch(0.2 0.006 60);
+  --secondary-foreground: hsl(40, 15%, 88%);
   --secondary-foreground: oklch(0.93 0.01 80);
-  --muted: oklch(0.22 0.006 60);
-  --muted-foreground: oklch(0.6 0.015 60);
-  --accent: oklch(0.72 0.1 75);
+
+  /* Muted */
+  --muted:             hsl(36, 8%, 16%);
+  --muted:             oklch(0.22 0.006 60);
+  --muted-foreground:  hsl(36, 8%, 45%);
+  --muted-foreground:  oklch(0.6 0.015 60);
+
+  /* Accent */
+  --accent:            hsl(38, 55%, 55%);
+  --accent:            oklch(0.72 0.1 75);
+  --accent-foreground: hsl(36, 8%, 9%);
   --accent-foreground: oklch(0.13 0.005 60);
-  --destructive: oklch(0.577 0.245 27.325);
+
+  /* Destructive */
+  --destructive:       hsl(0, 72%, 51%);
+  --destructive:       oklch(0.577 0.245 27.325);
+  --destructive-foreground: hsl(0, 0%, 98%);
   --destructive-foreground: oklch(0.98 0.01 264);
-  --border: oklch(0.25 0.008 60);
-  --input: oklch(0.2 0.006 60);
-  --ring: oklch(0.72 0.1 75);
-  --chart-1: oklch(0.72 0.1 75);
-  --chart-2: oklch(0.6 0.08 60);
-  --chart-3: oklch(0.5 0.06 60);
-  --chart-4: oklch(0.7 0.08 90);
-  --chart-5: oklch(0.65 0.07 45);
+
+  /* Border / Input / Ring */
+  --border:            hsl(36, 10%, 18%);
+  --border:            oklch(0.25 0.008 60);
+  --input:             hsl(36, 8%, 14%);
+  --input:             oklch(0.2 0.006 60);
+  --ring:              hsl(38, 55%, 55%);
+  --ring:              oklch(0.72 0.1 75);
+
+  /* Charts */
+  --chart-1:           hsl(38, 55%, 55%);
+  --chart-1:           oklch(0.72 0.1 75);
+  --chart-2:           hsl(36, 40%, 45%);
+  --chart-2:           oklch(0.6 0.08 60);
+  --chart-3:           hsl(36, 30%, 35%);
+  --chart-3:           oklch(0.5 0.06 60);
+  --chart-4:           hsl(50, 45%, 52%);
+  --chart-4:           oklch(0.7 0.08 90);
+  --chart-5:           hsl(30, 38%, 48%);
+  --chart-5:           oklch(0.65 0.07 45);
+
   --radius: 0.5rem;
-  --sidebar: oklch(0.16 0.006 60);
-  --sidebar-foreground: oklch(0.93 0.01 80);
-  --sidebar-primary: oklch(0.72 0.1 75);
+
+  /* Sidebar */
+  --sidebar:                   hsl(36, 8%, 11%);
+  --sidebar:                   oklch(0.16 0.006 60);
+  --sidebar-foreground:        hsl(40, 15%, 88%);
+  --sidebar-foreground:        oklch(0.93 0.01 80);
+  --sidebar-primary:           hsl(38, 55%, 55%);
+  --sidebar-primary:           oklch(0.72 0.1 75);
+  --sidebar-primary-foreground: hsl(36, 8%, 9%);
   --sidebar-primary-foreground: oklch(0.13 0.005 60);
-  --sidebar-accent: oklch(0.2 0.006 60);
+  --sidebar-accent:            hsl(36, 8%, 14%);
+  --sidebar-accent:            oklch(0.2 0.006 60);
+  --sidebar-accent-foreground: hsl(40, 15%, 88%);
   --sidebar-accent-foreground: oklch(0.93 0.01 80);
-  --sidebar-border: oklch(0.25 0.008 60);
-  --sidebar-ring: oklch(0.72 0.1 75);
+  --sidebar-border:            hsl(36, 10%, 18%);
+  --sidebar-border:            oklch(0.25 0.008 60);
+  --sidebar-ring:              hsl(38, 55%, 55%);
+  --sidebar-ring:              oklch(0.72 0.1 75);
 
   /* Custom luxury tokens */
-  --gold: oklch(0.72 0.1 75);
-  --gold-light: oklch(0.8 0.08 75);
-  --gold-dark: oklch(0.55 0.1 75);
-  --surface: oklch(0.16 0.006 60);
-  --surface-elevated: oklch(0.19 0.007 60);
+  --gold:              hsl(38, 55%, 55%);
+  --gold:              oklch(0.72 0.1 75);
+  --gold-light:        hsl(40, 48%, 65%);
+  --gold-light:        oklch(0.8 0.08 75);
+  --gold-dark:         hsl(36, 55%, 38%);
+  --gold-dark:         oklch(0.55 0.1 75);
+  --surface:           hsl(36, 8%, 11%);
+  --surface:           oklch(0.16 0.006 60);
+  --surface-elevated:  hsl(36, 8%, 13%);
+  --surface-elevated:  oklch(0.19 0.007 60);
 }
 
+/* dark — идентичны :root, т.к. сайт всегда тёмный */
 .dark {
-  --background: oklch(0.13 0.005 60);
-  --foreground: oklch(0.93 0.01 80);
-  --card: oklch(0.16 0.006 60);
-  --card-foreground: oklch(0.93 0.01 80);
-  --popover: oklch(0.16 0.006 60);
+  --background:        hsl(36, 8%, 9%);
+  --background:        oklch(0.13 0.005 60);
+  --foreground:        hsl(40, 15%, 88%);
+  --foreground:        oklch(0.93 0.01 80);
+  --card:              hsl(36, 8%, 11%);
+  --card:              oklch(0.16 0.006 60);
+  --card-foreground:   hsl(40, 15%, 88%);
+  --card-foreground:   oklch(0.93 0.01 80);
+  --popover:           hsl(36, 8%, 11%);
+  --popover:           oklch(0.16 0.006 60);
+  --popover-foreground: hsl(40, 15%, 88%);
   --popover-foreground: oklch(0.93 0.01 80);
-  --primary: oklch(0.72 0.1 75);
+  --primary:           hsl(38, 55%, 55%);
+  --primary:           oklch(0.72 0.1 75);
+  --primary-foreground: hsl(36, 8%, 9%);
   --primary-foreground: oklch(0.13 0.005 60);
-  --secondary: oklch(0.2 0.006 60);
+  --secondary:         hsl(36, 8%, 14%);
+  --secondary:         oklch(0.2 0.006 60);
+  --secondary-foreground: hsl(40, 15%, 88%);
   --secondary-foreground: oklch(0.93 0.01 80);
-  --muted: oklch(0.22 0.006 60);
-  --muted-foreground: oklch(0.6 0.015 60);
-  --accent: oklch(0.72 0.1 75);
+  --muted:             hsl(36, 8%, 16%);
+  --muted:             oklch(0.22 0.006 60);
+  --muted-foreground:  hsl(36, 8%, 45%);
+  --muted-foreground:  oklch(0.6 0.015 60);
+  --accent:            hsl(38, 55%, 55%);
+  --accent:            oklch(0.72 0.1 75);
+  --accent-foreground: hsl(36, 8%, 9%);
   --accent-foreground: oklch(0.13 0.005 60);
-  --destructive: oklch(0.396 0.141 25.723);
+  --destructive:       hsl(0, 62%, 35%);
+  --destructive:       oklch(0.396 0.141 25.723);
+  --destructive-foreground: hsl(0, 0%, 98%);
   --destructive-foreground: oklch(0.98 0.01 264);
-  --border: oklch(0.25 0.008 60);
-  --input: oklch(0.2 0.006 60);
-  --ring: oklch(0.72 0.1 75);
-  --chart-1: oklch(0.72 0.1 75);
-  --chart-2: oklch(0.6 0.08 60);
-  --chart-3: oklch(0.5 0.06 60);
-  --chart-4: oklch(0.7 0.08 90);
-  --chart-5: oklch(0.65 0.07 45);
-  --sidebar: oklch(0.16 0.006 60);
+  --border:            hsl(36, 10%, 18%);
+  --border:            oklch(0.25 0.008 60);
+  --input:             hsl(36, 8%, 14%);
+  --input:             oklch(0.2 0.006 60);
+  --ring:              hsl(38, 55%, 55%);
+  --ring:              oklch(0.72 0.1 75);
+  --chart-1:           hsl(38, 55%, 55%);
+  --chart-1:           oklch(0.72 0.1 75);
+  --chart-2:           hsl(36, 40%, 45%);
+  --chart-2:           oklch(0.6 0.08 60);
+  --chart-3:           hsl(36, 30%, 35%);
+  --chart-3:           oklch(0.5 0.06 60);
+  --chart-4:           hsl(50, 45%, 52%);
+  --chart-4:           oklch(0.7 0.08 90);
+  --chart-5:           hsl(30, 38%, 48%);
+  --chart-5:           oklch(0.65 0.07 45);
+  --sidebar:           hsl(36, 8%, 11%);
+  --sidebar:           oklch(0.16 0.006 60);
+  --sidebar-foreground: hsl(40, 15%, 88%);
   --sidebar-foreground: oklch(0.93 0.01 80);
-  --sidebar-primary: oklch(0.72 0.1 75);
+  --sidebar-primary:   hsl(38, 55%, 55%);
+  --sidebar-primary:   oklch(0.72 0.1 75);
+  --sidebar-primary-foreground: hsl(36, 8%, 9%);
   --sidebar-primary-foreground: oklch(0.13 0.005 60);
-  --sidebar-accent: oklch(0.2 0.006 60);
+  --sidebar-accent:    hsl(36, 8%, 14%);
+  --sidebar-accent:    oklch(0.2 0.006 60);
+  --sidebar-accent-foreground: hsl(40, 15%, 88%);
   --sidebar-accent-foreground: oklch(0.93 0.01 80);
-  --sidebar-border: oklch(0.25 0.008 60);
-  --sidebar-ring: oklch(0.72 0.1 75);
+  --sidebar-border:    hsl(36, 10%, 18%);
+  --sidebar-border:    oklch(0.25 0.008 60);
+  --sidebar-ring:      hsl(38, 55%, 55%);
+  --sidebar-ring:      oklch(0.72 0.1 75);
 }
 
 @theme inline {
@@ -132,134 +231,79 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    /* Samsung Browser: box-sizing явно */
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground;
+    /* Явный fallback цвет для старых WebKit */
+    background-color: hsl(36, 8%, 9%);
+    color: hsl(40, 15%, 88%);
+    /* Отключаем авто-увеличение шрифта на мобильных (Samsung Browser делает это агрессивно) */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Отключаем авто-подчёркивание телефонов/email в Samsung Browser */
+    -webkit-touch-callout: none;
+  }
+
+  /* Samsung Browser игнорирует font-face если нет явного объявления — страхуем системными шрифтами */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  }
+  p, span, a, button, li, input, textarea {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 }
 
-/* Luxury scroll animations */
+/* =====================================================================
+   АНИМАЦИИ
+   ===================================================================== */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-
 @keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
 }
-
 @keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
 }
-
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
 }
-
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-
 @keyframes reveal-line {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to   { width: 100%; }
 }
 
-.animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out both;
-}
-
-.animate-slide-left {
-  animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-slide-right {
-  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.animate-shimmer {
-  background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
-}
+.animate-fade-up    { animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in    { animation: fade-in 0.6s ease-out both; }
+.animate-slide-left { animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-slide-right{ animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-scale-in   { animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-float      { animation: float 6s ease-in-out infinite; }
+.animate-marquee    { animation: marquee 30s linear infinite; }
+.animate-shimmer    { background-size: 200% auto; animation: shimmer 3s linear infinite; }
 
 /* Delay utilities */
 .delay-100 { animation-delay: 100ms; }
@@ -271,47 +315,90 @@
 .delay-700 { animation-delay: 700ms; }
 .delay-800 { animation-delay: 800ms; }
 
-/* Gold shimmer text effect */
+/* =====================================================================
+   GOLD SHIMMER — с фоллбэком для Samsung Browser
+   Samsung Browser (старые версии) плохо обрабатывает -webkit-text-fill-color
+   с CSS-переменными oklch. Используем явные hsl-цвета в gradient.
+   ===================================================================== */
 .gold-shimmer {
+  /* Fallback для Samsung Browser и старых WebKit: просто золотой цвет */
+  color: hsl(38, 55%, 55%);
+
+  /* Для браузеров с поддержкой background-clip: text */
   background: linear-gradient(
     110deg,
-    var(--gold-dark) 0%,
-    var(--gold-light) 45%,
-    var(--gold) 55%,
-    var(--gold-dark) 100%
+    hsl(36, 55%, 38%) 0%,
+    hsl(40, 48%, 65%) 45%,
+    hsl(38, 55%, 55%) 55%,
+    hsl(36, 55%, 38%) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
+  /* Проверяем поддержку перед применением */
   -webkit-text-fill-color: transparent;
   animation: shimmer 4s linear infinite;
 }
 
-/* Smooth scrolling */
+/*
+  Если браузер не поддерживает background-clip: text (Samsung Browser < 15),
+  убираем прозрачный цвет через @supports — текст будет золотым, но видимым.
+*/
+@supports not (-webkit-background-clip: text) {
+  .gold-shimmer {
+    -webkit-text-fill-color: unset;
+    color: hsl(38, 55%, 55%);
+    background: none;
+    animation: none;
+  }
+}
+
+/* =====================================================================
+   SCROLL & SCROLLBAR
+   ===================================================================== */
 html {
   scroll-behavior: smooth;
+  /* Предотвращаем горизонтальный скролл на мобильных */
+  overflow-x: hidden;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+body {
+  overflow-x: hidden;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(36, 8%, 9%); }
+::-webkit-scrollbar-thumb { background: hsl(36, 10%, 18%); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(36, 55%, 38%); }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-dark);
-}
-
-/* Selection color */
 ::selection {
-  background: var(--gold);
-  color: var(--background);
+  background: hsl(38, 55%, 55%);
+  color: hsl(36, 8%, 9%);
+}
+
+/* =====================================================================
+   BURGER / HAMBURGER — Samsung Browser иногда не рендерит SVG-иконки
+   из lucide-react из-за проблем с pointer-events. Фикс:
+   ===================================================================== */
+button svg,
+a svg {
+  pointer-events: none;
+}
+
+/* Убеждаемся что кнопки кликабельны и видны */
+button {
+  cursor: pointer;
+  /* Samsung Browser иногда применяет странные стили к кнопкам */
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Возвращаем стили кнопкам, у которых они должны быть (не сбрасываем всё) */
+button:not([class]) {
+  background: revert;
+  border: revert;
+  padding: revert;
 }
