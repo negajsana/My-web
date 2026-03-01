@@ -385,20 +385,7 @@ a svg {
   pointer-events: none;
 }
 
-/* Убеждаемся что кнопки кликабельны и видны */
+/* Samsung Browser: только cursor, без сброса стилей кнопок */
 button {
   cursor: pointer;
-  /* Samsung Browser иногда применяет странные стили к кнопкам */
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-/* Возвращаем стили кнопкам, у которых они должны быть (не сбрасываем всё) */
-button:not([class]) {
-  background: revert;
-  border: revert;
-  padding: revert;
 }
