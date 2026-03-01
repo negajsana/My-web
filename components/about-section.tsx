@@ -40,6 +40,14 @@ function AnimatedCard({
   )
 }
 
+// Photo filenames in /public/ — replace with real photos when ready:
+// Alexander.jpg, Evgeny.jpg, Egor.jpg
+const teamPhotos: Record<number, string> = {
+  0: "/Alexander.jpg",
+  1: "/Evgeny.jpg",
+  2: "/Egor.jpg",
+}
+
 function TeamMemberCard({
   name,
   role,
@@ -52,6 +60,7 @@ function TeamMemberCard({
   index: number
 }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 })
+  const photo = teamPhotos[index]
 
   return (
     <div
@@ -65,14 +74,14 @@ function TeamMemberCard({
       <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary/40 transition-all duration-500 group-hover:w-6 group-hover:h-6 group-hover:border-primary/70" />
       <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary/40 transition-all duration-500 group-hover:w-6 group-hover:h-6 group-hover:border-primary/70" />
 
-      {/* Avatar placeholder */}
+      {/* Avatar */}
       <div className="mb-6 w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
         <Image
-          src="/placeholder-user.jpg"
+          src={photo}
           alt={name}
           width={64}
           height={64}
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover"
         />
       </div>
 
