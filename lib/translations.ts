@@ -7,9 +7,9 @@ export const translations = {
         h1: "Розробка сайтів та чат-ботів для бізнесу",
       },
       about: {
-        title: "Про розробника | Full-Stack веб-розробка Україна",
-        description: "Досвідчений Full-Stack розробник: Next.js, React, Node.js, Python. Створення веб-додатків та автоматизація бізнес-процесів в Україні.",
-        h1: "Про мене — Full-Stack розробник",
+        title: "Про нас | Full-Stack веб-розробка Україна",
+        description: "Команда досвідчених розробників: Next.js, React, Node.js, Python. Створення веб-додатків та автоматизація бізнес-процесів в Україні.",
+        h1: "Про нас — Code Architect",
       },
       services: {
         title: "Послуги веб-розробки та автоматизації | Ціни",
@@ -47,16 +47,16 @@ export const translations = {
       },
       {
         question: "Які технології використовуєте?",
-        answer: "Працюю з Next.js, React, Node.js, TypeScript, Python. Для ботів — Telegram Bot API, WhatsApp Business API. Інтеграція з Stripe, PayPal, Monobank.",
+        answer: "Працюємо з Next.js, React, Node.js, TypeScript, Python. Для ботів — Telegram Bot API, WhatsApp Business API. Інтеграція з Stripe, PayPal, Monobank.",
       },
       {
         question: "Чи працюєте з клієнтами з Європи?",
-        answer: "Так, маю досвід роботи з клієнтами з України, Німеччини, Польщі та інших країн. Спілкуюся українською, російською та англійською. Розраховуюся в USDT, EUR, UAH.",
+        answer: "Так, маємо досвід роботи з клієнтами з України, Німеччини, Польщі та інших країн. Спілкуємося українською, російською та англійською. Розраховуємося в USDT, EUR, UAH.",
       },
     ],
     nav: {
       home: "Головна",
-      about: "Про мене",
+      about: "Про нас",
       services: "Послуги",
       howWeWork: "Як ми працюємо",
       projects: "Портфоліо",
@@ -65,18 +65,35 @@ export const translations = {
     hero: {
       greeting: "Веб-розробка, яка приносить клієнтів",
       name: "Code Architect",
-      title: "Будую сайти та чат-боти для малого й середнього бізнесу — зі строками, результатами та підтримкою після запуску.",
+      title: "Будуємо сайти та чат-боти для малого й середнього бізнесу — зі строками, результатами та підтримкою після запуску.",
       description: "Перший проект готовий за 2–4 тижні. Підтримка включена.",
       cta: "Обговорити мій проєкт",
       viewWork: "Приклади робіт",
     },
     about: {
-      title: "Про мене",
-      intro: "Я допомагаю малому та середньому бізнесу з'явитися в інтернеті так, щоб це приносило реальних клієнтів — а не просто «гарну картинку».",
-      experience: "Більше 3 років працюю з Next.js, React, Node.js та Python. Вже запустив проекти для юридичного бізнесу, освітніх платформ та сервісного бізнесу.",
-      focus: "Я не зникаю після здачі — залишаюся на зв'язку і підтримую ваш продукт.",
-      // Головний розробник Code Architect — Олександр
-      leadDeveloper: "Головний розробник — Олександр",
+      title: "Про нас",
+      intro: "Ми допомагаємо малому та середньому бізнесу з'явитися в інтернеті так, щоб це приносило реальних клієнтів — а не просто «гарну картинку».",
+      experience: "Більше 3 років ми працюємо з Next.js, React, Node.js та Python. Вже запустили проекти для юридичного бізнесу, освітніх платформ та сервісного бізнесу.",
+      focus: "Ми не зникаємо після здачі — залишаємося на зв'язку і підтримуємо ваш продукт.",
+      teamLabel: "Наша команда",
+      teamTitle: "Люди, які роблять проєкт",
+      team: [
+        {
+          name: "Олександр",
+          role: "Головний розробник / Project Manager",
+          description: "Відповідає за архітектуру проєктів, технічні рішення та взаємодію з клієнтами. Понад 3 роки досвіду у Full-Stack розробці на Next.js, React та Node.js.",
+        },
+        {
+          name: "Євгеній",
+          role: "SEO-спеціаліст / Маркетолог",
+          description: "Займається просуванням проєктів у пошукових системах, маркетинговою стратегією та залученням органічного трафіку. Допомагає бізнесу знаходити клієнтів онлайн.",
+        },
+        {
+          name: "Єгор",
+          role: "Junior Fullstack Developer",
+          description: "Помічник головного розробника. Бере участь у розробці клієнтської та серверної частин, тестуванні та підтримці проєктів.",
+        },
+      ],
     },
     services: {
       title: "Послуги",
@@ -94,7 +111,7 @@ export const translations = {
       },
       integration: {
         title: "API & Інтеграції",
-        description: "Всі ваші системи — одна екосистема. Підключаю Stripe, PayPal, Monobank, CRM, месенджери. Клієнт оплачує → дані в CRM → менеджер у Telegram → відправлення автоматично.",
+        description: "Всі ваші системи — одна екосистема. Підключаємо Stripe, PayPal, Monobank, CRM, месенджери. Клієнт оплачує → дані в CRM → менеджер у Telegram → відправлення автоматично.",
       },
     },
     projects: {
@@ -133,13 +150,12 @@ export const translations = {
     },
     contact: {
       title: "Готові обговорити проект?",
-      subtitle: "Відповідаю протягом години у робочий час. Оберіть зручний спосіб зв'язку:",
+      subtitle: "Відповідаємо протягом години у робочий час. Оберіть зручний спосіб зв'язку:",
       phone: "Телефон / WhatsApp",
       telegram: "Telegram",
       letsTalk: "Напишіть зараз — перша консультація безкоштовна",
     },
     footer: {
-      // Назва компанії змінена з «Олександр» на «Code Architect»
       rights: "© 2026 Code Architect.",
       leadDeveloper: "Головний розробник — Олександр",
     },
@@ -154,43 +170,43 @@ export const translations = {
           number: "01",
           title: "Знайомство та дзвінок",
           duration: "20–30 хвилин",
-          description: "Спілкуємося у Telegram або Zoom — без підготовки та презентацій. Я запитаю про ваш бізнес, задачу та очікування. Ви запитаєте все що цікавить. Мета — зрозуміти одне одного і визначити чи підходимо один одному як партнери.",
+          description: "Спілкуємося у Telegram або Zoom — без підготовки та презентацій. Ми запитаємо про ваш бізнес, задачу та очікування. Ви запитаєте все що цікавить. Мета — зрозуміти одне одного і визначити чи підходимо один одному як партнери.",
         },
         {
           number: "02",
           title: "Бриф та технічне завдання",
           duration: "1–2 дні",
-          description: "Після дзвінка я надсилаю детальний бриф: структура проєкту, функціонал, строки та вартість. Все фіксується письмово — щоб не було «я думав, що...». Ви погоджуєте або коригуєте до повного розуміння.",
+          description: "Після дзвінка ми надсилаємо детальний бриф: структура проєкту, функціонал, строки та вартість. Все фіксується письмово — щоб не було «я думав, що...». Ви погоджуєте або коригуєте до повного розуміння.",
         },
         {
           number: "03",
           title: "Дизайн та прототип",
           duration: "3–7 днів",
-          description: "Розробляю макет або прототип у Figma. Ви бачите як виглядатиме сайт ще до початку розробки. На цьому етапі легко та дешево вносити зміни — тому раджу не поспішати і дати зворотний зв'язок детально.",
+          description: "Розробляємо макет або прототип у Figma. Ви бачите як виглядатиме сайт ще до початку розробки. На цьому етапі легко та дешево вносити зміни — тому раджу не поспішати і дати зворотний зв'язок детально.",
         },
         {
           number: "04",
           title: "Розробка",
           duration: "1–4 тижні",
-          description: "Кодую на Next.js, React та Node.js. Ви маєте доступ до тестового середовища і бачите прогрес в реальному часі. Щотижня — короткий апдейт: що зроблено, що далі. Жодних зникань на тиждень без зв'язку.",
+          description: "Кодуємо на Next.js, React та Node.js. Ви маєте доступ до тестового середовища і бачите прогрес в реальному часі. Щотижня — короткий апдейт: що зроблено, що далі. Жодних зникань на тиждень без зв'язку.",
         },
         {
           number: "05",
           title: "Тестування",
           duration: "2–4 дні",
-          description: "Перевіряю сайт на різних пристроях та браузерах, тестую всі форми, кнопки та інтеграції. Ви тестуєте зі свого боку і надсилаєте список правок. Я вношу зміни — зазвичай у той же день.",
+          description: "Перевіряємо сайт на різних пристроях та браузерах, тестуємо всі форми, кнопки та інтеграції. Ви тестуєте зі свого боку і надсилаєте список правок. Ми вносимо зміни — зазвичай у той же день.",
         },
         {
           number: "06",
           title: "Запуск",
           duration: "1 день",
-          description: "Деплой на продакшн, підключення домену, налаштування SSL та аналітики. Переконуюсь що все працює стабільно перед тим як оголосити запуск. Ви отримуєте живий сайт і всі доступи.",
+          description: "Деплой на продакшн, підключення домену, налаштування SSL та аналітики. Переконуємось що все працює стабільно перед тим як оголосити запуск. Ви отримуєте живий сайт і всі доступи.",
         },
         {
           number: "07",
           title: "Підтримка після запуску",
           duration: "Безкоштовно перший місяць",
-          description: "Перші 30 днів після запуску — я на зв'язку і виправляю будь-які помилки безкоштовно. Далі — за домовленістю: разові правки або пакет щомісячного супроводу. Ви ніколи не залишаєтесь наодинці з проблемою.",
+          description: "Перші 30 днів після запуску — ми на зв'язку і виправляємо будь-які помилки безкоштовно. Далі — за домовленістю: разові правки або пакет щомісячного супроводу. Ви ніколи не залишаєтесь наодинці з проблемою.",
         },
       ],
     },
@@ -198,15 +214,14 @@ export const translations = {
   ru: {
     seo: {
       home: {
-        // Название компании изменено с «Александр» на «Code Architect»
         title: "Разработка сайтов и чат-ботов | Code Architect",
         description: "Профессиональная разработка веб-сайтов, Telegram чат-ботов и автоматизация бизнеса. Сайт за 2-4 недели, бот за неделю.",
         h1: "Разработка сайтов и чат-ботов для бизнеса",
       },
       about: {
-        title: "О разработчике | Full-Stack веб-разработка",
-        description: "Опытный Full-Stack разработчик: Next.js, React, Node.js, Python. Создание веб-приложений и автоматизация бизнес-процессов.",
-        h1: "Обо мне — Full-Stack разработчик",
+        title: "О нас | Full-Stack веб-разработка",
+        description: "Команда опытных разработчиков: Next.js, React, Node.js, Python. Создание веб-приложений и автоматизация бизнес-процессов.",
+        h1: "О нас — Code Architect",
       },
       services: {
         title: "Услуги веб-разработки и автоматизации | Цены",
@@ -232,7 +247,7 @@ export const translations = {
     faq: [
       {
         question: "Сколько стоит разработка сайта?",
-        answer: "Стоимость зависит от сложности проекта. Лендинг от $300, корпоративный сайт от $600, веб-приложение от $1000. Точную цену предоставляю после обсуждения требований.",
+        answer: "Стоимость зависит от сложности проекта. Лендинг от $300, корпоративный сайт от $600, веб-приложение от $1000. Точную цену предоставляем после обсуждения требований.",
       },
       {
         question: "Сколько времени занимает разработка?",
@@ -244,16 +259,16 @@ export const translations = {
       },
       {
         question: "Какие технологии используете?",
-        answer: "Работаю с Next.js, React, Node.js, TypeScript, Python. Для ботов — Telegram Bot API, WhatsApp Business API. Интеграция с Stripe, PayPal, Monobank.",
+        answer: "Работаем с Next.js, React, Node.js, TypeScript, Python. Для ботов — Telegram Bot API, WhatsApp Business API. Интеграция с Stripe, PayPal, Monobank.",
       },
       {
         question: "Работаете с клиентами из Европы?",
-        answer: "Да, есть опыт работы с клиентами из Украины, Германии, Польши и других стран. Общаюсь на украинском, русском и английском. Расчёты в USDT, EUR, UAH.",
+        answer: "Да, есть опыт работы с клиентами из Украины, Германии, Польши и других стран. Общаемся на украинском, русском и английском. Расчёты в USDT, EUR, UAH.",
       },
     ],
     nav: {
       home: "Главная",
-      about: "Обо мне",
+      about: "О нас",
       services: "Услуги",
       howWeWork: "Как мы работаем",
       projects: "Портфолио",
@@ -261,20 +276,36 @@ export const translations = {
     },
     hero: {
       greeting: "Сайт, который работает, пока вы спите",
-      // Имя бренда изменено с «Александр» на «Code Architect»
       name: "Code Architect",
-      title: "Разрабатываю сайты и чат-боты для бизнеса с прозрачными сроками и реальными результатами.",
+      title: "Разрабатываем сайты и чат-боты для бизнеса с прозрачными сроками и реальными результатами.",
       description: "Готово за 2–4 недели. Поддержка включена.",
       cta: "Обсудить проект",
       viewWork: "Примеры работ",
     },
     about: {
-      title: "Обо мне",
-      intro: "Помогаю малому и среднему бизнесу выйти в онлайн так, чтобы это приносило реальных клиентов — а не просто красивую страницу.",
-      experience: "Более 3 лет работаю с Next.js, React, Node.js и Python. Реализованные проекты — юридический бизнес, образовательная платформа, автоматизация сервисного бизнеса.",
-      focus: "После запуска остаюсь на связи и поддерживаю ваш продукт.",
-      // Главный разработчик Code Architect — Александр
-      leadDeveloper: "Главный разработчик — Александр",
+      title: "О нас",
+      intro: "Помогаем малому и среднему бизнесу выйти в онлайн так, чтобы это приносило реальных клиентов — а не просто красивую страницу.",
+      experience: "Более 3 лет работаем с Next.js, React, Node.js и Python. Реализованные проекты — юридический бизнес, образовательная платформа, автоматизация сервисного бизнеса.",
+      focus: "После запуска остаёмся на связи и поддерживаем ваш продукт.",
+      teamLabel: "Наша команда",
+      teamTitle: "Люди, которые делают проект",
+      team: [
+        {
+          name: "Александр",
+          role: "Главный разработчик / Project Manager",
+          description: "Отвечает за архитектуру проектов, технические решения и взаимодействие с клиентами. Более 3 лет опыта в Full-Stack разработке на Next.js, React и Node.js.",
+        },
+        {
+          name: "Евгений",
+          role: "SEO-специалист / Маркетолог",
+          description: "Занимается продвижением проектов в поисковых системах, маркетинговой стратегией и привлечением органического трафика. Помогает бизнесу находить клиентов онлайн.",
+        },
+        {
+          name: "Егор",
+          role: "Junior Fullstack Developer",
+          description: "Помощник главного разработчика. Участвует в разработке клиентской и серверной частей, тестировании и поддержке проектов.",
+        },
+      ],
     },
     services: {
       title: "Услуги",
@@ -292,7 +323,7 @@ export const translations = {
       },
       integration: {
         title: "API & Интеграции",
-        description: "Все ваши системы — одна экосистема. Подключаю Stripe, PayPal, Monobank, CRM, мессенджеры. Клиент платит → данные в CRM → уведомление менеджеру → автоотправка.",
+        description: "Все ваши системы — одна экосистема. Подключаем Stripe, PayPal, Monobank, CRM, мессенджеры. Клиент платит → данные в CRM → уведомление менеджеру → автоотправка.",
       },
     },
     projects: {
@@ -309,19 +340,19 @@ export const translations = {
       },
       luerssen: {
         title: "Lürssen",
-        description: "Корпоративный сайт международной судостроительной компании премиум-сегмента. Реализована адаптивная вёрстка, оптимизация скорости загрузки, структурирование контента и улучшение UI/UX для удобной презентации флота и проектов компании.",
+        description: "Корпоративный сайт международной судостроительной компании премиум-сегмента. Реализована адаптивная вёрстка, оптимизация скорости загрузки, структурирование контента и улучшение UI/UX.",
       },
       isarAerospace: {
         title: "Isar Aerospace",
-        description: "Корпоративный сайт аэрокосмической компании. Реализован современный технологичный интерфейс, адаптивная вёрстка, оптимизация производительности и структурированная подача информации о ракете-носителе и технологиях компании.",
+        description: "Корпоративный сайт аэрокосмической компании. Реализован современный технологичный интерфейс, адаптивная вёрстка, оптимизация производительности.",
       },
       providentLaw: {
         title: "Provident Law LLP",
-        description: "Сайт юридической компании. Реализована удобная структура услуг, формы обратной связи, SEO-оптимизация и адаптивный дизайн для повышения количества обращений клиентов.",
+        description: "Сайт юридической компании. Реализована удобная структура услуг, формы обратной связи, SEO-оптимизация и адаптивный дизайн.",
       },
       rcnb: {
         title: "Real Club Náutico de Barcelona (RCNB)",
-        description: "Официальный сайт яхт-клуба международного уровня. Выполнена адаптивная вёрстка, структурирование информации о событиях и регатах, оптимизация контента и улучшение навигации.",
+        description: "Официальный сайт яхт-клуба международного уровня. Выполнена адаптивная вёрстка, структурирование информации о событиях и регатах.",
       },
     },
     portfolioPage: {
@@ -331,13 +362,12 @@ export const translations = {
     },
     contact: {
       title: "Готовы обсудить проект?",
-      subtitle: "Отвечаю в течение часа в рабочее время. Выберите удобный способ связи:",
+      subtitle: "Отвечаем в течение часа в рабочее время. Выберите удобный способ связи:",
       phone: "Телефон / WhatsApp",
       telegram: "Telegram",
       letsTalk: "Напишите сейчас — первая консультация бесплатно",
     },
     footer: {
-      // Название компании изменено с «Александр» на «Code Architect»
       rights: "© 2026 Code Architect.",
       leadDeveloper: "Главный разработчик — Александр",
     },
@@ -352,43 +382,43 @@ export const translations = {
           number: "01",
           title: "Знакомство и звонок",
           duration: "20–30 минут",
-          description: "Общаемся в Telegram или Zoom — без подготовки и презентаций. Я спрошу о вашем бизнесе, задаче и ожиданиях. Вы спросите всё что интересует. Цель — понять друг друга и определить подходим ли друг другу как партнёры.",
+          description: "Общаемся в Telegram или Zoom — без подготовки и презентаций. Мы спросим о вашем бизнесе, задаче и ожиданиях. Вы спросите всё что интересует. Цель — понять друг друга и определить подходим ли друг другу как партнёры.",
         },
         {
           number: "02",
           title: "Бриф и техническое задание",
           duration: "1–2 дня",
-          description: "После звонка я отправляю детальный бриф: структура проекта, функционал, сроки и стоимость. Всё фиксируется письменно — чтобы не было «я думал, что...». Вы согласовываете или корректируете до полного понимания.",
+          description: "После звонка отправляем детальный бриф: структура проекта, функционал, сроки и стоимость. Всё фиксируется письменно — чтобы не было «я думал, что...». Вы согласовываете или корректируете до полного понимания.",
         },
         {
           number: "03",
           title: "Дизайн и прототип",
           duration: "3–7 дней",
-          description: "Разрабатываю макет или прототип в Figma. Вы видите как будет выглядеть сайт ещё до начала разработки. На этом этапе легко и дёшево вносить изменения — поэтому советую не торопиться и дать подробную обратную связь.",
+          description: "Разрабатываем макет или прототип в Figma. Вы видите как будет выглядеть сайт ещё до начала разработки. На этом этапе легко и дёшево вносить изменения.",
         },
         {
           number: "04",
           title: "Разработка",
           duration: "1–4 недели",
-          description: "Кодирую на Next.js, React и Node.js. У вас есть доступ к тестовой среде и вы видите прогресс в реальном времени. Еженедельно — короткий апдейт: что сделано, что дальше. Никаких исчезновений на неделю без связи.",
+          description: "Кодируем на Next.js, React и Node.js. У вас есть доступ к тестовой среде и вы видите прогресс в реальном времени. Еженедельно — короткий апдейт: что сделано, что дальше.",
         },
         {
           number: "05",
           title: "Тестирование",
           duration: "2–4 дня",
-          description: "Проверяю сайт на разных устройствах и браузерах, тестирую все формы, кнопки и интеграции. Вы тестируете со своей стороны и присылаете список правок. Я вношу изменения — как правило в тот же день.",
+          description: "Проверяем сайт на разных устройствах и браузерах, тестируем все формы, кнопки и интеграции. Вы тестируете со своей стороны и присылаете список правок.",
         },
         {
           number: "06",
           title: "Запуск",
           duration: "1 день",
-          description: "Деплой на продакшн, подключение домена, настройка SSL и аналитики. Убеждаюсь что всё работает стабильно перед тем как объявить запуск. Вы получаете живой сайт и все доступы.",
+          description: "Деплой на продакшн, подключение домена, настройка SSL и аналитики. Убеждаемся что всё работает стабильно перед тем как объявить запуск. Вы получаете живой сайт и все доступы.",
         },
         {
           number: "07",
           title: "Поддержка после запуска",
           duration: "Бесплатно первый месяц",
-          description: "Первые 30 дней после запуска — я на связи и исправляю любые ошибки бесплатно. Далее — по договорённости: разовые правки или пакет ежемесячного сопровождения. Вы никогда не остаётесь один на один с проблемой.",
+          description: "Первые 30 дней после запуска — мы на связи и исправляем любые ошибки бесплатно. Далее — по договорённости: разовые правки или пакет ежемесячного сопровождения.",
         },
       ],
     },
@@ -396,15 +426,14 @@ export const translations = {
   en: {
     seo: {
       home: {
-        // Company name changed from «Oleksandr» to «Code Architect»
         title: "Web Development & Chatbots in Europe | Code Architect",
         description: "Professional website development, Telegram chatbots & business automation. Website in 2-4 weeks, bot in one week. Order development services.",
         h1: "Website & Chatbot Development for Business",
       },
       about: {
-        title: "About Developer | Full-Stack Web Development Europe",
-        description: "Experienced Full-Stack developer: Next.js, React, Node.js, Python. Web application development and business process automation in Europe.",
-        h1: "About Me — Full-Stack Developer",
+        title: "About Us | Full-Stack Web Development Europe",
+        description: "A team of experienced developers: Next.js, React, Node.js, Python. Web application development and business process automation in Europe.",
+        h1: "About Us — Code Architect",
       },
       services: {
         title: "Web Development & Automation Services | Pricing",
@@ -442,16 +471,16 @@ export const translations = {
       },
       {
         question: "What technologies do you use?",
-        answer: "I work with Next.js, React, Node.js, TypeScript, Python. For bots — Telegram Bot API, WhatsApp Business API. Integration with Stripe, PayPal, Monobank.",
+        answer: "We work with Next.js, React, Node.js, TypeScript, Python. For bots — Telegram Bot API, WhatsApp Business API. Integration with Stripe, PayPal, Monobank.",
       },
       {
         question: "Do you work with clients from Europe?",
-        answer: "Yes, I have experience working with clients from Ukraine, Germany, Poland, and other countries. I communicate in Ukrainian, Russian, and English. Payment in USDT, EUR, UAH.",
+        answer: "Yes, we have experience working with clients from Ukraine, Germany, Poland, and other countries. We communicate in Ukrainian, Russian, and English. Payment in USDT, EUR, UAH.",
       },
     ],
     nav: {
       home: "Home",
-      about: "About",
+      about: "About Us",
       services: "Services",
       howWeWork: "How We Work",
       projects: "Portfolio",
@@ -459,20 +488,36 @@ export const translations = {
     },
     hero: {
       greeting: "Web development that brings you clients",
-      // Brand name changed from «Oleksandr» to «Code Architect»
       name: "Code Architect",
-      title: "I build websites and chatbots for small and growing businesses — delivered on time, with real results and post-launch support included.",
+      title: "We build websites and chatbots for small and growing businesses — delivered on time, with real results and post-launch support included.",
       description: "First project ready in 2–4 weeks.",
       cta: "Discuss My Project",
-      viewWork: "View My Work",
+      viewWork: "View Our Work",
     },
     about: {
-      title: "About Me",
-      intro: "I help small and medium-sized businesses go online in a way that actually generates clients — not just a pretty page.",
-      experience: "3+ years of hands-on experience with Next.js, React, Node.js, and Python. I've shipped projects for legal firms, education platforms, and service businesses.",
-      focus: "I don't disappear after launch — I stay available and support your product.",
-      // Lead developer of Code Architect — Alexander
-      leadDeveloper: "Lead Developer — Alexander",
+      title: "About Us",
+      intro: "We help small and medium-sized businesses go online in a way that actually generates clients — not just a pretty page.",
+      experience: "3+ years of hands-on experience with Next.js, React, Node.js, and Python. We've shipped projects for legal firms, education platforms, and service businesses.",
+      focus: "We don't disappear after launch — we stay available and support your product.",
+      teamLabel: "Our Team",
+      teamTitle: "The people behind the project",
+      team: [
+        {
+          name: "Alexander",
+          role: "Lead Developer / Project Manager",
+          description: "Responsible for project architecture, technical decisions, and client communication. 3+ years of Full-Stack development experience with Next.js, React, and Node.js.",
+        },
+        {
+          name: "Evgeny",
+          role: "SEO Specialist / Marketing Strategist",
+          description: "Handles search engine optimization, marketing strategy, and organic traffic growth. Helps businesses find clients online.",
+        },
+        {
+          name: "Egor",
+          role: "Junior Fullstack Developer",
+          description: "Assistant Lead Developer. Participates in front-end and back-end development, testing, and project maintenance.",
+        },
+      ],
     },
     services: {
       title: "Services",
@@ -490,7 +535,7 @@ export const translations = {
       },
       integration: {
         title: "API & Integrations",
-        description: "All your tools — one seamless ecosystem. I connect Stripe, PayPal, Monobank, CRM systems, and messengers. Payment triggers CRM update, manager notification, and auto-fulfillment.",
+        description: "All your tools — one seamless ecosystem. We connect Stripe, PayPal, Monobank, CRM systems, and messengers. Payment triggers CRM update, manager notification, and auto-fulfillment.",
       },
     },
     projects: {
@@ -507,11 +552,11 @@ export const translations = {
       },
       luerssen: {
         title: "Lürssen",
-        description: "Corporate website for an international premium shipbuilding company. Delivered responsive layout, performance optimization, structured content, and improved UI/UX to clearly present the company's fleet and projects.",
+        description: "Corporate website for an international premium shipbuilding company. Delivered responsive layout, performance optimization, structured content, and improved UI/UX.",
       },
       isarAerospace: {
         title: "Isar Aerospace",
-        description: "Corporate website for an aerospace company. Implemented a modern tech-focused interface, responsive layout, performance optimisation, and a structured presentation of the launch vehicle and core technologies.",
+        description: "Corporate website for an aerospace company. Implemented a modern tech-focused interface, responsive layout, performance optimisation, and structured presentation.",
       },
       providentLaw: {
         title: "Provident Law LLP",
@@ -519,7 +564,7 @@ export const translations = {
       },
       rcnb: {
         title: "Real Club Náutico de Barcelona (RCNB)",
-        description: "Official website of an international yacht club. Delivered responsive layout, structured presentation of events and regattas, optimized content and improved navigation for easy access to club services.",
+        description: "Official website of an international yacht club. Delivered responsive layout, structured presentation of events and regattas, optimized content and improved navigation.",
       },
     },
     portfolioPage: {
@@ -529,13 +574,12 @@ export const translations = {
     },
     contact: {
       title: "Ready to discuss your project?",
-      subtitle: "I respond within an hour during business hours. Choose a convenient contact method:",
+      subtitle: "We respond within an hour during business hours. Choose a convenient contact method:",
       phone: "Phone / WhatsApp",
       telegram: "Telegram",
       letsTalk: "Write now — first consultation is free",
     },
     footer: {
-      // Company name changed from «Oleksandr» to «Code Architect»
       rights: "© 2026 Code Architect.",
       leadDeveloper: "Lead Developer — Alexander",
     },
@@ -550,43 +594,43 @@ export const translations = {
           number: "01",
           title: "Introduction & Call",
           duration: "20–30 minutes",
-          description: "We chat on Telegram or Zoom — no preparation or presentations needed. I'll ask about your business, task, and expectations. You ask whatever you want. Goal: understand each other and see if we're the right fit.",
+          description: "We chat on Telegram or Zoom — no preparation or presentations needed. We'll ask about your business, task, and expectations. You ask whatever you want. Goal: understand each other and see if we're the right fit.",
         },
         {
           number: "02",
           title: "Brief & Specification",
           duration: "1–2 days",
-          description: "After the call I send a detailed brief: project structure, features, timeline, and cost. Everything is fixed in writing — no «I thought that...». You approve or adjust until everything is clear.",
+          description: "After the call we send a detailed brief: project structure, features, timeline, and cost. Everything is fixed in writing — no «I thought that...». You approve or adjust until everything is clear.",
         },
         {
           number: "03",
           title: "Design & Prototype",
           duration: "3–7 days",
-          description: "I create a layout or prototype in Figma. You see how the website will look before any code is written. Changes are easy and cheap at this stage — so take your time and give detailed feedback.",
+          description: "We create a layout or prototype in Figma. You see how the website will look before any code is written. Changes are easy and cheap at this stage.",
         },
         {
           number: "04",
           title: "Development",
           duration: "1–4 weeks",
-          description: "I code in Next.js, React and Node.js. You have access to the test environment and see progress in real time. Weekly update: what's done, what's next. No disappearing for a week without contact.",
+          description: "We code in Next.js, React and Node.js. You have access to the test environment and see progress in real time. Weekly update: what's done, what's next.",
         },
         {
           number: "05",
           title: "Testing",
           duration: "2–4 days",
-          description: "I test the site on different devices and browsers, test all forms, buttons and integrations. You test from your side and send a list of fixes. I make changes — usually the same day.",
+          description: "We test the site on different devices and browsers, test all forms, buttons and integrations. You test from your side and send a list of fixes.",
         },
         {
           number: "06",
           title: "Launch",
           duration: "1 day",
-          description: "Deploy to production, domain connection, SSL and analytics setup. I make sure everything runs stably before announcing the launch. You receive a live site and all access credentials.",
+          description: "Deploy to production, domain connection, SSL and analytics setup. We make sure everything runs stably before announcing the launch. You receive a live site and all access credentials.",
         },
         {
           number: "07",
           title: "Post-Launch Support",
           duration: "Free for the first month",
-          description: "The first 30 days after launch — I'm available and fix any bugs for free. After that — by agreement: one-time fixes or a monthly maintenance package. You're never left alone with a problem.",
+          description: "The first 30 days after launch — we're available and fix any bugs for free. After that — by agreement: one-time fixes or a monthly maintenance package.",
         },
       ],
     },
@@ -594,15 +638,14 @@ export const translations = {
   es: {
     seo: {
       home: {
-        // Nombre de la empresa cambiado de «Oleksandr» a «Code Architect»
         title: "Desarrollo Web y Chatbots en Europa | Code Architect",
         description: "Desarrollo profesional de sitios web, chatbots de Telegram y automatización empresarial. Sitio web en 2-4 semanas, bot en una semana.",
         h1: "Desarrollo de Sitios Web y Chatbots para Empresas",
       },
       about: {
-        title: "Sobre el desarrollador | Desarrollo Web Full-Stack Europa",
-        description: "Desarrollador Full-Stack con experiencia: Next.js, React, Node.js, Python. Desarrollo de aplicaciones web y automatización de procesos empresariales.",
-        h1: "Sobre mí — Desarrollador Full-Stack",
+        title: "Sobre Nosotros | Desarrollo Web Full-Stack Europa",
+        description: "Equipo de desarrolladores con experiencia: Next.js, React, Node.js, Python. Desarrollo de aplicaciones web y automatización de procesos empresariales.",
+        h1: "Sobre Nosotros — Code Architect",
       },
       services: {
         title: "Servicios de Desarrollo Web y Automatización | Precios",
@@ -628,28 +671,28 @@ export const translations = {
     faq: [
       {
         question: "¿Cuánto cuesta el desarrollo de un sitio web?",
-        answer: "El costo depende de la complejidad del proyecto. Landing page desde $300, sitio corporativo desde $600, aplicación web desde $1000. Precio exacto tras discutir los requisitos.",
+        answer: "El costo depende de la complejidad del proyecto. Landing page desde $300, sitio corporativo desde $600, aplicación web desde $1000.",
       },
       {
         question: "¿Cuánto tiempo toma el desarrollo?",
-        answer: "Landing page — 1-2 semanas, sitio corporativo — 2-4 semanas, aplicación web — 4-8 semanas. Bot de Telegram — de 3 a 7 días. Los plazos se fijan en el contrato.",
+        answer: "Landing page — 1-2 semanas, sitio corporativo — 2-4 semanas, aplicación web — 4-8 semanas. Bot de Telegram — de 3 a 7 días.",
       },
       {
         question: "¿Ofrecen soporte después del lanzamiento?",
-        answer: "Sí, el soporte está incluido. El primer mes después del lanzamiento — correcciones y resolución de errores gratuitas. Luego — por acuerdo o paquete mensual.",
+        answer: "Sí, el soporte está incluido. El primer mes después del lanzamiento — correcciones y resolución de errores gratuitas.",
       },
       {
         question: "¿Qué tecnologías utilizan?",
-        answer: "Trabajo con Next.js, React, Node.js, TypeScript, Python. Para bots — Telegram Bot API, WhatsApp Business API. Integración con Stripe, PayPal, Monobank.",
+        answer: "Trabajamos con Next.js, React, Node.js, TypeScript, Python. Para bots — Telegram Bot API, WhatsApp Business API.",
       },
       {
         question: "¿Trabajan con clientes de Europa?",
-        answer: "Sí, tengo experiencia con clientes de Ucrania, Alemania, Polonia y otros países. Me comunico en ucraniano, ruso e inglés. Pagos en USDT, EUR, UAH.",
+        answer: "Sí, tenemos experiencia con clientes de Ucrania, Alemania, Polonia y otros países. Pagos en USDT, EUR, UAH.",
       },
     ],
     nav: {
       home: "Inicio",
-      about: "Sobre mí",
+      about: "Sobre Nosotros",
       services: "Servicios",
       howWeWork: "Cómo trabajamos",
       projects: "Portafolio",
@@ -657,20 +700,36 @@ export const translations = {
     },
     hero: {
       greeting: "Desarrollo web que atrae clientes",
-      // Nombre de marca cambiado de «Oleksandr» a «Code Architect»
       name: "Code Architect",
-      title: "Construyo sitios web y chatbots para pequeñas y medianas empresas — con plazos claros, resultados reales y soporte post-lanzamiento.",
+      title: "Construimos sitios web y chatbots para pequeñas y medianas empresas — con plazos claros, resultados reales y soporte post-lanzamiento.",
       description: "Primer proyecto listo en 2–4 semanas.",
       cta: "Hablar de mi proyecto",
-      viewWork: "Ver mis trabajos",
+      viewWork: "Ver nuestros trabajos",
     },
     about: {
-      title: "Sobre mí",
-      intro: "Ayudo a pequeñas y medianas empresas a aparecer en internet de manera que genere clientes reales — no solo una bonita página.",
+      title: "Sobre Nosotros",
+      intro: "Ayudamos a pequeñas y medianas empresas a aparecer en internet de manera que genere clientes reales — no solo una bonita página.",
       experience: "Más de 3 años de experiencia con Next.js, React, Node.js y Python. Proyectos para despachos legales, plataformas educativas y empresas de servicios.",
-      focus: "No desaparezco tras el lanzamiento — permanezco disponible y apoyo tu producto.",
-      // Desarrollador principal de Code Architect — Alexander
-      leadDeveloper: "Desarrollador principal — Alexander",
+      focus: "No desaparecemos tras el lanzamiento — permanecemos disponibles y apoyamos tu producto.",
+      teamLabel: "Nuestro equipo",
+      teamTitle: "Las personas detrás del proyecto",
+      team: [
+        {
+          name: "Alexander",
+          role: "Desarrollador principal / Project Manager",
+          description: "Responsable de la arquitectura de proyectos, decisiones técnicas e interacción con clientes. Más de 3 años de experiencia en desarrollo Full-Stack con Next.js, React y Node.js.",
+        },
+        {
+          name: "Evgeny",
+          role: "Especialista SEO / Estratega de Marketing",
+          description: "Se encarga del posicionamiento en buscadores, la estrategia de marketing y el crecimiento del tráfico orgánico. Ayuda a las empresas a encontrar clientes en línea.",
+        },
+        {
+          name: "Egor",
+          role: "Junior Fullstack Developer",
+          description: "Asistente del desarrollador principal. Participa en el desarrollo front-end y back-end, pruebas y mantenimiento de proyectos.",
+        },
+      ],
     },
     services: {
       title: "Servicios",
@@ -680,15 +739,15 @@ export const translations = {
       },
       chatbots: {
         title: "Telegram & Chatbots",
-        description: "Un asistente que trabaja 24/7. El bot gestiona pedidos, responde clientes, recopila contactos y hace seguimiento. La conversión crece un 30–40% frente al procesamiento manual.",
+        description: "Un asistente que trabaja 24/7. El bot gestiona pedidos, responde clientes, recopila contactos y hace seguimiento.",
       },
       automation: {
         title: "Automatización",
-        description: "Libérate de las tareas repetitivas. Recopilación de datos, informes automáticos, sincronización entre CRM y mensajería. Los equipos ahorran hasta 15 horas semanales.",
+        description: "Libérate de las tareas repetitivas. Recopilación de datos, informes automáticos, sincronización entre CRM y mensajería.",
       },
       integration: {
         title: "API & Integraciones",
-        description: "Todos tus sistemas — un ecosistema. Conecto Stripe, PayPal, Monobank, CRM y mensajería. El pago activa la actualización en CRM, notificación al gestor y envío automático.",
+        description: "Todos tus sistemas — un ecosistema. Conectamos Stripe, PayPal, Monobank, CRM y mensajería.",
       },
     },
     projects: {
@@ -697,27 +756,27 @@ export const translations = {
       allProjectsButton: "Todos los proyectos",
       advokats: {
         title: "Despacho de abogados «Sviy Yurist»",
-        description: "Sitio corporativo con sistema de consultas en línea y formularios de contacto. Resultado: aumento de solicitudes desde búsqueda orgánica tras el lanzamiento.",
+        description: "Sitio corporativo con sistema de consultas en línea y formularios de contacto.",
       },
       oratorica: {
         title: "Oratorica — Escuela de idiomas",
-        description: "Plataforma de aprendizaje online con registro, cuentas personales e integración de pagos. Matrícula y pago automatizados — sin procesamiento manual.",
+        description: "Plataforma de aprendizaje online con registro, cuentas personales e integración de pagos.",
       },
       luerssen: {
         title: "Lürssen",
-        description: "Sitio corporativo para empresa constructora de barcos de lujo internacional. Maquetación responsive, optimización de rendimiento, contenido estructurado y UI/UX mejorado.",
+        description: "Sitio corporativo para empresa constructora de barcos de lujo internacional.",
       },
       isarAerospace: {
         title: "Isar Aerospace",
-        description: "Sitio corporativo para empresa aeroespacial. Interfaz tecnológica moderna, maquetación responsive, optimización de rendimiento y presentación estructurada del cohete y tecnologías.",
+        description: "Sitio corporativo para empresa aeroespacial. Interfaz tecnológica moderna y maquetación responsive.",
       },
       providentLaw: {
         title: "Provident Law LLP",
-        description: "Sitio web para firma legal. Estructura clara de servicios, formularios de contacto, optimización SEO y diseño responsive para aumentar las consultas de clientes.",
+        description: "Sitio web para firma legal. Estructura clara de servicios, formularios de contacto y optimización SEO.",
       },
       rcnb: {
         title: "Real Club Náutico de Barcelona (RCNB)",
-        description: "Sitio oficial de un club náutico internacional. Maquetación responsive, presentación de eventos y regatas, contenido optimizado y navegación mejorada.",
+        description: "Sitio oficial de un club náutico internacional. Maquetación responsive y presentación de eventos.",
       },
     },
     portfolioPage: {
@@ -727,13 +786,12 @@ export const translations = {
     },
     contact: {
       title: "¿Listo para hablar de tu proyecto?",
-      subtitle: "Respondo en una hora en horario laboral. Elige el método de contacto que prefieras:",
+      subtitle: "Respondemos en una hora en horario laboral. Elige el método de contacto que prefieras:",
       phone: "Teléfono / WhatsApp",
       telegram: "Telegram",
       letsTalk: "Escribe ahora — primera consulta gratuita",
     },
     footer: {
-      // Nombre de la empresa cambiado de «Oleksandr» a «Code Architect»
       rights: "© 2026 Code Architect.",
       leadDeveloper: "Desarrollador principal — Alexander",
     },
@@ -748,43 +806,43 @@ export const translations = {
           number: "01",
           title: "Introducción y llamada",
           duration: "20–30 minutos",
-          description: "Hablamos por Telegram o Zoom — sin preparación ni presentaciones. Preguntaré sobre tu negocio, objetivo y expectativas. Tú preguntas todo lo que quieras. Meta: entendernos y ver si somos el equipo adecuado.",
+          description: "Hablamos por Telegram o Zoom. Preguntaremos sobre tu negocio, objetivo y expectativas. Meta: entendernos y ver si somos el equipo adecuado.",
         },
         {
           number: "02",
           title: "Brief y especificación",
           duration: "1–2 días",
-          description: "Tras la llamada envío un brief detallado: estructura del proyecto, funciones, plazos y coste. Todo queda por escrito — sin «pensé que...». Tú apruebas o ajustas hasta que todo esté claro.",
+          description: "Tras la llamada enviamos un brief detallado: estructura del proyecto, funciones, plazos y coste. Todo queda por escrito.",
         },
         {
           number: "03",
           title: "Diseño y prototipo",
           duration: "3–7 días",
-          description: "Creo un diseño o prototipo en Figma. Ves cómo quedará el sitio antes de escribir código. Los cambios son fáciles y baratos en esta etapa — tómate tu tiempo y da feedback detallado.",
+          description: "Creamos un diseño o prototipo en Figma. Ves cómo quedará el sitio antes de escribir código.",
         },
         {
           number: "04",
           title: "Desarrollo",
           duration: "1–4 semanas",
-          description: "Programo en Next.js, React y Node.js. Tienes acceso al entorno de pruebas y ves el progreso en tiempo real. Actualización semanal: qué está hecho, qué sigue. Sin desaparecer una semana.",
+          description: "Programamos en Next.js, React y Node.js. Tienes acceso al entorno de pruebas y ves el progreso en tiempo real.",
         },
         {
           number: "05",
           title: "Pruebas",
           duration: "2–4 días",
-          description: "Pruebo el sitio en diferentes dispositivos y navegadores, verifico formularios, botones e integraciones. Tú pruebas por tu lado y envías lista de correcciones. Hago los cambios — generalmente el mismo día.",
+          description: "Probamos el sitio en diferentes dispositivos y navegadores, verificamos formularios, botones e integraciones.",
         },
         {
           number: "06",
           title: "Lanzamiento",
           duration: "1 día",
-          description: "Deploy a producción, conexión de dominio, configuración de SSL y analítica. Me aseguro de que todo funcione de forma estable antes de anunciar el lanzamiento. Recibes el sitio en vivo y todos los accesos.",
+          description: "Deploy a producción, conexión de dominio, configuración de SSL y analítica. Recibes el sitio en vivo y todos los accesos.",
         },
         {
           number: "07",
           title: "Soporte post-lanzamiento",
           duration: "Gratis el primer mes",
-          description: "Los primeros 30 días — estoy disponible y corrijo cualquier error gratuitamente. Luego — por acuerdo: correcciones puntuales o paquete mensual. Nunca te quedas solo ante un problema.",
+          description: "Los primeros 30 días estamos disponibles y corregimos cualquier error gratuitamente. Luego — por acuerdo.",
         },
       ],
     },
@@ -792,15 +850,14 @@ export const translations = {
   de: {
     seo: {
       home: {
-        // Firmenname geändert von «Oleksandr» zu «Code Architect»
         title: "Webentwicklung & Chatbots in Europa | Code Architect",
         description: "Professionelle Webentwicklung, Telegram-Chatbots und Business-Automatisierung. Website in 2-4 Wochen, Bot in einer Woche.",
         h1: "Website- und Chatbot-Entwicklung für Unternehmen",
       },
       about: {
-        title: "Über den Entwickler | Full-Stack Webentwicklung Europa",
-        description: "Erfahrener Full-Stack Entwickler: Next.js, React, Node.js, Python. Entwicklung von Webanwendungen und Automatisierung von Geschäftsprozessen.",
-        h1: "Über mich — Full-Stack Entwickler",
+        title: "Über uns | Full-Stack Webentwicklung Europa",
+        description: "Ein Team erfahrener Entwickler: Next.js, React, Node.js, Python. Entwicklung von Webanwendungen und Automatisierung von Geschäftsprozessen.",
+        h1: "Über uns — Code Architect",
       },
       services: {
         title: "Webentwicklung & Automatisierungsleistungen | Preise",
@@ -826,28 +883,28 @@ export const translations = {
     faq: [
       {
         question: "Was kostet die Entwicklung einer Website?",
-        answer: "Die Kosten hängen von der Projektkomplexität ab. Landing Page ab $300, Unternehmenswebsite ab $600, Webanwendung ab $1000. Genauen Preis nach Besprechung der Anforderungen.",
+        answer: "Die Kosten hängen von der Projektkomplexität ab. Landing Page ab $300, Unternehmenswebsite ab $600, Webanwendung ab $1000.",
       },
       {
         question: "Wie lange dauert die Entwicklung?",
-        answer: "Landing Page — 1-2 Wochen, Unternehmenswebsite — 2-4 Wochen, Webanwendung — 4-8 Wochen. Telegram-Bot — 3 bis 7 Tage. Fristen werden im Vertrag festgelegt.",
+        answer: "Landing Page — 1-2 Wochen, Unternehmenswebsite — 2-4 Wochen, Webanwendung — 4-8 Wochen. Telegram-Bot — 3 bis 7 Tage.",
       },
       {
         question: "Bieten Sie Support nach dem Launch?",
-        answer: "Ja, Support ist inklusive. Im ersten Monat nach dem Launch — kostenlose Korrekturen und Fehlerbehebung. Danach — nach Vereinbarung oder monatliches Wartungspaket.",
+        answer: "Ja, Support ist inklusive. Im ersten Monat nach dem Launch — kostenlose Korrekturen und Fehlerbehebung.",
       },
       {
         question: "Welche Technologien verwenden Sie?",
-        answer: "Ich arbeite mit Next.js, React, Node.js, TypeScript, Python. Für Bots — Telegram Bot API, WhatsApp Business API. Integration mit Stripe, PayPal, Monobank.",
+        answer: "Wir arbeiten mit Next.js, React, Node.js, TypeScript, Python. Für Bots — Telegram Bot API, WhatsApp Business API.",
       },
       {
         question: "Arbeiten Sie mit Kunden aus Europa?",
-        answer: "Ja, ich habe Erfahrung mit Kunden aus der Ukraine, Deutschland, Polen und anderen Ländern. Ich kommuniziere auf Ukrainisch, Russisch und Englisch. Zahlung in USDT, EUR, UAH.",
+        answer: "Ja, wir haben Erfahrung mit Kunden aus der Ukraine, Deutschland, Polen und anderen Ländern. Zahlung in USDT, EUR, UAH.",
       },
     ],
     nav: {
       home: "Startseite",
-      about: "Über mich",
+      about: "Über uns",
       services: "Leistungen",
       howWeWork: "Wie wir arbeiten",
       projects: "Portfolio",
@@ -855,20 +912,36 @@ export const translations = {
     },
     hero: {
       greeting: "Webentwicklung, die neue Kunden bringt",
-      // Markenname geändert von «Oleksandr» zu «Code Architect»
       name: "Code Architect",
-      title: "Ich entwickle Websites und Chatbots für kleine und wachsende Unternehmen — mit klaren Fristen, messbaren Ergebnissen und Support nach dem Launch.",
+      title: "Wir entwickeln Websites und Chatbots für kleine und wachsende Unternehmen — mit klaren Fristen, messbaren Ergebnissen und Support nach dem Launch.",
       description: "Das erste Projekt ist in 2–4 Wochen einsatzbereit.",
       cta: "Projekt besprechen",
       viewWork: "Referenzen ansehen",
     },
     about: {
-      title: "Über mich",
-      intro: "Ich helfe kleinen und mittelständischen Unternehmen, online sichtbar zu werden — mit Websites, die wirklich Kunden bringen und nicht nur gut aussehen.",
+      title: "Über uns",
+      intro: "Wir helfen kleinen und mittelständischen Unternehmen, online sichtbar zu werden — mit Websites, die wirklich Kunden bringen und nicht nur gut aussehen.",
       experience: "Über 3 Jahre Erfahrung mit Next.js, React, Node.js und Python. Realisierte Projekte für Kanzleien, Bildungsplattformen und Dienstleistungsbetriebe.",
-      focus: "Ich verschwinde nicht nach dem Launch — ich bleibe erreichbar und unterstütze Ihr Produkt.",
-      // Hauptentwickler von Code Architect — Alexander
-      leadDeveloper: "Hauptentwickler — Alexander",
+      focus: "Wir verschwinden nicht nach dem Launch — wir bleiben erreichbar und unterstützen Ihr Produkt.",
+      teamLabel: "Unser Team",
+      teamTitle: "Die Menschen hinter dem Projekt",
+      team: [
+        {
+          name: "Alexander",
+          role: "Hauptentwickler / Project Manager",
+          description: "Verantwortlich für Projektarchitektur, technische Entscheidungen und Kundenkommunikation. Über 3 Jahre Full-Stack-Erfahrung mit Next.js, React und Node.js.",
+        },
+        {
+          name: "Evgeny",
+          role: "SEO-Spezialist / Marketing-Stratege",
+          description: "Zuständig für Suchmaschinenoptimierung, Marketingstrategie und organisches Traffic-Wachstum. Hilft Unternehmen, online Kunden zu gewinnen.",
+        },
+        {
+          name: "Egor",
+          role: "Junior Fullstack Developer",
+          description: "Assistent des Hauptentwicklers. Beteiligt an Front-End- und Back-End-Entwicklung, Tests und Projektwartung.",
+        },
+      ],
     },
     services: {
       title: "Leistungen",
@@ -878,7 +951,7 @@ export const translations = {
       },
       chatbots: {
         title: "Telegram & Chatbots",
-        description: "Ein Assistent, der 24/7 arbeitet. Der Bot beantwortet Anfragen, sammelt Leads und begleitet Bestellungen — mit höherer Conversion als reine Handarbeit.",
+        description: "Ein Assistent, der 24/7 arbeitet. Der Bot beantwortet Anfragen, sammelt Leads und begleitet Bestellungen.",
       },
       automation: {
         title: "Automatisierung",
@@ -886,7 +959,7 @@ export const translations = {
       },
       integration: {
         title: "API & Integrationen",
-        description: "Alle Ihre Systeme als ein Ökosystem. Ich verbinde Stripe, PayPal, Monobank, CRMs und Messenger. Vom Payment bis zur internen Benachrichtigung — automatisiert.",
+        description: "Alle Ihre Systeme als ein Ökosystem. Wir verbinden Stripe, PayPal, Monobank, CRMs und Messenger.",
       },
     },
     projects: {
@@ -895,27 +968,27 @@ export const translations = {
       allProjectsButton: "Alle Projekte",
       advokats: {
         title: "Kanzlei «Sviy Yurist»",
-        description: "Unternehmenswebsite mit Online-Beratungen und Kontaktformularen. Ergebnis: Mehr Anfragen aus organischer Suche nach dem Launch.",
+        description: "Unternehmenswebsite mit Online-Beratungen und Kontaktformularen.",
       },
       oratorica: {
         title: "Oratorica — Sprachschule",
-        description: "Online-Lernplattform mit Registrierung, Benutzerkonten und Zahlungsintegration. Vollständig automatisierter Anmelde- und Zahlungsprozess.",
+        description: "Online-Lernplattform mit Registrierung, Benutzerkonten und Zahlungsintegration.",
       },
       luerssen: {
         title: "Lürssen",
-        description: "Corporate Website für eine internationale Werft im Premiumsegment. Responsive Layout, Performance-Optimierung und strukturierte Präsentation der Flotte und Projekte.",
+        description: "Corporate Website für eine internationale Werft im Premiumsegment.",
       },
       isarAerospace: {
         title: "Isar Aerospace",
-        description: "Corporate Website für ein Raumfahrtunternehmen. Moderner, technischer Auftritt, responsive Umsetzung und klare Struktur für Informationen zur Trägerrakete und Technologie.",
+        description: "Corporate Website für ein Raumfahrtunternehmen. Moderner, technischer Auftritt.",
       },
       providentLaw: {
         title: "Provident Law LLP",
-        description: "Website für eine Anwaltskanzlei. Klare Struktur der Leistungen, Kontaktformulare, SEO-Optimierung und responsive Design zur Steigerung der Mandantenanfragen.",
+        description: "Website für eine Anwaltskanzlei. Klare Struktur der Leistungen und SEO-Optimierung.",
       },
       rcnb: {
         title: "Real Club Náutico de Barcelona (RCNB)",
-        description: "Offizielle Website eines internationalen Yachtclubs. Responsive Layout, strukturierte Darstellung von Events und Regatten, optimierte Inhalte und verbesserte Navigation.",
+        description: "Offizielle Website eines internationalen Yachtclubs.",
       },
     },
     portfolioPage: {
@@ -925,13 +998,12 @@ export const translations = {
     },
     contact: {
       title: "Bereit, über Ihr Projekt zu sprechen?",
-      subtitle: "Ich antworte in der Regel innerhalb einer Stunde an Werktagen. Wählen Sie den passenden Kanal:",
+      subtitle: "Wir antworten in der Regel innerhalb einer Stunde an Werktagen. Wählen Sie den passenden Kanal:",
       phone: "Telefon / WhatsApp",
       telegram: "Telegram",
       letsTalk: "Schreiben Sie jetzt — das erste Gespräch ist kostenlos",
     },
     footer: {
-      // Firmenname geändert von «Oleksandr» zu «Code Architect»
       rights: "© 2026 Code Architect.",
       leadDeveloper: "Hauptentwickler — Alexander",
     },
@@ -946,43 +1018,43 @@ export const translations = {
           number: "01",
           title: "Kennenlernen & Gespräch",
           duration: "20–30 Minuten",
-          description: "Wir sprechen per Telegram oder Zoom — ohne Vorbereitung und Präsentationen. Ich frage nach Ihrem Unternehmen, dem Ziel und den Erwartungen. Sie fragen alles, was Sie interessiert. Das Ziel: gegenseitiges Verständnis und Klärung, ob wir als Partner zueinander passen.",
+          description: "Wir sprechen per Telegram oder Zoom. Wir fragen nach Ihrem Unternehmen, dem Ziel und den Erwartungen.",
         },
         {
           number: "02",
           title: "Briefing & Leistungsbeschreibung",
           duration: "1–2 Tage",
-          description: "Nach dem Gespräch sende ich ein detailliertes Briefing: Projektstruktur, Funktionen, Zeitplan und Kosten. Alles wird schriftlich festgehalten — damit es kein «Ich dachte, dass...» gibt. Sie stimmen zu oder passen an, bis alles klar ist.",
+          description: "Nach dem Gespräch senden wir ein detailliertes Briefing: Projektstruktur, Funktionen, Zeitplan und Kosten. Alles wird schriftlich festgehalten.",
         },
         {
           number: "03",
           title: "Design & Prototyp",
           duration: "3–7 Tage",
-          description: "Ich erstelle ein Layout oder einen Prototyp in Figma. Sie sehen, wie die Website aussehen wird, bevor eine Zeile Code geschrieben ist. Zu diesem Zeitpunkt sind Änderungen einfach und günstig — daher empfehle ich, sich Zeit zu nehmen und detailliertes Feedback zu geben.",
+          description: "Wir erstellen ein Layout oder einen Prototyp in Figma. Sie sehen, wie die Website aussehen wird, bevor eine Zeile Code geschrieben ist.",
         },
         {
           number: "04",
           title: "Entwicklung",
           duration: "1–4 Wochen",
-          description: "Ich entwickle mit Next.js, React und Node.js. Sie haben Zugang zur Testumgebung und sehen den Fortschritt in Echtzeit. Wöchentliches Update: was fertig ist, was als nächstes kommt. Kein wochenlanger Funkstille.",
+          description: "Wir entwickeln mit Next.js, React und Node.js. Sie haben Zugang zur Testumgebung und sehen den Fortschritt in Echtzeit.",
         },
         {
           number: "05",
           title: "Testing",
           duration: "2–4 Tage",
-          description: "Ich teste die Website auf verschiedenen Geräten und Browsern, prüfe alle Formulare, Buttons und Integrationen. Sie testen auf Ihrer Seite und senden eine Liste mit Korrekturen. Ich nehme Änderungen vor — in der Regel noch am selben Tag.",
+          description: "Wir testen die Website auf verschiedenen Geräten und Browsern, prüfen alle Formulare, Buttons und Integrationen.",
         },
         {
           number: "06",
           title: "Launch",
           duration: "1 Tag",
-          description: "Deployment auf Produktion, Domain-Einrichtung, SSL- und Analytics-Konfiguration. Ich stelle sicher, dass alles stabil läuft, bevor der Launch verkündet wird. Sie erhalten eine live Website und alle Zugangsdaten.",
+          description: "Deployment auf Produktion, Domain-Einrichtung, SSL- und Analytics-Konfiguration. Sie erhalten eine live Website und alle Zugangsdaten.",
         },
         {
           number: "07",
           title: "Support nach dem Launch",
           duration: "Kostenlos im ersten Monat",
-          description: "In den ersten 30 Tagen nach dem Launch bin ich erreichbar und behebe Fehler kostenlos. Danach — nach Vereinbarung: Einzelkorrekturen oder ein monatliches Wartungspaket. Sie stehen nie allein vor einem Problem.",
+          description: "In den ersten 30 Tagen nach dem Launch sind wir erreichbar und beheben Fehler kostenlos. Danach — nach Vereinbarung.",
         },
       ],
     },
