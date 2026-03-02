@@ -99,19 +99,38 @@ export const translations = {
       title: "Послуги",
       web: {
         title: "Веб-розробка",
-        description: "Сайт, що продає, а не просто «присутній» в інтернеті. Лендінг або повноцінний вебзастосунок на Next.js: адаптивний дизайн, швидке завантаження, базове SEO та аналітика — готовий залучати клієнтів із першого дня.",
+        description: "Сайт, який продає, а не просто існує. Від лендінгу до SaaS-платформи — розробляємо на Next.js з адаптивним дизайном, швидким завантаженням та вбудованою аналітикою.",
+        items: ["Landing Pages", "Корпоративні сайти", "Інтернет-магазини", "Вебзастосунки (Next.js / React)", "SaaS-платформи", "Адмін-панелі"],
+      },
+      software: {
+        title: "Розробка ПЗ",
+        description: "Індивідуальні рішення під задачі вашого бізнесу. Від MVP за 4 тижні до повноцінної бізнес-платформи — з чистою архітектурою та документацією.",
+        items: ["Custom Software Development", "CRM / ERP системи", "Внутрішні бізнес-системи", "Платформи під стартапи", "MVP розробка"],
+      },
+      design: {
+        title: "UI/UX Дизайн",
+        description: "Дизайн, за яким зручно користуватися і який конвертує. Проводимо UX-дослідження, будуємо прототипи та передаємо готові макети розробникам.",
+        items: ["UX-дослідження", "Прототипування у Figma", "UI дизайн інтерфейсів", "Design Systems", "UX-аудит наявних продуктів"],
       },
       chatbots: {
         title: "Telegram & Чат-боти",
-        description: "Менеджер, який працює 24/7 і ніколи не хворіє. Бот обробляє замовлення, відповідає клієнтам, збирає контакти та нагадує про покупку. Конверсія вища на 30–40% порівняно з ручною обробкою.",
+        description: "Менеджер, який працює 24/7. Бот обробляє заявки, кваліфікує ліди та проводить клієнта до оплати — конверсія вища на 30–40% порівняно з ручною обробкою.",
+        items: ["Продажні боти", "Лідогенерація", "Інтеграція з CRM", "Автоматичні сценарії", "Платіжні інтеграції"],
       },
       automation: {
-        title: "Автоматизація",
-        description: "Позбудьтеся рутини — нехай машини роблять це за вас. Автопарсинг даних, звіти без ручної роботи, синхронізація між CRM та месенджерами. Звільняєте до 15 годин на тиждень для команди.",
+        title: "Автоматизація бізнесу",
+        description: "Звільняємо команду від рутини. Автопарсинг, звіти, синхронізація сервісів — один раз налаштовано, працює постійно. Економія до 15 годин на тиждень.",
+        items: ["Парсинг та збір даних", "Автозвіти", "Синхронізація сервісів", "Low-code / No-code рішення", "AI-автоматизація"],
       },
       integration: {
         title: "API & Інтеграції",
-        description: "Всі ваші системи — одна екосистема. Підключаємо Stripe, PayPal, Monobank, CRM, месенджери. Клієнт оплачує → дані в CRM → менеджер у Telegram → відправлення автоматично.",
+        description: "Всі ваші системи — одна екосистема. Клієнт оплачує → дані в CRM → менеджер у Telegram → доставка автоматично. Жодного ручного кроку.",
+        items: ["Stripe, PayPal, Monobank", "CRM та ERP системи", "Месенджери та чат-боти", "Маркетингові інструменти", "Сторонні API та сервіси"],
+      },
+      support: {
+        title: "Технічна підтримка",
+        description: "Не зникаємо після запуску. Підтримуємо, оптимізуємо та розвиваємо ваш продукт — щоб він працював стабільно і залишався конкурентним.",
+        items: ["Підтримка та супровід сайтів", "Оптимізація швидкості (Core Web Vitals)", "SEO-оптимізація", "Безпека та захист", "DevOps та деплой"],
       },
     },
     projects: {
@@ -311,19 +330,38 @@ export const translations = {
       title: "Услуги",
       web: {
         title: "Веб-разработка",
-        description: "Сайт, который продаёт, а не просто «существует». Лендинг или полноценное веб-приложение на Next.js: адаптивный дизайн, высокая скорость, базовое SEO и аналитика — готово привлекать клиентов с первого дня.",
+        description: "Сайт, который продаёт, а не просто существует. От лендинга до SaaS-платформы — разрабатываем на Next.js с адаптивным дизайном, высокой скоростью и встроенной аналитикой.",
+        items: ["Landing Pages", "Корпоративные сайты", "Интернет-магазины", "Веб-приложения (Next.js / React)", "SaaS-платформы", "Административные панели"],
+      },
+      software: {
+        title: "Разработка ПО",
+        description: "Индивидуальные решения под задачи вашего бизнеса. От MVP за 4 недели до полноценной бизнес-платформы — с чистой архитектурой и документацией.",
+        items: ["Custom Software Development", "CRM / ERP системы", "Внутренние бизнес-системы", "Платформы для стартапов", "MVP разработка"],
+      },
+      design: {
+        title: "UI/UX Дизайн",
+        description: "Дизайн, которым удобно пользоваться и который конвертирует. Проводим UX-исследования, строим прототипы и передаём готовые макеты разработчикам.",
+        items: ["UX-исследования", "Прототипирование в Figma", "UI дизайн интерфейсов", "Design Systems", "UX-аудит существующих продуктов"],
       },
       chatbots: {
         title: "Telegram & Чат-боты",
-        description: "Менеджер, который работает без выходных. Бот обрабатывает заказы, отвечает клиентам, собирает контакты и напоминает о покупке. Конверсия растёт на 30–40% по сравнению с ручной обработкой.",
+        description: "Менеджер, который работает 24/7. Бот обрабатывает заявки, квалифицирует лиды и проводит клиента до оплаты — конверсия выше на 30–40% по сравнению с ручной обработкой.",
+        items: ["Продажные боты", "Лидогенерация", "Интеграция с CRM", "Автоматические сценарии", "Платёжные интеграции"],
       },
       automation: {
-        title: "Автоматизация",
-        description: "Избавьтесь от рутины — пусть это делает машина. Автосбор данных, отчёты без ручной работы, синхронизация между CRM и мессенджерами. Освобождаете до 15 часов в неделю для команды.",
+        title: "Автоматизация бизнеса",
+        description: "Освобождаем команду от рутины. Автопарсинг, отчёты, синхронизация сервисов — один раз настроено, работает постоянно. Экономия до 15 часов в неделю.",
+        items: ["Парсинг и сбор данных", "Автоотчёты", "Синхронизация сервисов", "Low-code / No-code решения", "AI-автоматизация"],
       },
       integration: {
         title: "API & Интеграции",
-        description: "Все ваши системы — одна экосистема. Подключаем Stripe, PayPal, Monobank, CRM, мессенджеры. Клиент платит → данные в CRM → уведомление менеджеру → автоотправка.",
+        description: "Все ваши системы — одна экосистема. Клиент оплачивает → данные в CRM → менеджер в Telegram → доставка автоматически. Ни одного ручного шага.",
+        items: ["Stripe, PayPal, Monobank", "CRM и ERP системы", "Мессенджеры и чат-боты", "Маркетинговые инструменты", "Сторонние API и сервисы"],
+      },
+      support: {
+        title: "Техническая поддержка",
+        description: "Не исчезаем после запуска. Поддерживаем, оптимизируем и развиваем ваш продукт — чтобы он работал стабильно и оставался конкурентным.",
+        items: ["Поддержка и сопровождение сайтов", "Оптимизация скорости (Core Web Vitals)", "SEO-оптимизация", "Безопасность и защита", "DevOps и деплой"],
       },
     },
     projects: {
@@ -523,19 +561,38 @@ export const translations = {
       title: "Services",
       web: {
         title: "Web Development",
-        description: "A website that sells, not just exists. Landing page or full web app on Next.js: mobile-first, fast-loading, SEO-ready, and analytics-configured. Ready to attract clients from day one.",
+        description: "A website that works, not just exists. From landing pages to SaaS platforms — built on Next.js with responsive design, fast load times, and analytics configured from day one.",
+        items: ["Landing Pages", "Corporate Websites", "E-commerce Stores", "Web Applications (Next.js / React)", "SaaS Platforms", "Admin Dashboards"],
+      },
+      software: {
+        title: "Software Development",
+        description: "Custom-built solutions tailored to your business. From MVP in 4 weeks to a full-scale business platform — with clean architecture and documentation included.",
+        items: ["Custom Software Development", "CRM / ERP Systems", "Internal Business Tools", "Startup Platforms", "MVP Development"],
+      },
+      design: {
+        title: "UI/UX Design",
+        description: "Design that's intuitive to use and built to convert. We conduct UX research, build prototypes, and deliver production-ready layouts to the development team.",
+        items: ["UX Research", "Figma Prototyping", "UI Interface Design", "Design Systems", "UX Audit of Existing Products"],
       },
       chatbots: {
         title: "Telegram & Chatbots",
-        description: "A sales rep that works around the clock. Bot handles orders, answers clients, collects leads, and follows up on purchases. Conversion rates grow by 30–40% compared to manual handling.",
+        description: "A sales rep that works 24/7. The bot handles inquiries, qualifies leads, and guides the client to payment — conversion rates up to 30–40% higher than manual processing.",
+        items: ["Sales Bots", "Lead Generation", "CRM Integration", "Automated Scenarios", "Payment Integrations"],
       },
       automation: {
-        title: "Automation",
-        description: "Let automation handle the repetitive work. Data parsing, auto-reporting, CRM and messenger integrations — set up once, runs forever. Teams typically save up to 15 hours per week.",
+        title: "Business Automation",
+        description: "Free your team from routine. Data parsing, auto-reporting, service sync — configured once, runs indefinitely. Teams typically save up to 15 hours per week.",
+        items: ["Data Parsing & Collection", "Auto-Reporting", "Service Synchronisation", "Low-code / No-code Solutions", "AI Automation"],
       },
       integration: {
         title: "API & Integrations",
-        description: "All your tools — one seamless ecosystem. We connect Stripe, PayPal, Monobank, CRM systems, and messengers. Payment triggers CRM update, manager notification, and auto-fulfillment.",
+        description: "All your systems — one seamless ecosystem. Client pays → data in CRM → manager notified in Telegram → fulfilment triggered automatically. Zero manual steps.",
+        items: ["Stripe, PayPal, Monobank", "CRM & ERP Systems", "Messengers & Chatbots", "Marketing Tools", "Third-party APIs & Services"],
+      },
+      support: {
+        title: "Technical Support",
+        description: "We don't disappear after launch. We maintain, optimise, and evolve your product — so it stays stable, secure, and competitive.",
+        items: ["Website Maintenance & Support", "Performance Optimisation (Core Web Vitals)", "SEO Optimisation", "Security & Protection", "DevOps & Deployment"],
       },
     },
     projects: {
@@ -735,19 +792,38 @@ export const translations = {
       title: "Servicios",
       web: {
         title: "Desarrollo Web",
-        description: "Un sitio web que vende, no solo existe. Landing page o aplicación web completa en Next.js: diseño responsive, alta velocidad, SEO básico y analítica configurada.",
+        description: "Un sitio web que trabaja, no solo existe. De landing pages a plataformas SaaS — desarrollado en Next.js con diseño responsive, alta velocidad y analítica configurada desde el primer día.",
+        items: ["Landing Pages", "Sitios Corporativos", "Tiendas Online", "Aplicaciones Web (Next.js / React)", "Plataformas SaaS", "Paneles de Administración"],
+      },
+      software: {
+        title: "Desarrollo de Software",
+        description: "Soluciones a medida para las necesidades de tu negocio. Desde MVP en 4 semanas hasta una plataforma empresarial completa — con arquitectura limpia y documentación incluida.",
+        items: ["Custom Software Development", "Sistemas CRM / ERP", "Herramientas Internas de Negocio", "Plataformas para Startups", "Desarrollo de MVP"],
+      },
+      design: {
+        title: "Diseño UI/UX",
+        description: "Diseño intuitivo y orientado a la conversión. Realizamos investigación UX, construimos prototipos y entregamos layouts listos para producción al equipo de desarrollo.",
+        items: ["Investigación UX", "Prototipado en Figma", "Diseño de Interfaces UI", "Design Systems", "Auditoría UX de Productos Existentes"],
       },
       chatbots: {
         title: "Telegram & Chatbots",
-        description: "Un asistente que trabaja 24/7. El bot gestiona pedidos, responde clientes, recopila contactos y hace seguimiento.",
+        description: "Un asistente de ventas que trabaja 24/7. El bot gestiona consultas, califica leads y guía al cliente hasta el pago — tasas de conversión hasta un 30–40% más altas.",
+        items: ["Bots de Ventas", "Generación de Leads", "Integración con CRM", "Escenarios Automatizados", "Integraciones de Pago"],
       },
       automation: {
-        title: "Automatización",
-        description: "Libérate de las tareas repetitivas. Recopilación de datos, informes automáticos, sincronización entre CRM y mensajería.",
+        title: "Automatización Empresarial",
+        description: "Liberamos a tu equipo de la rutina. Parseo, informes automáticos, sincronización de servicios — configurado una vez, funciona permanentemente. Ahorro de hasta 15 horas semanales.",
+        items: ["Extracción y Recopilación de Datos", "Informes Automáticos", "Sincronización de Servicios", "Soluciones Low-code / No-code", "Automatización con IA"],
       },
       integration: {
         title: "API & Integraciones",
-        description: "Todos tus sistemas — un ecosistema. Conectamos Stripe, PayPal, Monobank, CRM y mensajería.",
+        description: "Todos tus sistemas — un ecosistema unificado. Cliente paga → datos en CRM → gestor notificado en Telegram → entrega activada automáticamente. Cero pasos manuales.",
+        items: ["Stripe, PayPal, Monobank", "Sistemas CRM y ERP", "Mensajería y Chatbots", "Herramientas de Marketing", "APIs y Servicios de Terceros"],
+      },
+      support: {
+        title: "Soporte Técnico",
+        description: "No desaparecemos tras el lanzamiento. Mantenemos, optimizamos y desarrollamos tu producto para que permanezca estable, seguro y competitivo.",
+        items: ["Mantenimiento y Soporte Web", "Optimización de Rendimiento (Core Web Vitals)", "Optimización SEO", "Seguridad y Protección", "DevOps y Despliegue"],
       },
     },
     projects: {
@@ -947,19 +1023,38 @@ export const translations = {
       title: "Leistungen",
       web: {
         title: "Webentwicklung",
-        description: "Eine Website, die konvertiert, nicht nur existiert. Landingpage oder komplette Webanwendung mit Next.js: responsive Design, hohe Performance, SEO-Basis und Tracking eingerichtet.",
+        description: "Eine Website, die arbeitet, nicht nur existiert. Von Landingpages bis SaaS-Plattformen — entwickelt mit Next.js, responsivem Design, hoher Ladegeschwindigkeit und eingerichtetem Tracking.",
+        items: ["Landing Pages", "Unternehmenswebsites", "Online-Shops", "Webanwendungen (Next.js / React)", "SaaS-Plattformen", "Admin-Dashboards"],
+      },
+      software: {
+        title: "Softwareentwicklung",
+        description: "Individuelle Lösungen für die Anforderungen Ihres Unternehmens. Vom MVP in 4 Wochen bis zur vollständigen Geschäftsplattform — mit sauberer Architektur und Dokumentation.",
+        items: ["Custom Software Development", "CRM / ERP Systeme", "Interne Geschäftssysteme", "Plattformen für Startups", "MVP-Entwicklung"],
+      },
+      design: {
+        title: "UI/UX Design",
+        description: "Design, das intuitiv bedienbar ist und konvertiert. Wir führen UX-Recherchen durch, erstellen Prototypen und liefern produktionsreife Layouts an das Entwicklungsteam.",
+        items: ["UX-Recherche", "Figma-Prototyping", "UI Interface Design", "Design Systems", "UX-Audit bestehender Produkte"],
       },
       chatbots: {
         title: "Telegram & Chatbots",
-        description: "Ein Assistent, der 24/7 arbeitet. Der Bot beantwortet Anfragen, sammelt Leads und begleitet Bestellungen.",
+        description: "Ein Vertriebsmitarbeiter, der 24/7 arbeitet. Der Bot bearbeitet Anfragen, qualifiziert Leads und begleitet Kunden bis zur Zahlung — Conversion bis zu 30–40% höher.",
+        items: ["Verkaufs-Bots", "Lead-Generierung", "CRM-Integration", "Automatisierte Szenarien", "Zahlungsintegrationen"],
       },
       automation: {
-        title: "Automatisierung",
-        description: "Automatisieren Sie wiederkehrende Aufgaben: Datensammlung, Reports, Integrationen zwischen CRM und Messengern.",
+        title: "Geschäftsautomatisierung",
+        description: "Wir befreien Ihr Team von Routineaufgaben. Datenparsing, automatische Reports, Service-Synchronisation — einmal eingerichtet, läuft dauerhaft. Einsparung von bis zu 15 Stunden pro Woche.",
+        items: ["Daten-Parsing & -Erfassung", "Automatische Reports", "Service-Synchronisation", "Low-code / No-code Lösungen", "KI-Automatisierung"],
       },
       integration: {
         title: "API & Integrationen",
-        description: "Alle Ihre Systeme als ein Ökosystem. Wir verbinden Stripe, PayPal, Monobank, CRMs und Messenger.",
+        description: "Alle Ihre Systeme — ein nahtloses Ökosystem. Kunde zahlt → Daten in CRM → Manager in Telegram benachrichtigt → Fulfillment automatisch ausgelöst. Kein manueller Schritt.",
+        items: ["Stripe, PayPal, Monobank", "CRM & ERP Systeme", "Messenger & Chatbots", "Marketing-Tools", "Drittanbieter-APIs & Services"],
+      },
+      support: {
+        title: "Technischer Support",
+        description: "Wir verschwinden nicht nach dem Launch. Wir warten, optimieren und entwickeln Ihr Produkt weiter — damit es stabil, sicher und wettbewerbsfähig bleibt.",
+        items: ["Website-Wartung & Support", "Performance-Optimierung (Core Web Vitals)", "SEO-Optimierung", "Sicherheit & Schutz", "DevOps & Deployment"],
       },
     },
     projects: {
