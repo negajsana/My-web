@@ -17,9 +17,49 @@ interface JsonLdProps {
   page: "home" | "about" | "services" | "contact" | "howWeWork" | "projects"
 }
 
+// Breadcrumb page names per language — kept in sync with nav translations
+const pageName: Record<string, Record<Language, string>> = {
+  about: {
+    uk: "Про нас",
+    ru: "О нас",
+    en: "About Us",
+    es: "Sobre Nosotros",
+    de: "Über uns",
+  },
+  services: {
+    uk: "Послуги",
+    ru: "Услуги",
+    en: "Services",
+    es: "Servicios",
+    de: "Leistungen",
+  },
+  contact: {
+    uk: "Контакти",
+    ru: "Контакты",
+    en: "Contact",
+    es: "Contacto",
+    de: "Kontakt",
+  },
+  "how-we-work": {
+    uk: "Як ми працюємо",
+    ru: "Как мы работаем",
+    en: "How We Work",
+    es: "Cómo trabajamos",
+    de: "Wie wir arbeiten",
+  },
+  projects: {
+    uk: "Портфоліо",
+    ru: "Портфолио",
+    en: "Portfolio",
+    es: "Portafolio",
+    de: "Portfolio",
+  },
+}
+
 export function JsonLd({ lang, page }: JsonLdProps) {
   const schemas = []
 
+  // Always include base schemas
   schemas.push(generateOrganizationSchema(lang))
   schemas.push(generateWebsiteSchema(lang))
 
@@ -28,91 +68,36 @@ export function JsonLd({ lang, page }: JsonLdProps) {
       schemas.push(generatePersonSchema(lang))
       schemas.push(generateFAQSchema(lang))
       break
+
     case "about":
       schemas.push(generatePersonSchema(lang))
       schemas.push(
-        generateBreadcrumbSchema(
-          lang,
-          "about",
-          lang === "uk"
-            ? "Про мене"
-            : lang === "ru"
-              ? "Обо мне"
-              : lang === "es"
-                ? "Sobre mí"
-                : lang === "de"
-                  ? "Über mich"
-                  : "About"
-        )
+        generateBreadcrumbSchema(lang, "about", pageName.about[lang])
       )
       break
+
     case "services":
       schemas.push(generateServicesSchema(lang))
       schemas.push(
-        generateBreadcrumbSchema(
-          lang,
-          "services",
-          lang === "uk"
-            ? "Послуги"
-            : lang === "ru"
-              ? "Услуги"
-              : lang === "es"
-                ? "Servicios"
-                : lang === "de"
-                  ? "Leistungen"
-                  : "Services"
-        )
+        generateBreadcrumbSchema(lang, "services", pageName.services[lang])
       )
       break
+
     case "contact":
       schemas.push(
-        generateBreadcrumbSchema(
-          lang,
-          "contact",
-          lang === "uk"
-            ? "Контакти"
-            : lang === "ru"
-              ? "Контакты"
-              : lang === "es"
-                ? "Contacto"
-                : lang === "de"
-                  ? "Kontakt"
-                  : "Contact"
-        )
+        generateBreadcrumbSchema(lang, "contact", pageName.contact[lang])
       )
       break
+
     case "howWeWork":
       schemas.push(
-        generateBreadcrumbSchema(
-          lang,
-          "how-we-work",
-          lang === "uk"
-            ? "Як ми працюємо"
-            : lang === "ru"
-              ? "Как мы работаем"
-              : lang === "es"
-                ? "Cómo trabajamos"
-                : lang === "de"
-                  ? "Wie wir arbeiten"
-                  : "How We Work"
-        )
+        generateBreadcrumbSchema(lang, "how-we-work", pageName["how-we-work"][lang])
       )
       break
+
     case "projects":
       schemas.push(
-        generateBreadcrumbSchema(
-          lang,
-          "projects",
-          lang === "uk"
-            ? "Портфоліо"
-            : lang === "ru"
-              ? "Портфолио"
-              : lang === "es"
-                ? "Portafolio"
-                : lang === "de"
-                  ? "Portfolio"
-                  : "Portfolio"
-        )
+        generateBreadcrumbSchema(lang, "projects", pageName.projects[lang])
       )
       break
   }
