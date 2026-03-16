@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { LanguageSelectScreen } from "@/components/language-select-screen"
+import Script from "next/script"
 import "./globals.css"
 
 /*
@@ -96,6 +97,20 @@ export default function RootLayout({
         <LanguageSelectScreen />
         {children}
         <Analytics />
+
+        {/* Google Ads Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-340195571"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-340195571');
+          `}
+        </Script>
       </body>
     </html>
   )
