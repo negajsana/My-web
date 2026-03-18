@@ -70,6 +70,10 @@ export function generatePageMetadata(
     title: seo.title,
     description: seo.description,
     keywords: getKeywords(lang, page),
+    icons: {
+      icon: [{ url: "/favicon.png", sizes: "32x32", type: "image/png" }],
+      apple: { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+    },
     authors: [
       { name: "Alexander", url: SITE_URL },
       { name: "Code Architect", url: SITE_URL },
