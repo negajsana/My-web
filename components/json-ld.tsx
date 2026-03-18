@@ -9,6 +9,7 @@ import {
   generateFAQSchema,
   generateBreadcrumbSchema,
   generateWebsiteSchema,
+  generatePortfolioSchema,
 } from "@/lib/seo"
 import type { Language } from "@/lib/translations"
 
@@ -17,7 +18,7 @@ interface JsonLdProps {
   page: "home" | "about" | "services" | "contact" | "howWeWork" | "projects"
 }
 
-// Breadcrumb page names per language — kept in sync with nav translations
+// Breadcrumb page names per language
 const pageName: Record<string, Record<Language, string>> = {
   about: {
     uk: "Про нас",
@@ -57,19 +58,21 @@ const pageName: Record<string, Record<Language, string>> = {
 }
 
 export function JsonLd({ lang, page }: JsonLdProps) {
-  const schemas = []
+  const schemas: object[] = []
 
-  // Always include base schemas
+  // Always include base schemas on every page
   schemas.push(generateOrganizationSchema(lang))
   schemas.push(generateWebsiteSchema(lang))
 
   switch (page) {
     case "home":
+      // Home: person (E-E-A-T signal) + FAQ (SERP rich result opportunity)
       schemas.push(generatePersonSchema(lang))
       schemas.push(generateFAQSchema(lang))
       break
 
     case "about":
+      // About: person schema for E-E-A-T + breadcrumb
       schemas.push(generatePersonSchema(lang))
       schemas.push(
         generateBreadcrumbSchema(lang, "about", pageName.about[lang])
@@ -77,6 +80,7 @@ export function JsonLd({ lang, page }: JsonLdProps) {
       break
 
     case "services":
+      // Services: full service list schema + breadcrumb
       schemas.push(generateServicesSchema(lang))
       schemas.push(
         generateBreadcrumbSchema(lang, "services", pageName.services[lang])
@@ -84,6 +88,7 @@ export function JsonLd({ lang, page }: JsonLdProps) {
       break
 
     case "contact":
+      // Contact: breadcrumb only (org schema already covers contactPoint)
       schemas.push(
         generateBreadcrumbSchema(lang, "contact", pageName.contact[lang])
       )
@@ -96,6 +101,8 @@ export function JsonLd({ lang, page }: JsonLdProps) {
       break
 
     case "projects":
+      // Projects: portfolio ItemList schema for rich results + breadcrumb
+      schemas.push(generatePortfolioSchema(lang))
       schemas.push(
         generateBreadcrumbSchema(lang, "projects", pageName.projects[lang])
       )
