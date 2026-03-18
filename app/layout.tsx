@@ -46,25 +46,13 @@ export const metadata: Metadata = {
   title: "Code Architect | Web Developer & Chatbot Engineer",
   description:
     "Professional web development, chatbots, and digital solutions. Building modern, functional, and visually compelling projects.",
-  generator: "v0.app",
   robots: "index, follow",
   icons: {
     icon: [
       {
         url: "/favicon.png",
-        media: "(prefers-color-scheme: light)",
         sizes: "32x32",
         type: "image/png",
-      },
-      {
-        url: "/favicon.png",
-        media: "(prefers-color-scheme: dark)",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "/favicon.png",
-        type: "image/svg+xml",
       },
     ],
     apple: {
