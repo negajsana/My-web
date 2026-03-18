@@ -1,18 +1,24 @@
 import type { Metadata } from "next"
 import { translations, type Language } from "./translations"
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // Company: Code Architect
 // Domains: https://codearchitect.site | https://dvl.yachts
 // Lead Developer: Alexander
 // Geography: Ukraine, Europe, International
-// ─────────────────────────────────────────────
+// Active languages with deployed routes: en, uk, ru
+// Defined but not yet routed: es, de (hreflang excluded until routes exist)
+// ─────────────────────────────────────────────────────────────────────────────
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://codearchitect.site"
 
-// ─────────────────────────────────────────────
+// Languages that have actual deployed routes.
+// Add "es" | "de" here only after you create app/[lang]/*/page.tsx for them.
+const ACTIVE_LANGUAGES: Language[] = ["en", "uk", "ru"]
+
+// ─────────────────────────────────────────────────────────────────────────────
 // PAGE METADATA
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 
 export function generatePageMetadata(
   lang: Language,
@@ -21,59 +27,53 @@ export function generatePageMetadata(
   const t = translations[lang]
   const seo = t.seo[page]
 
-  const langCode =
-    lang === "uk"
-      ? "uk-UA"
-      : lang === "en"
-        ? "en-US"
-        : lang === "ru"
-          ? "ru-RU"
-          : lang === "es"
-            ? "es-ES"
-            : "de-DE"
+  const langToLocale: Record<Language, string> = {
+    uk: "uk_UA",
+    en: "en_US",
+    ru: "ru_RU",
+    es: "es_ES",
+    de: "de_DE",
+  }
+  const langCode = langToLocale[lang]
 
   const pagePath =
     page === "home" ? "" : `/${page === "howWeWork" ? "how-we-work" : page}`
 
   const canonicalUrl = `${SITE_URL}/${lang}${pagePath}`
 
-  const alternateLanguages: Record<string, string> = {
-    uk: `${SITE_URL}/uk${pagePath}`,
-    en: `${SITE_URL}/en${pagePath}`,
-    ru: `${SITE_URL}/ru${pagePath}`,
-    es: `${SITE_URL}/es${pagePath}`,
-    de: `${SITE_URL}/de${pagePath}`,
-    "x-default": `${SITE_URL}/en${pagePath}`,
+  // Only include hreflang for languages with actual deployed routes.
+  // Hreflang pointing to 404s is a GSC error and wastes crawl budget.
+  const alternateLanguages: Record<string, string> = {}
+  for (const l of ACTIVE_LANGUAGES) {
+    alternateLanguages[l] = `${SITE_URL}/${l}${pagePath}`
+  }
+  // x-default always points to English
+  alternateLanguages["x-default"] = `${SITE_URL}/en${pagePath}`
+
+  const ogSiteName: Record<Language, string> = {
+    uk: "Code Architect — Веб-розробка та розробка ПЗ",
+    ru: "Code Architect — Веб-разработка и разработка ПО",
+    es: "Code Architect — Desarrollo Web y Software",
+    de: "Code Architect — Webentwicklung & Softwareentwicklung",
+    en: "Code Architect — Web & Software Development",
   }
 
-  // OG site name per language
-  const ogSiteName =
-    lang === "uk"
-      ? "Code Architect — Веб-розробка та розробка ПЗ"
-      : lang === "ru"
-        ? "Code Architect — Веб-разработка и разработка ПО"
-        : lang === "es"
-          ? "Code Architect — Desarrollo Web y Software"
-          : lang === "de"
-            ? "Code Architect — Webentwicklung & Softwareentwicklung"
-            : "Code Architect — Web & Software Development"
-
-  // OG image (shared across all pages)
   const ogImage = {
     url: `${SITE_URL}/og-image.jpg`,
     width: 1200,
     height: 630,
-    alt: ogSiteName,
+    alt: ogSiteName[lang],
+    type: "image/jpeg",
   }
+
+  // Build alternateLocale list for OG (exclude current)
+  const allLocales = Object.values(langToLocale)
+  const alternateLocales = allLocales.filter((l) => l !== langCode) as string[]
 
   return {
     title: seo.title,
     description: seo.description,
     keywords: getKeywords(lang, page),
-    icons: {
-      icon: [{ url: "/favicon.png", sizes: "32x32", type: "image/png" }],
-      apple: { url: "/favicon.png", sizes: "180x180", type: "image/png" },
-    },
     authors: [
       { name: "Alexander", url: SITE_URL },
       { name: "Code Architect", url: SITE_URL },
@@ -81,6 +81,10 @@ export function generatePageMetadata(
     creator: "Code Architect",
     publisher: "Code Architect",
     category: "technology",
+    icons: {
+      icon: [{ url: "/favicon.png", sizes: "32x32", type: "image/png" }],
+      apple: { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+    },
     robots: {
       index: true,
       follow: true,
@@ -100,12 +104,10 @@ export function generatePageMetadata(
       title: seo.title,
       description: seo.description,
       url: canonicalUrl,
-      siteName: ogSiteName,
+      siteName: ogSiteName[lang],
       locale: langCode,
       type: "website",
-      alternateLocale: ["uk-UA", "en-US", "ru-RU", "es-ES", "de-DE"].filter(
-        (l) => l !== langCode
-      ),
+      alternateLocale: alternateLocales,
       images: [ogImage],
     },
     twitter: {
@@ -119,27 +121,17 @@ export function generatePageMetadata(
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
     },
-    other: {
-      // Geographic targeting — Ukraine + Europe
-      "geo.region": "UA",
-      "geo.placename": "Ukraine",
-      // Business type signal for Google
-      "og:type": "website",
-      // Additional domains signal
-      "al:web:url": SITE_URL,
-    },
+    // NOTE: geo.* meta tags are legacy and have no confirmed ranking impact.
+    // Removed to reduce HTML bloat. Geo targeting is handled via hreflang + GSC.
   }
 }
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // KEYWORDS — per language, per page
-// Full coverage: UA / EN / RU / ES / DE
-// B2B commercial intent, international market
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 
 function getKeywords(lang: Language, page: string): string[] {
   const keywords: Record<Language, Record<string, string[]>> = {
-    // ── UKRAINIAN ────────────────────────────
     uk: {
       home: [
         "розробка сайтів Україна",
@@ -216,7 +208,6 @@ function getKeywords(lang: Language, page: string): string[] {
       ],
     },
 
-    // ── ENGLISH ──────────────────────────────
     en: {
       home: [
         "web development company Europe",
@@ -294,7 +285,6 @@ function getKeywords(lang: Language, page: string): string[] {
       ],
     },
 
-    // ── RUSSIAN ───────────────────────────────
     ru: {
       home: [
         "разработка сайтов",
@@ -362,7 +352,6 @@ function getKeywords(lang: Language, page: string): string[] {
       ],
     },
 
-    // ── SPANISH ───────────────────────────────
     es: {
       home: [
         "empresa de desarrollo web Europa",
@@ -431,7 +420,6 @@ function getKeywords(lang: Language, page: string): string[] {
       ],
     },
 
-    // ── GERMAN ────────────────────────────────
     de: {
       home: [
         "Webentwicklung Unternehmen Europa",
@@ -450,7 +438,7 @@ function getKeywords(lang: Language, page: string): string[] {
         "UI UX Design Agentur",
         "API Integration",
         "Webagentur Europa",
-        "Software Entwicklung Deutschland",
+        "Software Entwicklung",
         "Webentwicklung Ukraine",
         "Code Architect",
       ],
@@ -509,12 +497,29 @@ function getKeywords(lang: Language, page: string): string[] {
   return keywords[lang]?.[page] || []
 }
 
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // STRUCTURED DATA — JSON-LD SCHEMAS
-// ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 
 export function generateOrganizationSchema(lang: Language) {
   const description = translations[lang].seo.home.description
+
+  const jobTitles = {
+    alexander: {
+      uk: "Головний розробник / Project Manager",
+      ru: "Главный разработчик / Project Manager",
+      es: "Desarrollador principal / Project Manager",
+      de: "Hauptentwickler / Project Manager",
+      en: "Lead Developer / Project Manager",
+    },
+    evgeny: {
+      uk: "SEO-спеціаліст / Маркетолог",
+      ru: "SEO-специалист / Маркетолог",
+      es: "Especialista SEO / Marketing Strategist",
+      de: "SEO-Spezialist / Marketing-Stratege",
+      en: "SEO Specialist / Marketing Strategist",
+    },
+  }
 
   return {
     "@context": "https://schema.org",
@@ -530,7 +535,6 @@ export function generateOrganizationSchema(lang: Language) {
     },
     image: `${SITE_URL}/og-image.jpg`,
     description,
-    // Services offered
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web & Software Development Services",
@@ -545,46 +549,30 @@ export function generateOrganizationSchema(lang: Language) {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Technical Support" } },
       ],
     },
-    // Team
     employee: [
       {
         "@type": "Person",
         name: "Alexander",
-        jobTitle:
-          lang === "uk"
-            ? "Головний розробник / Project Manager"
-            : lang === "ru"
-              ? "Главный разработчик / Project Manager"
-              : lang === "es"
-                ? "Desarrollador principal / Project Manager"
-                : lang === "de"
-                  ? "Hauptentwickler / Project Manager"
-                  : "Lead Developer / Project Manager",
+        jobTitle: jobTitles.alexander[lang],
+        image: `${SITE_URL}/Alexander.jpg`,
       },
       {
         "@type": "Person",
         name: "Evgeny",
-        jobTitle:
-          lang === "uk"
-            ? "SEO-спеціаліст / Маркетолог"
-            : lang === "ru"
-              ? "SEO-специалист / Маркетолог"
-              : lang === "es"
-                ? "Especialista SEO / Marketing Strategist"
-                : lang === "de"
-                  ? "SEO-Spezialist / Marketing-Stratege"
-                  : "SEO Specialist / Marketing Strategist",
+        jobTitle: jobTitles.evgeny[lang],
+        image: `${SITE_URL}/Evgeny.jpg`,
       },
       {
         "@type": "Person",
         name: "Egor",
         jobTitle: "Junior Fullstack Developer",
+        image: `${SITE_URL}/Egor.jpg`,
       },
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      availableLanguage: ["Ukrainian", "English", "Russian", "Spanish", "German"],
+      availableLanguage: ["Ukrainian", "English", "Russian"],
       url: `${SITE_URL}/${lang}/contact`,
     },
     sameAs: [
@@ -606,26 +594,25 @@ export function generateOrganizationSchema(lang: Language) {
 }
 
 export function generatePersonSchema(lang: Language) {
-  const jobTitle =
-    lang === "uk"
-      ? "Головний розробник — Code Architect"
-      : lang === "ru"
-        ? "Главный разработчик — Code Architect"
-        : lang === "es"
-          ? "Desarrollador principal — Code Architect"
-          : lang === "de"
-            ? "Hauptentwickler — Code Architect"
-            : "Lead Developer — Code Architect"
+  const jobTitle: Record<Language, string> = {
+    uk: "Головний розробник — Code Architect",
+    ru: "Главный разработчик — Code Architect",
+    es: "Desarrollador principal — Code Architect",
+    de: "Hauptentwickler — Code Architect",
+    en: "Lead Developer — Code Architect",
+  }
 
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${SITE_URL}/#lead-developer`,
     name: "Alexander",
-    jobTitle,
+    jobTitle: jobTitle[lang],
     url: SITE_URL,
+    image: `${SITE_URL}/Alexander.jpg`,
     worksFor: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "Code Architect",
       url: SITE_URL,
     },
@@ -661,19 +648,42 @@ export function generateServicesSchema(lang: Language) {
     { "@type": "Continent", name: "Europe" },
   ]
 
+  const listName: Record<Language, string> = {
+    uk: "Послуги веб-розробки та автоматизації",
+    ru: "Услуги веб-разработки и автоматизации",
+    es: "Servicios de Desarrollo Web y Automatización",
+    de: "Webentwicklung & Automatisierungsleistungen",
+    en: "Web Development & Automation Services",
+  }
+
+  const softwareName: Record<Language, string> = {
+    uk: "Розробка програмного забезпечення",
+    ru: "Разработка программного обеспечения",
+    es: "Desarrollo de Software a Medida",
+    de: "Individuelle Softwareentwicklung",
+    en: "Custom Software Development",
+  }
+
+  const uiuxName: Record<Language, string> = {
+    uk: "UI/UX Дизайн",
+    ru: "UI/UX Дизайн",
+    es: "Diseño UI/UX",
+    de: "UI/UX Design",
+    en: "UI/UX Design",
+  }
+
+  const saasName: Record<Language, string> = {
+    uk: "SaaS Розробка",
+    ru: "SaaS Разработка",
+    es: "Desarrollo SaaS",
+    de: "SaaS Entwicklung",
+    en: "SaaS Development",
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name:
-      lang === "uk"
-        ? "Послуги веб-розробки та автоматизації"
-        : lang === "ru"
-          ? "Услуги веб-разработки и автоматизации"
-          : lang === "es"
-            ? "Servicios de Desarrollo Web y Automatización"
-            : lang === "de"
-              ? "Webentwicklung & Automatisierungsleistungen"
-              : "Web Development & Automation Services",
+    name: listName[lang],
     itemListElement: [
       {
         "@type": "ListItem",
@@ -727,18 +737,12 @@ export function generateServicesSchema(lang: Language) {
           url: `${SITE_URL}/${lang}/services`,
         },
       },
-      // Additional services (schema-only, no separate page yet)
       {
         "@type": "ListItem",
         position: 5,
         item: {
           "@type": "Service",
-          name:
-            lang === "uk" ? "Розробка програмного забезпечення"
-            : lang === "ru" ? "Разработка программного обеспечения"
-            : lang === "es" ? "Desarrollo de Software a Medida"
-            : lang === "de" ? "Individuelle Softwareentwicklung"
-            : "Custom Software Development",
+          name: softwareName[lang],
           provider,
           areaServed,
           serviceType: "Software Development",
@@ -750,11 +754,7 @@ export function generateServicesSchema(lang: Language) {
         position: 6,
         item: {
           "@type": "Service",
-          name:
-            lang === "uk" ? "UI/UX Дизайн"
-            : lang === "ru" ? "UI/UX Дизайн"
-            : lang === "de" ? "UI/UX Design"
-            : "UI/UX Design",
+          name: uiuxName[lang],
           provider,
           areaServed,
           serviceType: "UI/UX Design",
@@ -766,12 +766,7 @@ export function generateServicesSchema(lang: Language) {
         position: 7,
         item: {
           "@type": "Service",
-          name:
-            lang === "uk" ? "SaaS Розробка"
-            : lang === "ru" ? "SaaS Разработка"
-            : lang === "de" ? "SaaS Entwicklung"
-            : lang === "es" ? "Desarrollo SaaS"
-            : "SaaS Development",
+          name: saasName[lang],
           provider,
           areaServed,
           serviceType: "SaaS Development",
@@ -800,22 +795,19 @@ export function generateFAQSchema(lang: Language) {
 }
 
 export function generateBreadcrumbSchema(lang: Language, page: string, pageName: string) {
-  const homeName =
-    lang === "uk"
-      ? "Головна"
-      : lang === "ru"
-        ? "Главная"
-        : lang === "es"
-          ? "Inicio"
-          : lang === "de"
-            ? "Startseite"
-            : "Home"
+  const homeName: Record<Language, string> = {
+    uk: "Головна",
+    ru: "Главная",
+    es: "Inicio",
+    de: "Startseite",
+    en: "Home",
+  }
 
   const items = [
     {
       "@type": "ListItem",
       position: 1,
-      name: homeName,
+      name: homeName[lang],
       item: `${SITE_URL}/${lang}`,
     },
   ]
@@ -837,42 +829,75 @@ export function generateBreadcrumbSchema(lang: Language, page: string, pageName:
 }
 
 export function generateWebsiteSchema(lang: Language) {
-  const name =
-    lang === "uk"
-      ? "Code Architect — Веб-розробка та розробка ПЗ"
-      : lang === "ru"
-        ? "Code Architect — Веб-разработка и разработка ПО"
-        : lang === "es"
-          ? "Code Architect — Desarrollo Web y Software"
-          : lang === "de"
-            ? "Code Architect — Webentwicklung & Softwareentwicklung"
-            : "Code Architect — Web & Software Development"
+  const name: Record<Language, string> = {
+    uk: "Code Architect — Веб-розробка та розробка ПЗ",
+    ru: "Code Architect — Веб-разработка и разработка ПО",
+    es: "Code Architect — Desarrollo Web y Software",
+    de: "Code Architect — Webentwicklung & Softwareentwicklung",
+    en: "Code Architect — Web & Software Development",
+  }
 
-  const inLanguage =
-    lang === "uk" ? "uk-UA"
-    : lang === "ru" ? "ru-RU"
-    : lang === "es" ? "es-ES"
-    : lang === "de" ? "de-DE"
-    : "en-US"
+  const inLanguage: Record<Language, string> = {
+    uk: "uk-UA",
+    ru: "ru-RU",
+    es: "es-ES",
+    de: "de-DE",
+    en: "en-US",
+  }
 
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    name,
+    name: name[lang],
     url: SITE_URL,
-    inLanguage,
+    inLanguage: inLanguage[lang],
     publisher: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+    // NOTE: SearchAction removed — /search?q= route does not exist.
+    // A SearchAction pointing to a non-existent URL is invalid schema
+    // and will produce GSC errors. Add back only when search is implemented.
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PORTFOLIO SCHEMA — for projects page
+// ─────────────────────────────────────────────────────────────────────────────
+export function generatePortfolioSchema(lang: Language) {
+  const t = translations[lang]
+  const projects = [
+    { key: "advokats", image: "project-law.jpg" },
+    { key: "oratorica", image: "project-education.jpg" },
+    { key: "luerssen", image: "project-luerssen.jpg" },
+    { key: "isarAerospace", image: "project-isar-aerospace.jpg" },
+    { key: "providentLaw", image: "project-provident-law.jpg" },
+    { key: "rcnb", image: "project-rcnb.jpg" },
+  ] as const
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name:
+      lang === "uk" ? "Портфоліо — реалізовані проєкти"
+      : lang === "ru" ? "Портфолио — реализованные проекты"
+      : lang === "de" ? "Portfolio — realisierte Projekte"
+      : lang === "es" ? "Portafolio — proyectos realizados"
+      : "Portfolio — Delivered Projects",
+    itemListElement: projects.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "CreativeWork",
+        name: t.projects[p.key].title,
+        description: t.projects[p.key].description,
+        image: `${SITE_URL}/${p.image}`,
+        creator: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}/#organization`,
+        },
       },
-      "query-input": "required name=search_term_string",
-    },
+    })),
   }
 }
