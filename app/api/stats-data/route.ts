@@ -2,8 +2,6 @@ import { NextResponse } from "next/server"
 import { cookies } from "next/headers"
 import { neon } from "@neondatabase/serverless"
 
-const sql = neon(process.env.POSTGRES_URL!)
-
 const COOKIE_NAME = "stats_auth"
 const COOKIE_VALUE = "granted"
 
@@ -17,6 +15,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
+  const sql = neon(process.env.POSTGRES_URL!)
   const { searchParams } = new URL(request.url)
   const mode = searchParams.get("mode") || "overview"
   const date = searchParams.get("date")
