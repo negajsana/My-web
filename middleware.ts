@@ -1,20 +1,17 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
-// Страницы которые трекаем (без учёта языка)
 const TRACKED_SLUGS = ["/", "/about", "/contact", "/how-we-work", "/projects", "/services"]
-
-// Языки сайта
 const LANGS = ["en", "uk", "ru"]
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Не трекаем: статику, API, страницу статистики
+  // Не трогаем страницу статистики и API
   if (
+    pathname.startsWith("/stats-") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
-    pathname.startsWith("/stats-") ||
     pathname.includes(".")
   ) {
     return NextResponse.next()
@@ -32,7 +29,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Отправляем трекинг асинхронно через API (не блокируем запрос)
+  // Отправляем трекинг асинхронно
   const trackUrl = new URL("/api/track", request.url)
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
@@ -48,7 +45,7 @@ export function middleware(request: NextRequest) {
       userAgent: request.headers.get("user-agent") || "",
       referrer: request.headers.get("referer") || "",
     }),
-  }).catch(() => {}) // молча игнорируем ошибки трекинга
+  }).catch(() => {})
 
   return NextResponse.next()
 }
