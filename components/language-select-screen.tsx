@@ -15,10 +15,6 @@ const languages = [
 
 const supportedCodes = languages.map((l) => l.code)
 
-/**
- * Maps browser locale (e.g. "ru-RU", "de", "uk-UA") to a supported lang code.
- * Returns null if no match found -> manual picker is shown.
- */
 function detectBrowserLang(): string | null {
   if (typeof navigator === "undefined") return null
 
@@ -30,10 +26,8 @@ function detectBrowserLang(): string | null {
   for (const locale of preferred) {
     const base = locale.toLowerCase().split("-")[0]
 
-    // Direct match
     if (supportedCodes.includes(base)) return base
 
-    // Fallback mappings
     if (["be", "kk", "ky"].includes(base)) return "ru"
     if (["ca", "gl", "pt"].includes(base)) return "es"
     if (["fr", "it", "nl", "pl", "cs", "sv", "da", "fi", "no"].includes(base)) return "en"
@@ -49,6 +43,9 @@ export function LanguageSelectScreen() {
   const pathname = usePathname()
 
   useEffect(() => {
+    // Не трогаем служебные страницы
+    if (pathname.startsWith("/stats-")) return
+
     // 1. Previously saved choice -> redirect silently, no screen shown
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
@@ -76,7 +73,7 @@ export function LanguageSelectScreen() {
 
   function applyLang(code: string, animate: boolean) {
     const currentLang = pathname.split("/")[1]
-    if (currentLang === code) return // already on correct page
+    if (currentLang === code) return
 
     if (animate) {
       setLeaving(true)
@@ -103,7 +100,6 @@ export function LanguageSelectScreen() {
     applyLang(code, true)
   }
 
-  // Nothing to render until we know if picker is needed
   if (!showPicker) return null
 
   return (
@@ -113,7 +109,6 @@ export function LanguageSelectScreen() {
       }`}
       style={{ transition: "opacity 0.38s ease, transform 0.38s ease" }}
     >
-      {/* Background texture */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-surface/20 to-background" />
         <div
@@ -126,7 +121,6 @@ export function LanguageSelectScreen() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center gap-12 px-6">
-        {/* Logo */}
         <div className="flex items-center gap-1">
           <span className="text-2xl font-serif tracking-wide text-foreground">
             Code Architect
