@@ -40,19 +40,22 @@ export default async function ProjectsPage({ params }: PageProps) {
       <Navigation t={t} lang={lang} />
       <main className="pt-32 pb-24">
         <section className="container mx-auto px-6 lg:px-12 max-w-6xl">
-          <header className="mb-16 text-center">
+          <header className="mb-20 text-center">
             <span className="text-xs uppercase tracking-[0.4em] text-primary mb-4 block">
               {t.portfolioPage.title}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground text-balance">
               {t.seo.projects.h1}
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {t.portfolioPage.subtitle}
             </p>
-            <p className="mt-3 text-sm uppercase tracking-[0.2em] text-primary/80">
-              {t.portfolioPage.trustStatement}
-            </p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2">
+              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+              <p className="text-sm uppercase tracking-[0.15em] text-primary font-medium">
+                {t.portfolioPage.trustStatement}
+              </p>
+            </div>
           </header>
 
           <section>
@@ -72,16 +75,22 @@ export default async function ProjectsPage({ params }: PageProps) {
             </div>
           </section>
 
-          <section className="mt-20 rounded-3xl border border-border/60 bg-gradient-to-br from-surface/60 to-background p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-              {t.portfolioPage.ctaTitle}
-            </h2>
-            <Link
-              href={`/${lang}/contact`}
-              className="inline-flex items-center px-8 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-[0.2em] font-semibold hover:opacity-90 transition-opacity"
-            >
-              {t.portfolioPage.ctaButton}
-            </Link>
+          <section className="mt-24 rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-surface/40 to-background p-10 md:p-14 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(38_55%_55%/0.08),transparent_50%)]" />
+            <div className="relative">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-4 text-balance">
+                {t.portfolioPage.ctaTitle}
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                {t.contact.letsTalk}
+              </p>
+              <Link
+                href={`/${lang}/contact`}
+                className="inline-flex items-center px-10 py-4 bg-primary text-primary-foreground text-sm uppercase tracking-[0.2em] font-bold rounded-xl hover:opacity-90 transition-all duration-300 hover:scale-[1.02] shadow-[0_14px_30px_-12px_hsl(38_55%_55%/0.5)]"
+              >
+                {t.portfolioPage.ctaButton}
+              </Link>
+            </div>
           </section>
         </section>
       </main>

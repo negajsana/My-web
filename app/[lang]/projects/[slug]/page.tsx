@@ -116,7 +116,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href={`/${lang}/contact`}
-                className="inline-flex items-center justify-center px-8 md:px-10 py-4 bg-primary text-primary-foreground text-sm md:text-base uppercase tracking-[0.2em] font-bold rounded-xl hover:opacity-90 transition-all duration-300 hover:scale-[1.02] shadow-[0_14px_30px_-12px_rgba(107,72,255,0.75)]"
+                className="inline-flex items-center justify-center px-8 md:px-10 py-4 bg-primary text-primary-foreground text-sm md:text-base uppercase tracking-[0.2em] font-bold rounded-xl hover:opacity-90 transition-all duration-300 hover:scale-[1.02] shadow-[0_14px_30px_-12px_hsl(38_55%_55%/0.65)]"
               >
                 {t.caseStudyPage.primaryCtaButton}
               </Link>
