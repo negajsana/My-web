@@ -6,7 +6,7 @@ import { translations, type Language } from "@/lib/translations"
 import { generatePageMetadata } from "@/lib/seo"
 import { redirect } from "next/navigation"
 import { ProjectCard } from "@/components/projects-section"
-import { getCaseStudies } from "@/lib/case-studies"
+import { getCaseStudies } from "@/lib/caseStudies"
 import Link from "next/link"
 
 interface PageProps {
