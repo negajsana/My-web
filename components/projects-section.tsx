@@ -44,7 +44,7 @@ export function ProjectCard({
     >
       <Link
         href={href}
-        className="block rounded-3xl border border-border/60 bg-card/70 p-5 md:p-6 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.015] hover:border-primary/50 hover:shadow-[0_18px_40px_-18px_rgba(107,72,255,0.55)]"
+        className="block rounded-3xl border border-border/60 bg-card/70 p-5 md:p-6 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.015] hover:border-primary/50 hover:shadow-[0_18px_40px_-18px_hsl(38_55%_55%/0.55)]"
       >
         <p className="text-5xl md:text-6xl font-black text-primary leading-none tracking-tight mb-5">{metric}</p>
 
