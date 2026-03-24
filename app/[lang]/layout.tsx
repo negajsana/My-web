@@ -14,9 +14,8 @@ export function generateStaticParams() {
     { lang: "en" },
     { lang: "uk" },
     { lang: "ru" },
-    // Uncomment when /es and /de pages are ready:
-    // { lang: "es" },
-    // { lang: "de" },
+    { lang: "es" },
+    { lang: "de" },
   ]
 }
 
