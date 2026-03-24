@@ -6,6 +6,8 @@ import { translations, type Language } from "@/lib/translations"
 import { generatePageMetadata } from "@/lib/seo"
 import { redirect } from "next/navigation"
 import { ProjectCard } from "@/components/projects-section"
+import { getCaseStudies } from "@/lib/case-studies"
+import Link from "next/link"
 
 interface PageProps {
   params: Promise<{ lang: string }>
@@ -30,44 +32,7 @@ export default async function ProjectsPage({ params }: PageProps) {
 
   const t = translations[lang]
 
-  const projects = [
-    {
-      title: t.projects.advokats.title,
-      description: t.projects.advokats.description,
-      url: "https://www.advokats24.com.ua/",
-      image: "/project-law.jpg",
-    },
-    {
-      title: t.projects.oratorica.title,
-      description: t.projects.oratorica.description,
-      url: "https://www.oratorica.ua/",
-      image: "/project-education.jpg",
-    },
-    {
-      title: t.projects.luerssen.title,
-      description: t.projects.luerssen.description,
-      url: "https://www.lurssen.com/",
-      image: "/project-luerssen.jpg",
-    },
-    {
-      title: t.projects.isarAerospace.title,
-      description: t.projects.isarAerospace.description,
-      url: "https://isaraerospace.com/",
-      image: "/project-isar-aerospace.jpg",
-    },
-    {
-      title: t.projects.providentLaw.title,
-      description: t.projects.providentLaw.description,
-      url: "https://providentlawllp.ca",
-      image: "/project-provident-law.jpg",
-    },
-    {
-      title: t.projects.rcnb.title,
-      description: t.projects.rcnb.description,
-      url: "https://www.rcnb.com/en/",
-      image: "/project-rcnb.jpg",
-    },
-  ]
+  const projects = getCaseStudies(lang)
 
   return (
     <div className="min-h-screen">
@@ -82,22 +47,41 @@ export default async function ProjectsPage({ params }: PageProps) {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground text-balance">
               {t.seo.projects.h1}
             </h1>
+            <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+              {t.portfolioPage.subtitle}
+            </p>
+            <p className="mt-3 text-sm uppercase tracking-[0.2em] text-primary/80">
+              {t.portfolioPage.trustStatement}
+            </p>
           </header>
 
           <section>
             <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
               {projects.map((project, index) => (
                 <ProjectCard
-                  key={project.title}
+                  key={project.slug}
                   title={project.title}
-                  description={project.description}
-                  url={project.url}
+                  description={project.shortDescription}
+                  href={`/${lang}/projects/${project.slug}`}
                   image={project.image}
                   index={index}
-                  viewText={t.projects.view}
+                  metric={project.results[0].value}
+                  ctaText={t.projects.viewCase}
                 />
               ))}
             </div>
+          </section>
+
+          <section className="mt-20 rounded-3xl border border-border/60 bg-gradient-to-br from-surface/60 to-background p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
+              {t.portfolioPage.ctaTitle}
+            </h2>
+            <Link
+              href={`/${lang}/contact`}
+              className="inline-flex items-center px-8 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-[0.2em] font-semibold hover:opacity-90 transition-opacity"
+            >
+              {t.portfolioPage.ctaButton}
+            </Link>
           </section>
         </section>
       </main>
