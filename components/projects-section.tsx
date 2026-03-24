@@ -13,17 +13,19 @@ interface ProjectsSectionProps {
 export function ProjectCard({
   title,
   description,
-  url,
+  href,
   image,
   index,
-  viewText,
+  metric,
+  ctaText,
 }: {
   title: string
   description: string
-  url: string
+  href: string
   image: string
   index: number
-  viewText: string
+  metric: string
+  ctaText: string
 }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 })
 
@@ -40,41 +42,33 @@ export function ProjectCard({
         animationPlayState: isVisible ? "running" : "paused",
       }}
     >
-      <a href={url} target="_blank" rel="noopener noreferrer" className="block">
-        {/* Image Container */}
-        <div className="relative overflow-hidden aspect-[16/10] mb-6">
+      <Link
+        href={href}
+        className="block rounded-3xl border border-border/60 bg-card/70 p-5 md:p-6 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.015] hover:border-primary/50 hover:shadow-[0_18px_40px_-18px_rgba(107,72,255,0.55)]"
+      >
+        <p className="text-5xl md:text-6xl font-black text-primary leading-none tracking-tight mb-5">{metric}</p>
+
+        <div className="relative overflow-hidden aspect-[16/10] mb-5 rounded-2xl">
           <img
             src={image}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             crossOrigin="anonymous"
           />
-          {/* Overlay on hover */}
-          <div className="absolute inset-0 bg-background/0 group-hover:bg-background/30 transition-all duration-500" />
-
-          {/* View button that appears on hover */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <span className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm uppercase tracking-widest font-medium">
-              {viewText}
-              <ArrowUpRight className="h-4 w-4" />
-            </span>
-          </div>
-
-          {/* Corner frame */}
-          <div className="absolute top-3 left-3 w-6 h-6 border-t border-l border-foreground/20 transition-all duration-500 group-hover:border-primary/60 group-hover:w-8 group-hover:h-8" />
-          <div className="absolute bottom-3 right-3 w-6 h-6 border-b border-r border-foreground/20 transition-all duration-500 group-hover:border-primary/60 group-hover:w-8 group-hover:h-8" />
+          <div className="absolute inset-0 bg-background/10 group-hover:bg-background/25 transition-all duration-500" />
         </div>
 
-        {/* Text Content */}
-        <div>
-          <h3 className="text-2xl font-serif font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
-            {title}
-          </h3>
-          <p className="text-muted-foreground leading-relaxed text-base">
-            {description}
-          </p>
-        </div>
-      </a>
+        <h3 className="text-2xl font-serif font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
+          {title}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed text-sm md:text-base mb-4">
+          {description}
+        </p>
+        <span className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.22em] font-semibold text-primary">
+          {ctaText}
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </span>
+      </Link>
     </div>
   )
 }
@@ -84,15 +78,17 @@ export function ProjectsSection({ t, lang }: ProjectsSectionProps) {
 
   const projects = [
     {
+      slug: "sviuryst-law-firm",
       title: t.projects.advokats.title,
       description: t.projects.advokats.description,
-      url: "https://www.advokats24.com.ua/",
+      metric: t.projects.advokats.result,
       image: "/project-law.jpg",
     },
     {
+      slug: "oratorica-language-school",
       title: t.projects.oratorica.title,
       description: t.projects.oratorica.description,
-      url: "https://www.oratorica.ua/",
+      metric: t.projects.oratorica.result,
       image: "/project-education.jpg",
     },
   ]
@@ -136,10 +132,11 @@ export function ProjectsSection({ t, lang }: ProjectsSectionProps) {
                 key={index}
                 title={project.title}
                 description={project.description}
-                url={project.url}
+                href={`/${lang}/projects/${project.slug}`}
                 image={project.image}
                 index={index}
-                viewText={t.projects.view}
+                metric={project.metric}
+                ctaText={t.projects.viewCase}
               />
             ))}
           </div>
