@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 const TRACKED_SLUGS = ["/", "/about", "/contact", "/how-we-work", "/projects", "/services"]
-const LANGS = ["en", "uk", "ru"]
+const LANGS = ["en", "uk", "ru", "es", "de"]
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
