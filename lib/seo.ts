@@ -6,15 +6,13 @@ import { translations, type Language } from "./translations"
 // Domains: https://codearchitect.site | https://dvl.yachts
 // Lead Developer: Alexander
 // Geography: Ukraine, Europe, International
-// Active languages with deployed routes: en, uk, ru
-// Defined but not yet routed: es, de (hreflang excluded until routes exist)
+// Active languages with deployed routes: en, uk, ru, es, de
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://codearchitect.site"
 
 // Languages that have actual deployed routes.
-// Add "es" | "de" here only after you create app/[lang]/*/page.tsx for them.
-const ACTIVE_LANGUAGES: Language[] = ["en", "uk", "ru"]
+const ACTIVE_LANGUAGES: Language[] = ["en", "uk", "ru", "es", "de"]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PAGE METADATA
@@ -123,6 +121,53 @@ export function generatePageMetadata(
     },
     // NOTE: geo.* meta tags are legacy and have no confirmed ranking impact.
     // Removed to reduce HTML bloat. Geo targeting is handled via hreflang + GSC.
+  }
+}
+
+export function generateCaseMetadata(
+  lang: Language,
+  slug: string,
+  title: string,
+  description: string
+): Metadata {
+  const langToLocale: Record<Language, string> = {
+    uk: "uk_UA",
+    en: "en_US",
+    ru: "ru_RU",
+    es: "es_ES",
+    de: "de_DE",
+  }
+  const langCode = langToLocale[lang]
+  const canonicalUrl = `${SITE_URL}/${lang}/projects/${slug}`
+
+  const alternateLanguages: Record<string, string> = {}
+  for (const l of ACTIVE_LANGUAGES) {
+    alternateLanguages[l] = `${SITE_URL}/${l}/projects/${slug}`
+  }
+  alternateLanguages["x-default"] = `${SITE_URL}/en/projects/${slug}`
+
+  return {
+    title: `${title} | Case Study | Code Architect`,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: alternateLanguages,
+    },
+    openGraph: {
+      title: `${title} | Case Study`,
+      description,
+      url: canonicalUrl,
+      siteName: "Code Architect",
+      locale: langCode,
+      type: "article",
+      images: [`${SITE_URL}/og-image.jpg`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Case Study`,
+      description,
+      images: [`${SITE_URL}/og-image.jpg`],
+    },
   }
 }
 
