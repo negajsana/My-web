@@ -32,7 +32,7 @@ export function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`group relative transition-all duration-700 ${
+      className={`group relative h-full transition-all duration-700 ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-16"
@@ -44,7 +44,7 @@ export function ProjectCard({
     >
       <Link
         href={href}
-        className="block rounded-3xl border border-border/60 bg-card/70 p-5 md:p-6 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.015] hover:border-primary/50 hover:shadow-[0_18px_40px_-18px_hsl(38_55%_55%/0.55)]"
+        className="flex flex-col h-full rounded-3xl border border-border/60 bg-card/70 p-5 md:p-6 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.015] hover:border-primary/50 hover:shadow-[0_18px_40px_-18px_hsl(38_55%_55%/0.55)]"
       >
         <p className="text-5xl md:text-6xl font-black text-primary leading-none tracking-tight mb-5">{metric}</p>
 
@@ -61,10 +61,10 @@ export function ProjectCard({
         <h3 className="text-2xl font-serif font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
           {title}
         </h3>
-        <p className="text-muted-foreground leading-relaxed text-sm md:text-base mb-4">
+        <p className="flex-1 text-muted-foreground leading-relaxed text-sm md:text-base mb-4">
           {description}
         </p>
-        <span className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.22em] font-semibold text-primary">
+        <span className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.22em] font-semibold text-primary mt-auto">
           {ctaText}
           <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
@@ -126,7 +126,7 @@ export function ProjectsSection({ t, lang }: ProjectsSectionProps) {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 mb-12">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-stretch mb-12">
             {projects.map((project, index) => (
               <ProjectCard
                 key={index}
