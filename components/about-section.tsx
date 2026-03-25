@@ -46,6 +46,7 @@ const teamPhotos: Record<number, string> = {
   0: "/Alexander.jpg",
   1: "/Evgeny.jpg",
   2: "/Egor.jpg",
+  3: "/Artem.jpg
 }
 
 function TeamMemberCard({
