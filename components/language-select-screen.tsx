@@ -30,7 +30,7 @@ function detectBrowserLang(): string | null {
 
     if (["be", "kk", "ky"].includes(base)) return "ru"
     if (["ca", "gl", "pt"].includes(base)) return "es"
-    // убрали fallback на en — неизвестный язык → показываем пикер
+    if (["fr", "it", "nl", "pl", "cs", "sv", "da", "fi", "no"].includes(base)) return "en"
   }
 
   return null
@@ -46,14 +46,32 @@ export function LanguageSelectScreen() {
     // Never touch stats pages
     if (pathname.startsWith("/stats-")) return
 
+    // ─────────────────────────────────────────────────────────────────────────────
+    // KEY FIX: Check if URL already contains a valid language prefix
+    // If it does, NEVER redirect — respect the language in the URL
+    // ─────────────────────────────────────────────────────────────────────────────
     const currentLang = pathname.split("/")[1]
     if (supportedCodes.includes(currentLang)) {
+      // URL has a valid language prefix (e.g., /en/, /es/, /de/)
+      // Do NOT redirect based on browser detection or saved preference
+      // The user explicitly requested this language via the URL
       return
     }
 
+    // ──────────────────────────────────────────────────��──────────────────────────
+    // Only apply auto-detection and redirects on the ROOT path (/)
+    // All other non-language-prefixed paths should also not trigger auto-redirect
+    // ────────────────────────────────���────────────────────────────────────────────
     if (pathname !== "/") {
+      // Not root and not language-prefixed
+      // Don't auto-redirect, just show the page
       return
     }
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // ONLY reach here if: pathname === "/"
+    // Apply auto-detection logic ONLY on root
+    // ─────────────────────────────────────────────────────────────────────────────
 
     // 1. Check saved language preference
     try {
