@@ -49,5 +49,6 @@ export function generateStaticParams() {
     { lang: "ru" },
     { lang: "en" },
     { lang: "es" },
+    { lang: "de" },
   ]
 }

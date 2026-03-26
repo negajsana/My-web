@@ -19,6 +19,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface ServicesSectionProps {
   t: TranslationKey
+  lang: string
 }
 
 // ─── Icon map ────────────────────────────────────────────────────────────────
@@ -51,6 +52,7 @@ function CoreCard({
   description,
   bullets,
   bestFor,
+  bestForLabel,
   cta,
   index,
   ctaLink,
@@ -60,6 +62,7 @@ function CoreCard({
   description: string
   bullets: string[]
   bestFor: string[]
+  bestForLabel: string
   cta: string
   index: number
   ctaLink: string
@@ -107,7 +110,7 @@ function CoreCard({
         {bestFor.length > 0 && (
           <div className="mb-6 border-t border-border/20 pt-4">
             <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-primary/70">
-              Best for
+              {bestForLabel}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {bestFor.map((tag, i) => (
@@ -230,8 +233,31 @@ function SectionLabel({
   )
 }
 
+function InlineSectionCta({
+  href,
+  label,
+  helper,
+}: {
+  href: string
+  label: string
+  helper: string
+}) {
+  return (
+    <div className="mt-8 border border-border/30 bg-surface/20 p-5 sm:p-6">
+      <p className="mb-3 text-xs text-muted-foreground">{helper}</p>
+      <Link
+        href={href}
+        className="inline-flex items-center gap-2 border border-primary/60 px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:bg-primary hover:text-background"
+      >
+        {label}
+        <ArrowRight className="h-3 w-3" />
+      </Link>
+    </div>
+  )
+}
+
 // ─── Main export ──────────────────────────────────────────────────────────────
-export function ServicesSection({ t }: ServicesSectionProps) {
+export function ServicesSection({ t, lang }: ServicesSectionProps) {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation()
   const { ref: coreRef, isVisible: coreVisible } = useScrollAnimation()
   const { ref: engRef, isVisible: engVisible } = useScrollAnimation()
@@ -316,12 +342,18 @@ export function ServicesSection({ t }: ServicesSectionProps) {
                   description={item.description}
                   bullets={item.bullets}
                   bestFor={item.bestFor}
+                  bestForLabel={sv.bestForLabel}
                   cta={sv.ctaStart}
-                  ctaLink={`/contacts?from=services&service=${serviceSlugs[i] || 'core'}`}
+                  ctaLink={`/${lang}/contacts?from=services&service=${serviceSlugs[i] || "core"}`}
                   index={i}
                 />
               ))}
             </div>
+            <InlineSectionCta
+              href={`/${lang}/contacts?from=services&section=core`}
+              label={sv.ctaStart}
+              helper={sv.ctaHelper}
+            />
           </div>
 
           {/* ── Flow connector ── */}
@@ -338,7 +370,7 @@ export function ServicesSection({ t }: ServicesSectionProps) {
           </div>
 
           {/* ── 2. Engineering Services ── */}
-          <div id="engineering" className="mb-24 lg:mb-32">
+          <div id="engineering" className="mb-24 lg:mb-32 border border-border/20 bg-surface/15 p-6 sm:p-8 lg:p-10">
             <div ref={engRef}>
               <SectionLabel
                 label="02"
@@ -360,6 +392,11 @@ export function ServicesSection({ t }: ServicesSectionProps) {
                 />
               ))}
             </div>
+            <InlineSectionCta
+              href={`/${lang}/contacts?from=services&section=engineering`}
+              label={sv.ctaTalk}
+              helper={sv.ctaHelper}
+            />
           </div>
 
           {/* ── 3. Architecture & Consulting ── */}
@@ -385,6 +422,11 @@ export function ServicesSection({ t }: ServicesSectionProps) {
                 />
               ))}
             </div>
+            <InlineSectionCta
+              href={`/${lang}/contacts?from=services&section=consulting`}
+              label={sv.ctaTalk}
+              helper={sv.ctaHelper}
+            />
           </div>
 
           {/* ── Bottom CTA ── */}
@@ -404,7 +446,7 @@ export function ServicesSection({ t }: ServicesSectionProps) {
               {sv.ctaHelper}
             </p>
             <Link
-              href="/contacts?from=services"
+              href={`/${lang}/contacts?from=services`}
               className="inline-flex items-center gap-3 border border-primary px-8 py-4 text-sm uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-background transition-all duration-300"
             >
               <MessageSquare className="h-4 w-4" />

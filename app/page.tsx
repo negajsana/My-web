@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation"
-
 export default function RootPage() {
-  redirect("/uk")
+  return (
+    <main className="min-h-screen bg-background" aria-label="Language selection root" />
+  )
 }
