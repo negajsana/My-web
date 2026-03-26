@@ -133,6 +133,123 @@ export const translations = {
         items: ["Підтримка та супровід сайтів", "Оптимізація швидкості (Core Web Vitals)", "SEO-оптимізація", "Безпека та захист", "DevOps та деплой"],
       },
     },
+    servicesPage: {
+      label: "Що ми будуємо",
+      title: "Послуги",
+      subtitle: "Ми будуємо повні цифрові системи — від основного продукту до технічного фундаменту. Ось як структурована наша робота.",
+      anchorCore: "Основні рішення",
+      anchorEngineering: "Розробка",
+      anchorConsulting: "Консалтинг",
+      ctaDiscuss: "Обговорити",
+      ctaLabel: "Готові розпочати?",
+      ctaTitle: "Розкажіть про свій проєкт",
+      ctaButton: "Написати в Telegram",
+      flowLabel: "Як сервіси пов'язані",
+      flowItems: ["Оплата / Бронювання", "API-шар", "Web & Mobile", "CRM / Аналітика"],
+      flowDescription: "Ми будуємо системи від початку до кінця. Кожен шар підключається до наступного — щоб продукт працював як єдиний процес.",
+      core: {
+        label: "Основні рішення",
+        subtitle: "Платформи з високою цінністю, що вирішують конкретні бізнес-задачі. Це наші пріоритетні напрями.",
+        items: [
+          {
+            title: "Платежі та Фінтех",
+            description: "Кастомні платіжні сценарії та фінансова інфраструктура для бізнесів, що приймають оплату онлайн.",
+            bullets: [
+              "Інтеграція Stripe, PayPal, Monobank",
+              "Підписки та автоматичне виставлення рахунків",
+              "Мультивалютні та розділені платежі",
+            ],
+            bestFor: ["SaaS-продукти", "Маркетплейси", "Сервісний бізнес"],
+          },
+          {
+            title: "Бронювання та Тревел-платформи",
+            description: "Повні системи бронювання з управлінням доступністю, оплатою та сповіщеннями клієнтів.",
+            bullets: [
+              "Синхронізація доступності та календаря в реальному часі",
+              "Автоматичні підтвердження та нагадування",
+              "Адмін-панель з управлінням бронями",
+            ],
+            bestFor: ["Клініки", "Готелі", "Туроператори", "Організатори подій"],
+          },
+          {
+            title: "Маркетплейси та Платформи",
+            description: "Платформи, що з'єднують покупців і продавців — з каталогами, оплатою та відгуками.",
+            bullets: [
+              "Акаунти продавців та покупців",
+              "Управління оголошеннями та пошук",
+              "Інтегровані платежі та комісії",
+            ],
+            bestFor: ["B2B-каталоги", "Платформи оренди", "Сервісні маркетплейси"],
+          },
+        ],
+      },
+      engineering: {
+        label: "Інженерні послуги",
+        subtitle: "Технічний шар, що забезпечує роботу продукту — веб, мобайл та інтеграції.",
+        items: [
+          {
+            title: "Веб-розробка",
+            description: "Від лендінгів до повноцінних веб-застосунків на Next.js з високою швидкістю та чистим кодом.",
+            bullets: [
+              "Лендінги, корпоративні сайти, SaaS-застосунки",
+              "Next.js, React, TypeScript",
+              "SEO-оптимізований та адаптивний",
+            ],
+          },
+          {
+            title: "Розробка мобільних застосунків",
+            description: "Кросплатформні мобільні застосунки для iOS та Android з єдиної кодової бази.",
+            bullets: [
+              "React Native з нативним відчуттям",
+              "Push-сповіщення та офлайн-підтримка",
+              "Публікація в App Store та Google Play",
+            ],
+          },
+          {
+            title: "API-розробка та інтеграції",
+            description: "З'єднайте свої системи. Ми будуємо та інтегруємо API для взаємодії між сервісами.",
+            bullets: [
+              "REST та GraphQL API",
+              "Інтеграція CRM, ERP та сторонніх сервісів",
+              "Webhook та подієво-орієнтована архітектура",
+            ],
+          },
+        ],
+      },
+      consulting: {
+        label: "Архітектура та консалтинг",
+        subtitle: "Стратегічна та технічна експертиза — щоб побудувати правильну річ правильним способом.",
+        items: [
+          {
+            title: "Системна архітектура",
+            description: "Проєктування масштабованих систем до написання коду. Уникайте дорогих помилок на ранньому етапі.",
+            bullets: [
+              "Огляд і планування архітектури",
+              "Вибір технологічного стеку",
+              "Проєктування бази даних та API",
+            ],
+          },
+          {
+            title: "Масштабування та оптимізація",
+            description: "Покращення продуктивності наявних систем — швидкість, навантаження та витрати на інфраструктуру.",
+            bullets: [
+              "Оптимізація Core Web Vitals та часу завантаження",
+              "Оптимізація запитів до БД та кешування",
+              "Масштабування інфраструктури на Vercel / AWS",
+            ],
+          },
+          {
+            title: "Технічний аудит та консалтинг",
+            description: "Незалежний огляд наявного продукту — що працює, що ні, що виправити в першу чергу.",
+            bullets: [
+              "Аудит якості коду та архітектури",
+              "Перевірка безпеки та вразливостей",
+              "Дорожня карта покращень з пріоритетами",
+            ],
+          },
+        ],
+      },
+    },
     projects: {
       title: "Портфоліо",
       view: "ПЕРЕГЛЯНУТИ САЙТ",
@@ -389,6 +506,123 @@ export const translations = {
         title: "Техническая поддержка",
         description: "Не исчезаем после запуска. Поддерживаем, оптимизируем и развиваем ваш продукт — чтобы он работал стабильно и оставался конкурентным.",
         items: ["Поддержка и сопровождение сайтов", "Оптимизация скорости (Core Web Vitals)", "SEO-оптимизация", "Безопасность и защита", "DevOps и деплой"],
+      },
+    },
+    servicesPage: {
+      label: "Что мы строим",
+      title: "Услуги",
+      subtitle: "Мы строим полные цифровые системы — от основного продукта до технической основы. Вот как структурирована наша работа.",
+      anchorCore: "Основные решения",
+      anchorEngineering: "Разработка",
+      anchorConsulting: "Консалтинг",
+      ctaDiscuss: "Обсудить",
+      ctaLabel: "Готовы начать?",
+      ctaTitle: "Расскажите о своём проекте",
+      ctaButton: "Написать в Telegram",
+      flowLabel: "Как сервисы связаны",
+      flowItems: ["Оплата / Бронирование", "API-слой", "Web & Mobile", "CRM / Аналитика"],
+      flowDescription: "Мы строим системы от начала до конца. Каждый слой подключается к следующему — чтобы продукт работал как единый процесс.",
+      core: {
+        label: "Основные решения",
+        subtitle: "Платформы с высокой ценностью, которые решают конкретные бизнес-задачи. Это наши приоритетные направления.",
+        items: [
+          {
+            title: "Платежи и Финтех",
+            description: "Кастомные платёжные сценарии и финансовая инфраструктура для бизнеса, принимающего оплату онлайн.",
+            bullets: [
+              "Интеграция Stripe, PayPal, Monobank",
+              "Подписки и автоматическое выставление счетов",
+              "Мультивалютные и раздельные платежи",
+            ],
+            bestFor: ["SaaS-продукты", "Маркетплейсы", "Сервисный бизнес"],
+          },
+          {
+            title: "Бронирование и Travel-платформы",
+            description: "Полные системы бронирования с управлением доступностью, оплатой и уведомлениями клиентов.",
+            bullets: [
+              "Синхронизация доступности и календаря в реальном времени",
+              "Автоматические подтверждения и напоминания",
+              "Административная панель с управлением бронями",
+            ],
+            bestFor: ["Клиники", "Отели", "Туроператоры", "Организаторы мероприятий"],
+          },
+          {
+            title: "Маркетплейсы и Платформы",
+            description: "Платформы, соединяющие покупателей и продавцов — с каталогами, оплатой и отзывами.",
+            bullets: [
+              "Аккаунты продавцов и покупателей",
+              "Управление объявлениями и поиск",
+              "Интегрированные платежи и комиссии",
+            ],
+            bestFor: ["B2B-каталоги", "Платформы аренды", "Сервисные маркетплейсы"],
+          },
+        ],
+      },
+      engineering: {
+        label: "Инженерные услуги",
+        subtitle: "Технический слой, обеспечивающий работу продукта — веб, мобайл и интеграции.",
+        items: [
+          {
+            title: "Веб-разработка",
+            description: "От лендингов до полноценных веб-приложений на Next.js с высокой скоростью и чистым кодом.",
+            bullets: [
+              "Лендинги, корпоративные сайты, SaaS-приложения",
+              "Next.js, React, TypeScript",
+              "SEO-оптимизированный и адаптивный",
+            ],
+          },
+          {
+            title: "Разработка мобильных приложений",
+            description: "Кроссплатформенные мобильные приложения для iOS и Android из единой кодовой базы.",
+            bullets: [
+              "React Native с нативным ощущением",
+              "Push-уведомления и офлайн-поддержка",
+              "Публикация в App Store и Google Play",
+            ],
+          },
+          {
+            title: "API-разработка и интеграции",
+            description: "Соедините свои системы. Мы строим и интегрируем API для взаимодействия между сервисами.",
+            bullets: [
+              "REST и GraphQL API",
+              "Интеграция CRM, ERP и сторонних сервисов",
+              "Webhook и событийно-ориентированная архитектура",
+            ],
+          },
+        ],
+      },
+      consulting: {
+        label: "Архитектура и консалтинг",
+        subtitle: "Стратегическая и техническая экспертиза — чтобы построить правильную вещь правильным способом.",
+        items: [
+          {
+            title: "Системная архитектура",
+            description: "Проектирование масштабируемых систем до написания кода. Избегайте дорогих ошибок на раннем этапе.",
+            bullets: [
+              "Обзор и планирование архитектуры",
+              "Выбор технологического стека",
+              "Проектирование базы данных и API",
+            ],
+          },
+          {
+            title: "Масштабирование и оптимизация",
+            description: "Улучшение производительности существующих систем — скорость, нагрузка и расходы на инфраструктуру.",
+            bullets: [
+              "Оптимизация Core Web Vitals и времени загрузки",
+              "Оптимизация запросов к БД и кэширования",
+              "Масштабирование инфраструктуры на Vercel / AWS",
+            ],
+          },
+          {
+            title: "Технический аудит и консалтинг",
+            description: "Независимый обзор существующего продукта — что работает, что нет, что исправить в первую очередь.",
+            bullets: [
+              "Аудит качества кода и архитектуры",
+              "Проверка безопасности и уязвимостей",
+              "Дорожная карта улучшений с приоритетами",
+            ],
+          },
+        ],
       },
     },
     projects: {
@@ -649,6 +883,123 @@ export const translations = {
         items: ["Website Maintenance & Support", "Performance Optimisation (Core Web Vitals)", "SEO Optimisation", "Security & Protection", "DevOps & Deployment"],
       },
     },
+    servicesPage: {
+      label: "What we build",
+      title: "Our Services",
+      subtitle: "We build complete digital systems — from core product to technical foundation. Here is how our work is structured.",
+      anchorCore: "Core Solutions",
+      anchorEngineering: "Engineering",
+      anchorConsulting: "Consulting",
+      ctaDiscuss: "Discuss this",
+      ctaLabel: "Ready to start?",
+      ctaTitle: "Tell us about your project",
+      ctaButton: "Write on Telegram",
+      flowLabel: "How services connect",
+      flowItems: ["Payment / Booking", "API Layer", "Web & Mobile", "CRM / Analytics"],
+      flowDescription: "We build end-to-end systems. Each layer connects to the next — so your product works as one seamless flow.",
+      core: {
+        label: "Core Solutions",
+        subtitle: "High-value platforms that solve specific business problems. These are our primary focus areas.",
+        items: [
+          {
+            title: "Payments & Fintech",
+            description: "Custom payment flows and financial infrastructure for businesses that handle money online.",
+            bullets: [
+              "Stripe, PayPal, Monobank integration",
+              "Subscription billing and invoicing",
+              "Multi-currency and split payments",
+            ],
+            bestFor: ["SaaS products", "Marketplaces", "Service businesses"],
+          },
+          {
+            title: "Booking & Travel Platforms",
+            description: "End-to-end booking systems with availability management, payments, and client notifications.",
+            bullets: [
+              "Real-time availability and calendar sync",
+              "Automated confirmations and reminders",
+              "Admin panel with booking management",
+            ],
+            bestFor: ["Clinics", "Hotels", "Tour operators", "Event organizers"],
+          },
+          {
+            title: "Marketplaces & Platforms",
+            description: "Multi-sided platforms connecting buyers and sellers — with listings, payments, and reviews.",
+            bullets: [
+              "Vendor and buyer accounts",
+              "Listing management and search",
+              "Integrated payments and commissions",
+            ],
+            bestFor: ["B2B directories", "Rental platforms", "Service marketplaces"],
+          },
+        ],
+      },
+      engineering: {
+        label: "Engineering Services",
+        subtitle: "The technical layer that powers your product — web, mobile, and integrations.",
+        items: [
+          {
+            title: "Web Development",
+            description: "From landing pages to full web apps built on Next.js with fast performance and clean code.",
+            bullets: [
+              "Landing pages, corporate sites, SaaS apps",
+              "Next.js, React, TypeScript",
+              "SEO-ready and mobile-first",
+            ],
+          },
+          {
+            title: "Mobile App Development",
+            description: "Cross-platform mobile apps that work on iOS and Android from a single codebase.",
+            bullets: [
+              "React Native with native feel",
+              "Push notifications and offline support",
+              "App Store and Google Play deployment",
+            ],
+          },
+          {
+            title: "API Development & Integrations",
+            description: "Connect your systems. We build and integrate APIs that make services talk to each other.",
+            bullets: [
+              "REST and GraphQL APIs",
+              "CRM, ERP, and third-party integrations",
+              "Webhook and event-driven architecture",
+            ],
+          },
+        ],
+      },
+      consulting: {
+        label: "Architecture & Consulting",
+        subtitle: "Strategic and technical expertise to help you build the right thing, the right way.",
+        items: [
+          {
+            title: "System Architecture",
+            description: "Design scalable systems before writing a line of code. Avoid expensive mistakes early.",
+            bullets: [
+              "Architecture review and planning",
+              "Technology stack selection",
+              "Database and API design",
+            ],
+          },
+          {
+            title: "Scaling & Optimization",
+            description: "Improve performance of existing systems — speed, load handling, and infrastructure costs.",
+            bullets: [
+              "Core Web Vitals and load time optimization",
+              "Database query and caching improvements",
+              "Infrastructure scaling on Vercel / AWS",
+            ],
+          },
+          {
+            title: "Technical Audit & Consulting",
+            description: "An independent review of your existing product — what works, what doesn't, what to fix first.",
+            bullets: [
+              "Code quality and architecture audit",
+              "Security and vulnerability review",
+              "Actionable improvement roadmap",
+            ],
+          },
+        ],
+      },
+    },
     projects: {
       title: "Portfolio",
       view: "View Site",
@@ -907,6 +1258,123 @@ export const translations = {
         items: ["Mantenimiento y Soporte Web", "Optimización de Rendimiento (Core Web Vitals)", "Optimización SEO", "Seguridad y Protección", "DevOps y Despliegue"],
       },
     },
+    servicesPage: {
+      label: "Qué construimos",
+      title: "Servicios",
+      subtitle: "Construimos sistemas digitales completos — desde el producto principal hasta la base técnica. Así es como estructuramos nuestro trabajo.",
+      anchorCore: "Soluciones principales",
+      anchorEngineering: "Ingeniería",
+      anchorConsulting: "Consultoría",
+      ctaDiscuss: "Hablar sobre esto",
+      ctaLabel: "¿Listo para empezar?",
+      ctaTitle: "Cuéntanos sobre tu proyecto",
+      ctaButton: "Escribir en Telegram",
+      flowLabel: "Cómo se conectan los servicios",
+      flowItems: ["Pago / Reserva", "Capa API", "Web & Móvil", "CRM / Analítica"],
+      flowDescription: "Construimos sistemas de extremo a extremo. Cada capa se conecta a la siguiente — para que tu producto funcione como un flujo continuo.",
+      core: {
+        label: "Soluciones principales",
+        subtitle: "Plataformas de alto valor que resuelven problemas específicos del negocio. Estas son nuestras áreas de enfoque principal.",
+        items: [
+          {
+            title: "Pagos y Fintech",
+            description: "Flujos de pago personalizados e infraestructura financiera para negocios que cobran en línea.",
+            bullets: [
+              "Integración con Stripe, PayPal, Monobank",
+              "Facturación por suscripción e invoices automáticas",
+              "Pagos en múltiples monedas y pagos divididos",
+            ],
+            bestFor: ["Productos SaaS", "Marketplaces", "Negocios de servicios"],
+          },
+          {
+            title: "Plataformas de Reservas y Viajes",
+            description: "Sistemas de reservas completos con gestión de disponibilidad, pagos y notificaciones a clientes.",
+            bullets: [
+              "Disponibilidad en tiempo real y sincronización de calendario",
+              "Confirmaciones y recordatorios automáticos",
+              "Panel de administración con gestión de reservas",
+            ],
+            bestFor: ["Clínicas", "Hoteles", "Operadores turísticos", "Organizadores de eventos"],
+          },
+          {
+            title: "Marketplaces y Plataformas",
+            description: "Plataformas que conectan compradores y vendedores — con listados, pagos y reseñas.",
+            bullets: [
+              "Cuentas de vendedor y comprador",
+              "Gestión de listados y búsqueda",
+              "Pagos integrados y comisiones",
+            ],
+            bestFor: ["Directorios B2B", "Plataformas de alquiler", "Marketplaces de servicios"],
+          },
+        ],
+      },
+      engineering: {
+        label: "Servicios de ingeniería",
+        subtitle: "La capa técnica que impulsa tu producto — web, móvil e integraciones.",
+        items: [
+          {
+            title: "Desarrollo web",
+            description: "Desde landing pages hasta aplicaciones web completas en Next.js con alto rendimiento y código limpio.",
+            bullets: [
+              "Landing pages, sitios corporativos, apps SaaS",
+              "Next.js, React, TypeScript",
+              "Optimizado para SEO y dispositivos móviles",
+            ],
+          },
+          {
+            title: "Desarrollo de apps móviles",
+            description: "Apps móviles multiplataforma para iOS y Android desde una sola base de código.",
+            bullets: [
+              "React Native con experiencia nativa",
+              "Notificaciones push y soporte offline",
+              "Publicación en App Store y Google Play",
+            ],
+          },
+          {
+            title: "Desarrollo de API e integraciones",
+            description: "Conecta tus sistemas. Construimos e integramos APIs para que los servicios se comuniquen entre sí.",
+            bullets: [
+              "APIs REST y GraphQL",
+              "Integraciones con CRM, ERP y terceros",
+              "Arquitectura basada en webhooks y eventos",
+            ],
+          },
+        ],
+      },
+      consulting: {
+        label: "Arquitectura y consultoría",
+        subtitle: "Experiencia estratégica y técnica para ayudarte a construir lo correcto, de la manera correcta.",
+        items: [
+          {
+            title: "Arquitectura de sistemas",
+            description: "Diseña sistemas escalables antes de escribir una línea de código. Evita errores costosos desde el inicio.",
+            bullets: [
+              "Revisión y planificación de arquitectura",
+              "Selección de stack tecnológico",
+              "Diseño de base de datos y API",
+            ],
+          },
+          {
+            title: "Escalado y optimización",
+            description: "Mejora el rendimiento de sistemas existentes — velocidad, capacidad de carga y costes de infraestructura.",
+            bullets: [
+              "Optimización de Core Web Vitals y tiempo de carga",
+              "Mejoras en consultas a BD y caché",
+              "Escalado de infraestructura en Vercel / AWS",
+            ],
+          },
+          {
+            title: "Auditoría técnica y consultoría",
+            description: "Revisión independiente de tu producto actual — qué funciona, qué no, qué corregir primero.",
+            bullets: [
+              "Auditoría de calidad de código y arquitectura",
+              "Revisión de seguridad y vulnerabilidades",
+              "Hoja de ruta de mejoras con prioridades",
+            ],
+          },
+        ],
+      },
+    },
     projects: {
       title: "Portafolio",
       view: "Ver Sitio",
@@ -1163,6 +1631,123 @@ export const translations = {
         title: "Technischer Support",
         description: "Wir verschwinden nicht nach dem Launch. Wir warten, optimieren und entwickeln Ihr Produkt weiter — damit es stabil, sicher und wettbewerbsfähig bleibt.",
         items: ["Website-Wartung & Support", "Performance-Optimierung (Core Web Vitals)", "SEO-Optimierung", "Sicherheit & Schutz", "DevOps & Deployment"],
+      },
+    },
+    servicesPage: {
+      label: "Was wir bauen",
+      title: "Leistungen",
+      subtitle: "Wir bauen vollständige digitale Systeme — vom Kernprodukt bis zur technischen Grundlage. So ist unsere Arbeit strukturiert.",
+      anchorCore: "Kernlösungen",
+      anchorEngineering: "Engineering",
+      anchorConsulting: "Beratung",
+      ctaDiscuss: "Besprechen",
+      ctaLabel: "Bereit anzufangen?",
+      ctaTitle: "Erzählen Sie uns von Ihrem Projekt",
+      ctaButton: "Auf Telegram schreiben",
+      flowLabel: "Wie die Dienste verbunden sind",
+      flowItems: ["Zahlung / Buchung", "API-Schicht", "Web & Mobil", "CRM / Analytik"],
+      flowDescription: "Wir bauen End-to-End-Systeme. Jede Schicht verbindet sich mit der nächsten — damit Ihr Produkt als nahtloser Ablauf funktioniert.",
+      core: {
+        label: "Kernlösungen",
+        subtitle: "Hochwertige Plattformen, die spezifische Geschäftsprobleme lösen. Das sind unsere primären Schwerpunktbereiche.",
+        items: [
+          {
+            title: "Zahlungen & Fintech",
+            description: "Individuelle Zahlungsabläufe und Finanzinfrastruktur für Unternehmen, die online Zahlungen abwickeln.",
+            bullets: [
+              "Stripe, PayPal, Monobank Integration",
+              "Abonnementabrechnung und automatische Rechnungsstellung",
+              "Multi-Währungs- und geteilte Zahlungen",
+            ],
+            bestFor: ["SaaS-Produkte", "Marktplätze", "Dienstleistungsunternehmen"],
+          },
+          {
+            title: "Buchungs- & Reiseplattformen",
+            description: "Vollständige Buchungssysteme mit Verfügbarkeitsmanagement, Zahlungen und Kundenbenachrichtigungen.",
+            bullets: [
+              "Echtzeit-Verfügbarkeit und Kalendersynchronisation",
+              "Automatische Bestätigungen und Erinnerungen",
+              "Admin-Panel mit Buchungsverwaltung",
+            ],
+            bestFor: ["Kliniken", "Hotels", "Reiseveranstalter", "Event-Organisatoren"],
+          },
+          {
+            title: "Marktplätze & Plattformen",
+            description: "Mehrseitige Plattformen, die Käufer und Verkäufer verbinden — mit Inseraten, Zahlungen und Bewertungen.",
+            bullets: [
+              "Verkäufer- und Käuferkonten",
+              "Inseratverwaltung und Suche",
+              "Integrierte Zahlungen und Provisionen",
+            ],
+            bestFor: ["B2B-Verzeichnisse", "Vermietungsplattformen", "Service-Marktplätze"],
+          },
+        ],
+      },
+      engineering: {
+        label: "Engineering-Leistungen",
+        subtitle: "Die technische Schicht, die Ihr Produkt antreibt — Web, Mobile und Integrationen.",
+        items: [
+          {
+            title: "Webentwicklung",
+            description: "Von Landing Pages bis zu vollständigen Web-Apps in Next.js mit hoher Performance und sauberem Code.",
+            bullets: [
+              "Landing Pages, Unternehmenswebsites, SaaS-Apps",
+              "Next.js, React, TypeScript",
+              "SEO-optimiert und mobilfreundlich",
+            ],
+          },
+          {
+            title: "Mobile App-Entwicklung",
+            description: "Plattformübergreifende mobile Apps für iOS und Android aus einer einzigen Codebasis.",
+            bullets: [
+              "React Native mit nativem Gefühl",
+              "Push-Benachrichtigungen und Offline-Unterstützung",
+              "Veröffentlichung im App Store und Google Play",
+            ],
+          },
+          {
+            title: "API-Entwicklung & Integrationen",
+            description: "Verbinden Sie Ihre Systeme. Wir bauen und integrieren APIs, damit Dienste miteinander kommunizieren.",
+            bullets: [
+              "REST- und GraphQL-APIs",
+              "CRM-, ERP- und Drittanbieter-Integrationen",
+              "Webhook- und ereignisgesteuerte Architektur",
+            ],
+          },
+        ],
+      },
+      consulting: {
+        label: "Architektur & Beratung",
+        subtitle: "Strategische und technische Expertise, um das Richtige auf die richtige Weise zu bauen.",
+        items: [
+          {
+            title: "Systemarchitektur",
+            description: "Entwerfen Sie skalierbare Systeme, bevor Sie eine Zeile Code schreiben. Vermeiden Sie kostspielige Fehler früh.",
+            bullets: [
+              "Architekturüberprüfung und -planung",
+              "Auswahl des Technologie-Stacks",
+              "Datenbank- und API-Design",
+            ],
+          },
+          {
+            title: "Skalierung & Optimierung",
+            description: "Verbesserung der Performance bestehender Systeme — Geschwindigkeit, Lastverhalten und Infrastrukturkosten.",
+            bullets: [
+              "Core Web Vitals- und Ladezeit-Optimierung",
+              "Datenbankabfragen und Caching-Verbesserungen",
+              "Infrastruktur-Skalierung auf Vercel / AWS",
+            ],
+          },
+          {
+            title: "Technisches Audit & Beratung",
+            description: "Eine unabhängige Überprüfung Ihres bestehenden Produkts — was funktioniert, was nicht, was zuerst zu beheben ist.",
+            bullets: [
+              "Code-Qualitäts- und Architektur-Audit",
+              "Sicherheits- und Schwachstellenprüfung",
+              "Priorisierte Verbesserungs-Roadmap",
+            ],
+          },
+        ],
       },
     },
     projects: {
