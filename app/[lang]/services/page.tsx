@@ -35,7 +35,8 @@ export default async function ServicesPage({ params }: PageProps) {
       <JsonLd lang={lang} page="services" />
       <Navigation t={t} lang={lang} />
       <main className="pt-24">
-        <ServicesSection t={t} />
+        {/* Передаем lang сюда, чтобы настроить роутинг на страницу контактов */}
+        <ServicesSection t={t} lang={lang} />
       </main>
       <Footer t={t} />
     </div>
@@ -48,6 +49,5 @@ export function generateStaticParams() {
     { lang: "ru" },
     { lang: "en" },
     { lang: "es" },
-    { lang: "de" },
   ]
 }
