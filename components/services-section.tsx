@@ -7,9 +7,12 @@ import {
   CalendarCheck,
   ShoppingBag,
   Globe,
+  LayoutTemplate,
   Smartphone,
   Plug,
-  Cpu,
+  Server,
+  Boxes,
+  Compass,
   TrendingUp,
   ClipboardCheck,
   ArrowRight,
@@ -22,134 +25,35 @@ interface ServicesSectionProps {
   lang: string
 }
 
-// ─── Icon map ────────────────────────────────────────────────────────────────
-const CORE_ICONS = [CreditCard, CalendarCheck, ShoppingBag]
-const ENGINEERING_ICONS = [Globe, Smartphone, Plug]
-const CONSULTING_ICONS = [Cpu, TrendingUp, ClipboardCheck]
-
-// ─── Flow badge ───────────────────────────────────────────────────────────────
-function FlowBadge({ items }: { items: string[] }) {
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      {items.map((item, i) => (
-        <span key={i} className="flex items-center gap-2">
-          <span className="text-xs tracking-widest uppercase text-muted-foreground bg-surface border border-border/30 px-3 py-1">
-            {item}
-          </span>
-          {i < items.length - 1 && (
-            <ArrowRight className="h-3 w-3 text-primary/50 flex-shrink-0" />
-          )}
-        </span>
-      ))}
-    </div>
-  )
+type ServiceCardItem = {
+  title: string
+  description: string
+  bullets: string[]
+  bestFor?: string[]
+  slug: string
+  cta: string
+  icon: typeof Globe
 }
 
-// ─── Core card (larger, emphasized) ──────────────────────────────────────────
-function CoreCard({
+function ServiceCard({
   icon: Icon,
   title,
   description,
   bullets,
   bestFor,
-  bestForLabel,
-  cta,
-  index,
-  ctaLink,
+  bestForLabel,  
+  ctaLabel,
+  href,
+  index
 }: {
   icon: typeof Globe
   title: string
   description: string
   bullets: string[]
-  bestFor: string[]
+  bestFor?: string[]
   bestForLabel: string
-  cta: string
-  index: number
-  ctaLink: string
-}) {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 })
-
-  return (
-    <div
-      ref={ref}
-      className={`group relative transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
-      style={{ transitionDelay: `${index * 120}ms` }}
-    >
-      <div className="relative h-full border border-primary/20 bg-surface/80 p-8 lg:p-10 transition-all duration-500 hover:border-primary/50 hover:bg-surface-elevated/60 flex flex-col">
-        {/* Accent top line */}
-        <div className="absolute top-0 left-0 h-px w-0 bg-primary transition-all duration-700 group-hover:w-full" />
-
-        {/* Icon */}
-        <div className="mb-6 flex h-12 w-12 flex-shrink-0 items-center justify-center border border-primary/30 bg-primary/5 transition-all duration-500 group-hover:border-primary/60 group-hover:bg-primary/10">
-          <Icon className="h-5 w-5 text-primary" />
-        </div>
-
-        {/* Title */}
-        <h3 className="mb-3 font-serif text-xl font-semibold text-foreground transition-colors duration-300 group-hover:text-primary">
-          {title}
-        </h3>
-
-        {/* Description */}
-        <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
-          {description}
-        </p>
-
-        {/* Bullets */}
-        <ul className="mb-6 space-y-2">
-          {bullets.map((b, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground/90">
-              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
-              {b}
-            </li>
-          ))}
-        </ul>
-
-        {/* Best for */}
-        {bestFor.length > 0 && (
-          <div className="mb-6 border-t border-border/20 pt-4">
-            <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-primary/70">
-              {bestForLabel}
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {bestFor.map((tag, i) => (
-                <span
-                  key={i}
-                  className="text-[11px] text-muted-foreground/70 border border-border/30 px-2 py-0.5"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* CTA */}
-        <Link
-          href={ctaLink}
-          className="mt-auto inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary hover:gap-3 transition-all duration-300"
-        >
-          {cta}
-          <ArrowRight className="h-3 w-3" />
-        </Link>
-      </div>
-    </div>
-  )
-}
-
-// ─── Secondary card (smaller) ─────────────────────────────────────────────────
-function SecondaryCard({
-  icon: Icon,
-  title,
-  description,
-  bullets,
-  index,
-}: {
-  icon: typeof Globe
-  title: string
-  description: string
-  bullets: string[]
+  ctaLabel: string
+  href: string
   index: number
 }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 })
@@ -162,28 +66,49 @@ function SecondaryCard({
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="relative h-full border border-border/30 bg-surface/30 p-6 transition-all duration-500 hover:border-border/60 hover:bg-surface/50 flex flex-col">
-        <div className="mb-4 flex h-9 w-9 flex-shrink-0 items-center justify-center border border-border/40 transition-all duration-500 group-hover:border-primary/30">
-          <Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+      <div className="relative h-full border border-border/30 bg-surface/30 p-6 lg:p-7 transition-all duration-500 hover:border-primary/40 hover:bg-surface/60 flex flex-col">
+        <div className="mb-4 flex h-10 w-10 flex-shrink-0 items-center justify-center border border-border/40 bg-surface/50 transition-all duration-500 group-hover:border-primary/40">
+          <Icon className="h-4 w-4 text-primary" />
         </div>
 
-        <h4 className="mb-2 font-serif text-base font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+        <h3 className="mb-2 font-serif text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-primary">
           {title}
-        </h4>
-
-        <p className="mb-4 text-xs leading-relaxed text-muted-foreground/80">
+        </h3>
+        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
-
-        <ul className="mt-auto space-y-1.5">
+        <ul className="mb-5 space-y-1.5">
           {bullets.map((b, i) => (
-            <li key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground/70">
-              <span className="mt-1.5 h-0.5 w-0.5 flex-shrink-0 rounded-full bg-primary/50" />
+            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground/90">
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary/80" />
               {b}
             </li>
           ))}
         </ul>
-
+        {!!bestFor?.length && (
+          <div className="mb-5 border-t border-border/20 pt-4">
+            <p className="mb-2 text-[10px] uppercase tracking-[0.25em] text-primary/70">
+              {bestForLabel}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {bestFor.map((tag: string, i: number) => (
+                <span
+                  key={i}
+                  className="text-[11px] text-muted-foreground/70 border border-border/30 px-2 py-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        <Link
+          href={href}
+          className="mt-auto inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:gap-3"
+        >
+          {ctaLabel}
+          <ArrowRight className="h-3 w-3" />
+        </Link>
         <div className="absolute bottom-0 left-0 h-px w-0 bg-primary/30 transition-all duration-500 group-hover:w-full" />
       </div>
     </div>
@@ -233,40 +158,60 @@ function SectionLabel({
   )
 }
 
-function InlineSectionCta({
-  href,
-  label,
-  helper,
-}: {
-  href: string
-  label: string
-  helper: string
-}) {
-  return (
-    <div className="mt-8 border border-border/30 bg-surface/20 p-5 sm:p-6">
-      <p className="mb-3 text-xs text-muted-foreground">{helper}</p>
-      <Link
-        href={href}
-        className="inline-flex items-center gap-2 border border-primary/60 px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:bg-primary hover:text-background"
-      >
-        {label}
-        <ArrowRight className="h-3 w-3" />
-      </Link>
-    </div>
-  )
-}
-
 // ─── Main export ──────────────────────────────────────────────────────────────
 export function ServicesSection({ t, lang }: ServicesSectionProps) {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation()
-  const { ref: coreRef, isVisible: coreVisible } = useScrollAnimation()
-  const { ref: engRef, isVisible: engVisible } = useScrollAnimation()
-  const { ref: consultRef, isVisible: consultVisible } = useScrollAnimation()
-  const { ref: flowRef, isVisible: flowVisible } = useScrollAnimation()
+  const { ref: businessRef, isVisible: businessVisible } = useScrollAnimation()
+  const { ref: productRef, isVisible: productVisible } = useScrollAnimation()
+  const { ref: systemsRef, isVisible: systemsVisible } = useScrollAnimation()
+  const { ref: architectureRef, isVisible: architectureVisible } = useScrollAnimation()
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation()
 
   const sv = t.servicesPage
-  const serviceSlugs = ["payments", "booking", "marketplaces"]
+  const businessItems: ServiceCardItem[] = [
+    { ...sv.core.items[0], slug: "payments", cta: sv.ctaDiscussProject, icon: CreditCard },
+    { ...sv.core.items[1], slug: "booking-systems", cta: sv.ctaDiscussProject, icon: CalendarCheck },
+    { ...sv.core.items[2], slug: "marketplaces", cta: sv.ctaDiscussProject, icon: ShoppingBag },
+  ]
+  const productItems: ServiceCardItem[] = [
+    { ...sv.engineering.items[0], slug: "web-development", cta: sv.ctaPlanDevelopment, icon: Globe },
+    {
+      title: sv.landingPages.title,
+      description: sv.landingPages.description,
+      bullets: sv.landingPages.bullets,
+      bestFor: sv.landingPages.bestFor,
+      slug: "landing-pages",
+      cta: sv.ctaPlanDevelopment,
+      icon: LayoutTemplate,
+    },
+    { ...sv.engineering.items[1], slug: "mobile-apps", cta: sv.ctaPlanDevelopment, icon: Smartphone },
+  ]
+  const systemsItems: ServiceCardItem[] = [
+    { ...sv.engineering.items[2], slug: "api-development", cta: sv.ctaAssessSystem, icon: Plug },
+    {
+      title: sv.systemEngineering.integrations.title,
+      description: sv.systemEngineering.integrations.description,
+      bullets: sv.systemEngineering.integrations.bullets,
+      bestFor: sv.systemEngineering.integrations.bestFor,
+      slug: "integrations",
+      cta: sv.ctaAssessSystem,
+      icon: Boxes,
+    },
+    {
+      title: sv.systemEngineering.backend.title,
+      description: sv.systemEngineering.backend.description,
+      bullets: sv.systemEngineering.backend.bullets,
+      bestFor: sv.systemEngineering.backend.bestFor,
+      slug: "backend-systems",
+      cta: sv.ctaAssessSystem,
+      icon: Server,
+    },
+  ]
+  const architectureItems: ServiceCardItem[] = [
+    { ...sv.consulting.items[0], slug: "system-design", cta: sv.ctaAssessSystem, icon: Compass },
+    { ...sv.consulting.items[1], slug: "scaling", cta: sv.ctaAssessSystem, icon: TrendingUp },
+    { ...sv.consulting.items[2], slug: "audit", cta: sv.ctaAssessSystem, icon: ClipboardCheck },
+  ]
 
   return (
     <section id="services" className="py-28 lg:py-36 relative">
@@ -307,9 +252,10 @@ export function ServicesSection({ t, lang }: ServicesSectionProps) {
               style={{ transitionDelay: "300ms" }}
             >
               {[
-                { href: "#core", label: sv.anchorCore },
-                { href: "#engineering", label: sv.anchorEngineering },
-                { href: "#consulting", label: sv.anchorConsulting },
+                { href: "#business-solutions", label: sv.anchorBusiness },
+                { href: "#product-development", label: sv.anchorProductDevelopment },
+                { href: "#system-engineering", label: sv.anchorSystemEngineering },
+                { href: "#architecture-consulting", label: sv.anchorArchitecture },
               ].map((a) => (
                 <a
                   key={a.href}
@@ -322,114 +268,114 @@ export function ServicesSection({ t, lang }: ServicesSectionProps) {
             </div>
           </div>
 
-          {/* ── 1. Core Solutions ── */}
-          <div id="core" className="mb-24 lg:mb-32">
-            <div ref={coreRef}>
+          <div id="business-solutions" className="mb-24 lg:mb-28">
+            <div ref={businessRef}>
               <SectionLabel
                 label="01"
-                title={sv.core.label}
-                subtitle={sv.core.subtitle}
-                visible={coreVisible}
+                title={sv.businessSolutions.label}
+                subtitle={sv.businessSolutions.subtitle}
+                visible={businessVisible}
               />
             </div>
-
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-              {sv.core.items.map((item, i) => (
-                <CoreCard
-                  key={i}
-                  icon={CORE_ICONS[i]}
+              {businessItems.map((item, i) => (
+                <ServiceCard
+                  key={item.slug}
+                  icon={item.icon}
                   title={item.title}
                   description={item.description}
                   bullets={item.bullets}
                   bestFor={item.bestFor}
                   bestForLabel={sv.bestForLabel}
-                  cta={sv.ctaStart}
-                  ctaLink={`/${lang}/contacts?from=services&service=${serviceSlugs[i] || "core"}`}
+                  ctaLabel={item.cta}
+                  href={`/${lang}/contacts?from=services&service=${item.slug}`}
                   index={i}
                 />
               ))}
             </div>
-            <InlineSectionCta
-              href={`/${lang}/contacts?from=services&section=core`}
-              label={sv.ctaStart}
-              helper={sv.ctaHelper}
-            />
           </div>
 
-          {/* ── Flow connector ── */}
-          <div ref={flowRef} className={`mb-24 lg:mb-32 transition-all duration-700 ${flowVisible ? "opacity-100" : "opacity-0"}`}>
-            <div className="border border-border/20 bg-surface/20 p-6 lg:p-8">
-              <p className="mb-4 text-[10px] uppercase tracking-[0.4em] text-primary/70">
-                {sv.flowLabel}
-              </p>
-              <FlowBadge items={sv.flowItems} />
-              <p className="mt-4 text-xs text-muted-foreground/70 max-w-lg">
-                {sv.flowDescription}
-              </p>
-            </div>
-          </div>
-
-          {/* ── 2. Engineering Services ── */}
-          <div id="engineering" className="mb-24 lg:mb-32 border border-border/20 bg-surface/15 p-6 sm:p-8 lg:p-10">
-            <div ref={engRef}>
+          <div id="product-development" className="mb-24 lg:mb-28">
+            <div ref={productRef}>
               <SectionLabel
                 label="02"
-                title={sv.engineering.label}
-                subtitle={sv.engineering.subtitle}
-                visible={engVisible}
+                title={sv.productDevelopment.label}
+                subtitle={sv.productDevelopment.subtitle}
+                visible={productVisible}
               />
             </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-              {sv.engineering.items.map((item, i) => (
-                <SecondaryCard
-                  key={i}
-                  icon={ENGINEERING_ICONS[i]}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {productItems.map((item, i) => (
+                <ServiceCard
+                  key={item.slug}
+                  icon={item.icon}
                   title={item.title}
                   description={item.description}
                   bullets={item.bullets}
+                  bestFor={item.bestFor}
+                  bestForLabel={sv.bestForLabel}
+                  ctaLabel={item.cta}
+                  href={`/${lang}/contacts?from=services&service=${item.slug}`}
                   index={i}
                 />
               ))}
             </div>
-            <InlineSectionCta
-              href={`/${lang}/contacts?from=services&section=engineering`}
-              label={sv.ctaTalk}
-              helper={sv.ctaHelper}
-            />
           </div>
 
-          {/* ── 3. Architecture & Consulting ── */}
-          <div id="consulting" className="mb-20">
-            <div ref={consultRef}>
+          <div id="system-engineering" className="mb-24 lg:mb-28">
+            <div ref={systemsRef}>
               <SectionLabel
                 label="03"
-                title={sv.consulting.label}
-                subtitle={sv.consulting.subtitle}
-                visible={consultVisible}
+                title={sv.systemEngineering.label}
+                subtitle={sv.systemEngineering.subtitle}
+                visible={systemsVisible}
               />
             </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-              {sv.consulting.items.map((item, i) => (
-                <SecondaryCard
-                  key={i}
-                  icon={CONSULTING_ICONS[i]}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {systemsItems.map((item, i) => (
+                <ServiceCard
+                  key={item.slug}
+                  icon={item.icon}
                   title={item.title}
                   description={item.description}
                   bullets={item.bullets}
+                  bestFor={item.bestFor}
+                  bestForLabel={sv.bestForLabel}
+                  ctaLabel={item.cta}
+                  href={`/${lang}/contacts?from=services&service=${item.slug}`}
                   index={i}
                 />
               ))}
             </div>
-            <InlineSectionCta
-              href={`/${lang}/contacts?from=services&section=consulting`}
-              label={sv.ctaTalk}
-              helper={sv.ctaHelper}
-            />
           </div>
 
-          {/* ── Bottom CTA ── */}
+          <div id="architecture-consulting" className="mb-20">
+            <div ref={architectureRef}>
+              <SectionLabel
+                label="04"
+                title={sv.architectureConsulting.label}
+                subtitle={sv.architectureConsulting.subtitle}
+                visible={architectureVisible}
+              />
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {architectureItems.map((item, i) => (
+                <ServiceCard
+                  key={item.slug}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  bullets={item.bullets}
+                  bestFor={item.bestFor}
+                  bestForLabel={sv.bestForLabel}
+                  ctaLabel={item.cta}
+                  href={`/${lang}/contacts?from=services&service=${item.slug}`}
+                  index={i}
+                />
+              ))}
+            </div>
+          </div>
+
           <div
             ref={ctaRef}
             className={`border-t border-border/20 pt-16 text-center transition-all duration-700 ${
@@ -445,12 +391,15 @@ export function ServicesSection({ t, lang }: ServicesSectionProps) {
             <p className="mb-8 text-sm text-muted-foreground max-w-md mx-auto">
               {sv.ctaHelper}
             </p>
+            <p className="mb-8 text-sm text-muted-foreground/80 max-w-lg mx-auto">
+              {sv.finalLeadText}
+            </p>
             <Link
               href={`/${lang}/contacts?from=services`}
               className="inline-flex items-center gap-3 border border-primary px-8 py-4 text-sm uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-background transition-all duration-300"
             >
               <MessageSquare className="h-4 w-4" />
-              {sv.ctaTalk}
+              {sv.ctaDiscussProject}
             </Link>
           </div>
 
