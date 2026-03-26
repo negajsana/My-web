@@ -39,6 +39,7 @@ function detectBrowserLang(): string | null {
 export function LanguageSelectScreen() {
   const [showPicker, setShowPicker] = useState(false)
   const [leaving, setLeaving] = useState(false)
+  const [recommendedLang, setRecommendedLang] = useState<string | null>(null)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -46,56 +47,33 @@ export function LanguageSelectScreen() {
     // Never touch stats pages
     if (pathname.startsWith("/stats-")) return
 
-    // ─────────────────────────────────────────────────────────────────────────────
-    // KEY FIX: Check if URL already contains a valid language prefix
-    // If it does, NEVER redirect — respect the language in the URL
-    // ─────────────────────────────────────────────────────────────────────────────
+    // If URL already has valid language prefix — never override it.
     const currentLang = pathname.split("/")[1]
     if (supportedCodes.includes(currentLang)) {
-      // URL has a valid language prefix (e.g., /en/, /es/, /de/)
-      // Do NOT redirect based on browser detection or saved preference
-      // The user explicitly requested this language via the URL
       return
     }
 
-    // ──────────────────────────────────────────────────��──────────────────────────
-    // Only apply auto-detection and redirects on the ROOT path (/)
-    // All other non-language-prefixed paths should also not trigger auto-redirect
-    // ────────────────────────────────���────────────────────────────────────────────
+    // Auto-detection runs only on root.
     if (pathname !== "/") {
-      // Not root and not language-prefixed
-      // Don't auto-redirect, just show the page
       return
     }
 
-    // ─────────────────────────────────────────────────────────────────────────────
-    // ONLY reach here if: pathname === "/"
-    // Apply auto-detection logic ONLY on root
-    // ─────────────────────────────────────────────────────────────────────────────
-
-    // 1. Check saved language preference
+    // No automatic redirects to keep SEO/indexing predictable.
+    // We only recommend the language and let user confirm.
+    let recommended: string | null = null
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
       if (saved && supportedCodes.includes(saved)) {
-        router.replace(`/${saved}`)
-        return
+        recommended = saved
       }
     } catch {}
 
-    // 2. Detect from browser
-    const detected = detectBrowserLang()
-    if (detected) {
-      try {
-        localStorage.setItem(STORAGE_KEY, detected)
-        localStorage.setItem("preferred-lang", detected)
-      } catch {}
-      router.replace(`/${detected}`)
-      return
+    if (!recommended) {
+      recommended = detectBrowserLang()
     }
 
-    // 3. Unknown language → show manual picker
+    setRecommendedLang(recommended)
     setShowPicker(true)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   function applyLang(code: string, animate: boolean) {
@@ -122,6 +100,11 @@ export function LanguageSelectScreen() {
   }
 
   if (!showPicker) return null
+  const orderedLanguages = [...languages].sort((a, b) => {
+    if (a.code === recommendedLang) return -1
+    if (b.code === recommendedLang) return 1
+    return 0
+  })
 
   return (
     <div
@@ -156,7 +139,7 @@ export function LanguageSelectScreen() {
         </p>
 
         <div className="flex flex-col items-center gap-3 w-full max-w-xs">
-          {languages.map((lang) => (
+          {orderedLanguages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => choose(lang.code)}
@@ -164,6 +147,11 @@ export function LanguageSelectScreen() {
             >
               <span className="text-base font-serif text-foreground group-hover:text-primary transition-colors duration-300">
                 {lang.native}
+                {recommendedLang === lang.code && (
+                  <span className="ml-2 text-[10px] uppercase tracking-[0.2em] text-primary">
+                    Recommended
+                  </span>
+                )}
               </span>
               <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground group-hover:text-primary transition-colors duration-300">
                 {lang.label}

@@ -21,6 +21,7 @@ export function LanguageSwitcher() {
   ]
 
   const current = languages.find((l) => l.code === currentLang) || languages[0]
+  const STORAGE_KEY = "ca-lang-selected"
 
   const switchLanguage = (lang: string) => {
     const segments = pathname.split("/")
@@ -29,6 +30,7 @@ export function LanguageSwitcher() {
     setOpen(false)
     // Save language preference
     try {
+      localStorage.setItem(STORAGE_KEY, lang)
       localStorage.setItem("preferred-lang", lang)
     } catch {}
   }
