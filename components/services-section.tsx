@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import type { TranslationKey } from "@/lib/translations"
 import {
   CreditCard,
@@ -122,13 +123,13 @@ function CoreCard({
         )}
 
         {/* CTA */}
-        <a
+        <Link
           href={ctaLink}
           className="mt-auto inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary hover:gap-3 transition-all duration-300"
         >
           {cta}
           <ArrowRight className="h-3 w-3" />
-        </a>
+        </Link>
       </div>
     </div>
   )
@@ -239,8 +240,7 @@ export function ServicesSection({ t }: ServicesSectionProps) {
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation()
 
   const sv = t.servicesPage
-
-  const telegramLink = "https://t.me/codearchitect_dev"
+  const serviceSlugs = ["payments", "booking", "marketplaces"]
 
   return (
     <section id="services" className="py-28 lg:py-36 relative">
@@ -316,8 +316,8 @@ export function ServicesSection({ t }: ServicesSectionProps) {
                   description={item.description}
                   bullets={item.bullets}
                   bestFor={item.bestFor}
-                  cta={sv.ctaDiscuss}
-                  ctaLink={telegramLink}
+                  cta={sv.ctaStart}
+                  ctaLink={`/contacts?from=services&service=${serviceSlugs[i] || 'core'}`}
                   index={i}
                 />
               ))}
@@ -397,18 +397,19 @@ export function ServicesSection({ t }: ServicesSectionProps) {
             <p className="mb-2 text-xs uppercase tracking-[0.4em] text-primary">
               {sv.ctaLabel}
             </p>
-            <h3 className="mb-6 font-serif text-2xl md:text-3xl font-semibold text-foreground">
+            <h3 className="mb-4 font-serif text-2xl md:text-3xl font-semibold text-foreground">
               {sv.ctaTitle}
             </h3>
-            <a
-              href={telegramLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <p className="mb-8 text-sm text-muted-foreground max-w-md mx-auto">
+              {sv.ctaHelper}
+            </p>
+            <Link
+              href="/contacts?from=services"
               className="inline-flex items-center gap-3 border border-primary px-8 py-4 text-sm uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-background transition-all duration-300"
             >
               <MessageSquare className="h-4 w-4" />
-              {sv.ctaButton}
-            </a>
+              {sv.ctaTalk}
+            </Link>
           </div>
 
         </div>
